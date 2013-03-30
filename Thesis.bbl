@@ -1,0 +1,109 @@
+\begin{thebibliography}{10}
+
+\bibitem{ID1}
+Analog Devices, Inc., {\em ADSP-21367/ADSP-21368/ADSP-21369 SHARC Processor
+  Data Sheet}, a~ed.
+
+\bibitem{ID2}
+Analog Devices, Inc., {\em ADSP-21369 EZ-KIT Lite Evaluation System Manual},
+  2.2~ed., September 2009.
+
+\bibitem{ID3}
+Analog Devices, Inc., {\em ADM3202/ADM3222/ADM1385 Data Sheet}.
+\newblock Line Drivers/Receivers.
+
+\bibitem{ID4}
+Analog Devices, Inc., {\em Using the UART Port Controller on SHARC®
+  Processors}, ee-296~ed.
+
+\bibitem{ID5}
+Maxim, Inc., {\em Determining Clock Accuracy Requirements for UART
+  Communications}.
+
+\bibitem{ID14}
+Analog Devices, Inc., {\em AD1835A Data Sheet}, a~ed., 2003.
+
+\bibitem{ID15}
+Analog Devices, Inc., {\em ADSP-2136(7/8/9) SHARC® Processor Hardware
+  Reference}, 1.0~ed., August 2006.
+
+\bibitem{ID16}
+Analog Devices, Inc., {\em Using the Expert DAI for SHARC® Processors},
+  ee-243~ed., June 2010.
+
+\bibitem{ID6}
+P.~A.Blume, {\em The LabVIEW Style Book}.
+\newblock Prentice Hall, 1~ed., March 2007.
+
+\bibitem{ID7}
+R.~W. Larsen, {\em LabVIEW for Engineers}.
+\newblock Prentice Hall, 1~ed., February 2010.
+
+\bibitem{ID8}
+J.~G. Proakis and V.~K. Ingle, {\em Digital Signal Processing Using MATLAB}.
+\newblock Global Engineering: Christopher M. Shortt, 3~ed., August 2006.
+
+\bibitem{ID9}
+J.~Chowning and D.~Bristow, {\em FM Theory and Applications}.
+\newblock Shimomeguro Meguroku, Tokyo, Japan: Yamaha Music Foundation, 3~ed.,
+  1986.
+
+\bibitem{ID10}
+K.~Fujimoto, ``How to make and play sound with matlab.''
+\newblock http://www.h6.dion.ne.jp/~fff/old/technique/auditory/matlab.html.
+
+\bibitem{ID11}
+J.~Thomas, ``Making a studio pt.3,'' May 2009.
+\newblock
+  http://en.audiofanzine.com/homestudio/editorial/articles/making-a-studio-pt3.html.
+
+\bibitem{ID12}
+T.~Zuckerman, ``Pitches, in hertz, produced by a keyboard instrument with 88
+  digitals, tuned to equal temperament.''
+\newblock http://shakahara.com/pianopitch2.php.
+
+\bibitem{ID13}
+K.~Eneman, ``Coursebook on digital signal processing,'' 2011-2012.
+
+\bibitem{ID17}
+G.~Read, ``Synth secrets, part 10: Modulation,'' February 2000.
+\newblock http://www.soundonsound.com/sos/feb00/articles/synthsecrets.htm.
+
+\bibitem{ID19}
+G.~Read, ``Synth secrets, part 12: An introduction to frequency modulation,''
+  April 2000.
+\newblock http://www.soundonsound.com/sos/apr00/articles/synthsecrets.htm.
+
+\bibitem{ID18}
+G.~Read, ``Synth secrets, part 13: More on frequency modulation,'' May 2000.
+\newblock http://www.soundonsound.com/sos/may00/articles/synth.htm.
+
+\bibitem{ID20}
+A.~D. Inc., ``Digital signal processing 101- an introductory course in dsp
+  system design.''
+\newblock
+  http://www.analog.com/en/processors-dsp/processors/beginners\_guide\_to\_dsp/fca.html.
+
+\bibitem{ID21}
+E.~W. Weisstein, ``Fourier series - sawtooth wave.''
+\newblock http://mathworld.wolfram.com/FourierSeriesSawtoothWave.html.
+
+\bibitem{ID22}
+E.~W. Weisstein, ``Fourier series - square wave.''
+\newblock http://mathworld.wolfram.com/FourierSeriesSawtoothWave.html.
+
+\bibitem{ID23}
+E.~W. Weisstein, ``Fourier series - triangle wave.''
+\newblock http://mathworld.wolfram.com/FourierSeriesSawtoothWave.html.
+
+\bibitem{ID24}
+E.~W. Weisstein, ``Bessel function of the first kind.''
+\newblock http://mathworld.wolfram.com/BesselFunctionoftheFirstKind.html.
+
+\bibitem{ID25}
+P.~Burk, L.~Polansky, D.~Repetto, M.~Roberts, and D.~Rockmore, {\em Music and
+  Computers: A Theoretical and Historical Approach}.
+\newblock Key College Publishing.
+\newblock http://music.columbia.edu/cmc/MusicAndComputers/.
+
+\end{thebibliography}

@@ -1,0 +1,124 @@
+% Chapter 8
+
+\chapter{Critical reflections} 
+\label{Chapter8}
+\lhead{Chapter 8. \emph{Critical reflections}}
+\textsf{\textsl{Written by Bjorn Deraeve}}
+%----------------------------------------------------------------------------------------
+\section{Implementation problems}
+In chapter \ref{Chapter6} we already explained how the program on the SHARC processor is designed. Here we will have a closer look at some problems encountered during the development.
+\subsection{Communication with the Labview interface}
+As explained in chapter \ref{Chapter7}, the parameters read from the interface are interrupt driven. As a consequence the program on the SHARC processor does not receive values if the user doesn't change any particular input on the interface.\\
+For normal use this is not a problem since the values are initialized correctly when the program is started. However during the debugging process this often led to confusion and searching on problems in the code that actually weren't there.
+%----------------------------------------------------------------------------------------
+\subsection{Combining different program parts and general programming issues}
+Including smaller topics like the envelopes, effects and equaliser into the main program sometimes led to major problems. Next to the inevitable minor adjustments in the program parts also the interaction with the interface caused problems. However, most of these problems were small mistakes that could easily be fixed. Nevertheless not all team members succeeded into fixing those little errors.\\
+Sometimes it was necessary to change some details of the main program in order for the subprograms to work fluently. However, in order to do so efficiently one must at least understand the template we received at the beginning of the project and think well before changing stuff. There had to be intervened several times because a team member unknowingly stopped the whole program instead of just disabling his own algorithm. For example, as explained in chapter \ref{Chapter6}, processors on embedded systems need a \verb+while(TRUE)+ loop. Another useful thing to realize is that the periodic functions generating the waveforms need a variable that keeps track of the time. Updating this time in a local variable does not have the same effect like updating the global variable and again stops the program!\\
+Also the modulo \%-operator is common in DSP algorithms and all team members should its meaning. Looking this up with google would have been a great idea!\\ Finally before asking to include a subprogram into the main program the smaller part must first have been debugged for syntax errors (since notepad doesn't highlight such errors).\\Next, some other concrete programming issues are described:
+\begin{description}
+\item[Sampling frequency:] The template we started from mentionned a sampling frequency of 48 kHz. However that project used a stereo audio channel which meant the samples were sent to the AD1835A at a rate of 96 kHz. Because we filled the algorithm's frames with mono channel samples (instead of two samples per calculation) our sampling frequency in software matched the sampling frequency of the hardware. \\ \\
+\item[Modulation:] Enabling modulation caused some minor timing problems, however this could simply be fixed by passing the function's argument by value instead of by reference. \\ \\
+\item[Envelopes:] There were several problems with the envelope. In a first stage nothing worked and a trick must be implemented to create envelopes with a duration longer than one second. To do so the function received a counter in its arguments. \\
+The updating of this counter was at first done in the main synthesize sequence, when the program's time was an integer multiple of the sampling frequency. However because of the fixed frame length of 1024 samples this happend only every 4 seconds. To avoid this the updating of counter was originally moved to the create signal function. This has no influence and even made things worse actually. The problem with placing the flag here was that if modulation is enabled the flag updated several times. However this whole time the counter argument worked and the envelope refused working even without modulation.\\The underlying cause was that the envelope function made use of the wrong envelopes in memory so the parameters had no influence. Unfortunatelly not all team members were able to find such mistakes\\
+Finally to fix all little problems the envelope received its own space in memory for keeping track of time. So now this isn't done anymore in the synthesize function but in the envelope itself. Because now the time is obviously updateted instaneously all problems are fixed. 
+%\item[Envelopes, the bigger problem: ] There were several problems with the envelope. In a first stage nothing worked
+\end{description}
+%----------------------------------------------------------------------------------------
+\subsection{Connecting the DSP board and use of the IDEs}
+There were numerous of problems with Analog Devices' IDE. Personally I could not connect with the board on my normal Windows. Running the program from within a virtual machine on that same computer seemed to magically solve the problem (after a few years of internetting). If we have to invent an explanation I'd say that Sony tampered with the OS' USB drivers to make them more energy efficient and thus not supporting the DSP board.\\
+Getting VisualDSP++ and Labview to run fluently also took a lot of time. For VisualDSP++ an activation code had to been registered. This became a problem since by the end of the project we got warnings that the activation would expend in less than a few days. Another issue with this activation code was that in week 10 a team member asked for it while it had already been e-mailed to all team members in week 4.\\
+VisualDSP++ also seemed to be a very hard program to work with since a team member needed step-by-step click instructions for how to activate the editor's line numbers. \\
+For Labview there were no valid licenses at all so the program had to be reinstalled a few times. Also to use all aspects of the interface several extra Labview plugins needed to be installed and again the only way to do is by completely reinstalling Labview, this became more or less a routine.
+%----------------------------------------------------------------------------------------
+\subsection{Extreme programming}
+Due to the tricky situation with the interface several problems asked a lot of time to get fixed or didn't get fixed at all. For those harder to find errors a second pair of eyes would have been welcome.\\
+Though in an attempt to improve the overal impression of the project it was best to do have look at those extra problems and happily been able to fix some of them. \emph{However it cannot be that there is only one person responsible to make all things work properly, the lack of a good programming partner was big. With such a partner a lot of improvements could have been made, some of them are discussed in section \ref{sec:future}.}
+%----------------------------------------------------------------------------------------
+\subsection{Latex}
+Latex' standard color package does not support the color pink. My disappointment was huge, after heavy consideration I will declare this as the biggest lack encountered during this EE5-project.  
+%----------------------------------------------------------------------------------------
+\section{Team problems}
+Next to common problems teams sometimes encounter like poor communication, group thinking and difficulty making decisions we also suffered from other problems. They are described shortly below:
+\begin{itemize}
+\item \textbf{Major issues}
+\begin{itemize}
+\item Lack of basic programming knowledge
+\item Update files to the shared folder
+\item Lack of inspiration for simple program features
+\end{itemize}
+\item \textbf{Minor issues}
+\begin{itemize}
+\item Update timesheets in time
+\item Labview vs. C distinction
+\item Give feedback on the programs: this only happened for the interface
+\item Chaotic organisation of files in the shared folder
+\end{itemize}
+\end{itemize}
+%----------------------------------------------------------------------------------------
+\section{Achieved activities}
+\begin{table}[hbp]
+\begin{center}
+\begin{tabular}[htbp]{| >{\centering\arraybackslash}m{4cm} | >{\centering\arraybackslash}m{4cm} |}
+\hline
+\textbf{Student} & \textbf{Hours}\\
+\hline
+Bjorn Deraeve & 210\\
+\hline
+Frederik De Greef & 140 \\
+\hline
+Kenneth Piot & 140 \\
+\hline
+Thuy Pham & 180 \\
+\hline
+\end{tabular}
+\caption{Project logbook}
+\label{tab:logs}
+\end{center}
+\end{table}
+\begin{table}[!htbp]
+\begin{center}
+\begin{tabular}[!htbp]{|c|c|c|}
+\hline
+\textbf{Student} & \textbf{Topic}\\
+\hline
+Bjorn Deraeve & Admin: Meeting reports\\ 
+& Labview: Connect the basic interface\\
+& C: General program structure \\
+& C: Signals and modulation \\
+& C: Import and adapt (fix) the other programs\\ 
+& C: Debug and fix envelope program\\
+& Matlab: plots for report\\
+& Labview: Bessel functions\\
+& \LaTeX: cls, bib and tex template, chapters 1,2,5,6,8\\
+\hline
+Frederik De Greef & C \& Matlab: effects \\
+& C \& Matlab: equaliser\\
+& Report: chapter 4\\
+\hline
+Kenneth Piot & C: Envelopes \\
+& Labview: Piano interface \\
+& Report: chapter 2\\
+\hline
+Thuy Pham & Labview: full interface \\
+& C: Configuration of UART communication \\
+& Labview: waves and specta \\
+& Labview: envelopes and graphs \\
+& Labview: equaliser \\
+& Labview: piano interface \\
+& Report: chapter 7\\
+\hline
+\end{tabular}
+\caption{Activities}
+\label{tab:acts}
+\end{center}
+\end{table}
+%----------------------------------------------------------------------------------------
+\section{Future work}\label{sec:future}
+This section summarizes some features that could add additional value to DSP Synthesizer.
+\begin{description}
+\item[Envelopes:] It is no coincidence the piano interface is located in the chapter on the envelopes. Combining the piano keystroke with the envelopes should have been an easy to implement extension.
+\item[Equaliser:] An extended equaliser would provoke the musicians' creativity more.
+\item[SDRAM:] Being able to save created sounds and reuse them to modulate signals. Also prestored effects could be offered this way. Search how to initialize the chip, \dots
+\item[SHARC-ADSP 21369 IRQs:] Using the board's buttons to increase or decrease the volume. This is an interrupt driven event. Combining this interrupt with the other, time pressured interrupts, would have presented some interesting programming problems.
+\item[Hardware controller:] Instead of using the labview interface use a real controller with a more advanced communication protocol. The board supports SPI, I$^{2}$C,\dots
+\end{description}

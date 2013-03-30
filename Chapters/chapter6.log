@@ -1,0 +1,13 @@
+This is TeX, Version 3.1415926 (MiKTeX 2.9) (preloaded format=tex 2012.3.18)  31 MAY 2012 15:17
+**chapter6.tex
+(d:\Dropbox\Bjorn\Documents\LEdProjects\EE5\Chapters\chapter6.tex
+! Undefined control sequence.
+l.2 \chapter
+            {Implementation: C}
+? 
+! Emergency stop.
+l.2 \chapter
+            {Implementation: C}
+End of file on the terminal!
+
+No pages of output.

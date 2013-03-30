@@ -1,0 +1,265 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt, a4paper, oneside]{Thesis} % Paper size, default font size and one-sided paper
+\graphicspath{{./Pictures/}} % Specifies the directory where pictures are stored
+%\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\usepackage{stmaryrd}
+\usepackage{epsfig}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{array} 
+%\usepackage[nottoc,numbib]{tocbibind}
+
+\hypersetup{urlcolor=black, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
+\title{\ttitle} % Defines the thesis title - don't touch this
+
+\begin{document}
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+\setstretch{1.3} % Line spacing of 1.3
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{} % Clears all page headers and footers
+\rhead{\thepage} % Sets the right side header to show the page number
+\lhead{} % Clears the left side page header
+
+\pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % New command to make the lines in the title page
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begin{titlepage}
+\begin{center}
+\includegraphics{Logo}\\[1.5cm] % University/department logo
+\textsc{\LARGE \univname}\\[2cm] % University name
+%\textsc{\LARGE "Thesis"}\\[1.5cm]
+
+\HRule \\[0.5cm] % Horizontal line
+\begin{spacing}{2.0}
+{\huge \bfseries \ttitle}\\[0.1cm] % Thesis title
+\end{spacing}
+\HRule \\[1.0cm] % Horizontal line
+
+\includegraphics[height=6cm]{waspmote} \\[1.0cm] 
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Authors:}\\
+{\authornames}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+{\supname}
+\end{flushright}
+\end{minipage}\\[2cm]
+
+{\large \today}\\% Date
+
+\vfill
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	REAL TITLE PAGE
+%	Your institution may give you a different text to place here
+%----------------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+\thispagestyle{empty}
+\null\vfill 
+
+\begin{center}
+\Large{\textbf{DESIGN OF A WIRELESS SENSOR NETWORKING TEST-BED}}\\
+\vspace{3cm}
+\large{\emph{Bjorn Deraeve $\quad\bullet\quad$ Roel Storms}} \\
+\HRule \\[1.0cm]
+\vspace{1cm}
+\normalsize{Written on behalf of Mr. Luc Vandeurzen}\\
+\vspace{12cm}
+{\large \today}
+\end{center}
+
+\vfill\vfill\vfill\vfill\
+
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+%\pagestyle{empty} % No headers or footers for the following pages
+%\null\vfill % Add some space to move the quote down the page a bit
+%\textit{``Be a yardstick of quality. Some people aren't used to an environment where excellence is expected."}
+%\begin{flushright}
+%Steve Jobs
+%\end{flushright}
+%\vfill\vfill\vfill\vfill\vfill\vfill\null % Add some space at the bottom to position the quote just right
+%\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
+
+\abstract{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+
+\emph{Audio applications are on of the main subfields of digital signal processing. More specific, in audio and music one can use frequency modulation synthesis in order to make creative and totally different sounding tones. A theoretical background and practical approach with an Analog Devices DSP-board is reported here.\\ \\
+In the first two chapters it is explained how sound works and what aspects of frequency modulation are actually responsible for making a particular tone sound differently. Next a practical approach to add envelopes and effects to the tone is given.\\ \\
+Chapter \ref{Chapter5} serves as introduction to \ref{Chapter6}. In this chapter some theoretical background and electronic designs of CPU architectures are explained. This chapter serves as a backbone for the practical implementations explored in chapter \ref{Chapter6}. Readers with a basic knowledge on this matter can skip this chapter and immediately start with chapter 6. The first part of this chapter handles the Analog Devices ADSP-21369 DSP board's initialisation routines and the second part focusses on the practical implementation of the signal creation and modulation algorithms.\\ \\
+Finally chapter \ref{Chapter7} deals with the communication between the DSP-board and the Labview interface for the FM Synthesizer.\\ \\
+As a conclusion chapter \ref{Chapter8} closes this report with some critical reflections on the implementation and team activities.}
+}
+
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+%\setstretch{1.3} % Reset the line-spacing to 1.3 for body text (if it has changed)
+%\acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+%The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+%}
+%\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\pagestyle{fancy} % The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+\lhead{\emph{Contents}} % Set the left side page header to "Contents"
+\tableofcontents % Write out the Table of Contents
+
+\lhead{\emph{List of Figures}} % Set the left side page header to "List of Figures"
+\listoffigures % Write out the List of Figures
+
+\lhead{\emph{List of Tables}} % Set the left side page header to "List of Tables"
+%\listoftables % Write out the List of Tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\clearpage % Start a new page
+\setstretch{1.5} % Set the line spacing to 1.5, this makes the following tables easier to read
+\lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
+\listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
+{
+\textbf{ALU} & \textbf{A}rithmetic \textbf{L}ogic \textbf{U}nit \\
+\textbf{ASIC} & \textbf{A}pplication \textbf{S}pecific \textbf{I}integrated \textbf{C}ircuit \\
+\textbf{CPU} & \textbf{C}entral \textbf{P}rocessing \textbf{U}nit \\
+\textbf{DAG} & \textbf{D}ata \textbf{A}ddress \textbf{G}enerator \\
+}
+
+%----------------------------------------------------------------------------------------
+%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%\clearpage % Start a new page
+%\lhead{\emph{Physical Constants}} % Set the left side page header to "Physical Constants"
+%\listofconstants{lrcl} % Include a list of Physical Constants (a four column table)
+%{
+%Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
+%Constant Name & Symbol & = & Constant Value (with units) \\
+%}
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+%\clearpage % Start a new page
+%\lhead{\emph{Symbols}} % Set the left side page header to "Symbols"
+%\listofnomenclature{lll} % Include a list of Symbols (a three column table)
+%{
+%$a$ & distance & m \\
+%$P$ & power & W (Js$^{-1}$) \\
+% Symbol & Name & Unit \\
+
+%& & \\ % Gap to separate the Roman symbols from the Greek
+
+%$\omega$ & angular frequency & rads$^{-1}$ \\
+% Symbol & Name & Unit \\
+%}
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\setstretch{1.3} % Return the line spacing back to 1.3
+\pagestyle{empty} % Page style needs to be empty for this page
+%\dedicatory{For/Dedicated to/To my\ldots} % Dedication text
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+%----------------------------------------------------------------------------------------
+%	CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{fancy} % Return the page headers back to the "fancy" style
+\setstretch{1.0}
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\input{./Chapters/Chapter1}
+\input{./Chapters/Chapter2} 
+%\input{./Chapters/Chapter3}
+%\input{./Chapters/Chapter4} 
+%\input{./Chapters/Chapter5} 
+%\input{./Chapters/Chapter6} 
+%\input{./Chapters/Chapter7} 
+%\input{./Chapters/Chapter8} 
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\label{Bibliography}
+
+\lhead{\emph{Bibliography}} % Change the page header to say "Bibliography"
+
+\bibliographystyle{ieeetr} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+
+\addtocontents{toc}{\vspace{2em}}
+%\clearpage
+%\addcontentsline{toc}{\vspace{1em}}
+\addcontentsline{toc}{chapter}{Bibliography}{\vspace{1em}}
+\nocite{*}
+\bibliography{./Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\input{./Appendices/AppendixA}
+%input{./Appendices/AppendixB}
+%\input{./Appendices/AppendixC}
+%\input{./Appendices/AppendixD}
+%\input{./Appendices/AppendixE}
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\backmatter
+
+
+\end{document}  

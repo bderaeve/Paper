@@ -1,0 +1,89 @@
+% Appendix B
+
+\chapter{Matlab code Equaliser} % Main appendix title
+
+\label{AppendixB} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix B. \emph{Matlab code Equaliser}} % This is for the header on each page - perhaps a shortened title
+
+\begin{lstlisting}[language=Matlab]
+% 3 BAND EQ TEST WITH WHITE GAUSSIAN NOISE AND FAST FOUTIER TRANSFORM
+ 
+% Filter settings
+ 
+Fs = 48000;              % Sampling Frequency
+N    = 100;              % Order
+win = hamming(N+1);      % Hamming window
+flag = 'scale';          % Sampling Flag
+ 
+LpGain = 1;              % set between 0 and 1 for the lowpass gain (0-800Hz)
+BpGain = 1;              % set between 0 and 1 for the bandpass gain (800 - 6000Hz)
+HpGain = 0;              % set between 0 and 1 for the highpass gain (6000 - 24000Hz)
+ 
+% LP coefficients
+ 
+Fc   = 800;              % Cutoff Frequency
+blp  = fir1(N, Fc/(Fs/2), 'low', win, flag);
+ 
+% HP coefficients
+ 
+Fc   = 6000;             % Cutoff Frequency
+bhp  = fir1(N, Fc/(Fs/2), 'high', win, flag);
+ 
+% BP coefficients
+ 
+Fc1  = 800;   %800           % First Cutoff Frequency
+Fc2  = 6000;  % 6000          % Second Cutoff Frequency
+bbp  = fir1(N, [Fc1 Fc2]/(Fs/2), 'bandpass', win, flag);
+ 
+ 
+ 
+% Creation of the main filtercoefficients
+filter = zeros(1,N+1);
+ 
+for i=1:N+1
+value = bhp(i)*HpGain + blp(i)*LpGain + bbp(i)*BpGain;
+filter(i) = value;
+end
+ 
+% Creation of a whitenoise test block
+ 
+data = wgn(1,1024,1); % generates array of 1024 white noise samples
+ 
+% Proces the data with the filter
+ 
+outputarray = zeros(1, length(filter)+length(data)-1);
+ 
+ 
+% adjusts the inputed data, puts a series of zeros at the front and the end
+adjdata = [zeros(1,length(filter)-1) data zeros(1,length(filter))];
+ 
+for n=length(filter):length(data)+length(filter)+1,
+    outputvalue = 0;
+   
+ 	for k=1:length(filter),   
+ 
+ 	outputvalue = outputvalue + adjdata(n-k+1)* filter(k);
+ 	end;
+ 	
+    outputarray(n-length(filter)+1) = outputvalue;
+    
+end;
+ 
+ 
+% PLOT FFT
+L = 1024
+NFFT = 2^nextpow2(L); % Next power of 2 from length of y
+Y = fft(outputarray,NFFT)/L;
+ 
+f = Fs/2*linspace(0,1,NFFT/2+1);
+ 
+ 
+% Plot single-sided amplitude spectrum.
+q = 2*abs(Y(1:NFFT/2+1));
+plot(f,q) 
+title('Single-Sided Amplitude Spectrum of the outputsignal')
+xlabel('Frequency (Hz)')
+ylabel('|Y(f)|')
+
+\end{lstlisting}
