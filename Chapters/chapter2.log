@@ -1,7 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.3.18)  3 JUN 2012 15:03
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.3.18)  3 APR 2013 19:33
 entering extended mode
-**chapter2.tex
-(d:\Dropbox\Bjorn\Documents\LEdProjects\EE5\Chapters\chapter2.tex
+**Chapter2.tex
+
+("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Chapters\Chapter2.te
+x"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -16,20 +18,12 @@ senglishmax, welsh, loaded.
 ! Undefined control sequence.
 l.2 \definecolor
                 {pink}{rgb}{1.0,.01,0.57}
-? j
-Type <return> to proceed, S to scroll future error messages,
-R to run without stopping, Q to run quietly,
-I to insert something, E to edit your file,
-1 or ... or 9 to ignore the next 1 to 9 tokens of input,
-H for help, X to quit.
-? k
-Type <return> to proceed, S to scroll future error messages,
-R to run without stopping, Q to run quietly,
-I to insert something, E to edit your file,
-1 or ... or 9 to ignore the next 1 to 9 tokens of input,
-H for help, X to quit.
-? r
-OK, entering \nonstopmode...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -63,32 +57,22 @@ Missing character: There is no 5 in font nullfont!
 Missing character: There is no 7 in font nullfont!
 ! Undefined control sequence.
 l.3 \chapter
-            {Frequency modulation} % Main chapter title
+            {Why ZigBee} % Main chapter title
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no F in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no q in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
+Missing character: There is no W in font nullfont!
+Missing character: There is no h in font nullfont!
 Missing character: There is no y in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
+Missing character: There is no Z in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
 l.5 \lhead
           {Chapter 2. \emph{Frequency modulation}} % This is for the header ...
@@ -4374,12 +4358,12 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 113--115
 
 
 Overfull \hbox (11.57376pt too wide) in paragraph at lines 113--115
-\OML/cmm/m/it/10 A[]$
+$\OML/cmm/m/it/10 A[]$
  []
 
 
 Overfull \hbox (15.09613pt too wide) in paragraph at lines 113--115
-\OML/cmm/m/it/10 A[]$ 
+$\OML/cmm/m/it/10 A[]$ 
  []
 
 
@@ -5319,17 +5303,17 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 122--132
 
 
 Overfull \hbox (9.35963pt too wide) in paragraph at lines 122--132
-\OML/cmm/m/it/10 a[]$
+$\OML/cmm/m/it/10 a[]$
  []
 
 
 Overfull \hbox (5.95834pt too wide) in paragraph at lines 122--132
-\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 $
  []
 
 
 Overfull \hbox (15.02866pt too wide) in paragraph at lines 122--132
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
@@ -5339,22 +5323,22 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 122--132
 
 
 Overfull \hbox (12.882pt too wide) in paragraph at lines 122--132
-\OML/cmm/m/it/10 a[]$
+$\OML/cmm/m/it/10 a[]$
  []
 
 
 Overfull \hbox (12.49197pt too wide) in paragraph at lines 122--132
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
 Overfull \hbox (12.882pt too wide) in paragraph at lines 122--132
-\OML/cmm/m/it/10 a[]$
+$\OML/cmm/m/it/10 a[]$
  []
 
 
 Overfull \hbox (12.49197pt too wide) in paragraph at lines 122--132
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
@@ -5389,12 +5373,12 @@ Overfull \hbox (29.64423pt too wide) in paragraph at lines 122--132
 
 
 Overfull \hbox (7.29517pt too wide) in paragraph at lines 122--132
-[]$
+$[]$
  []
 
 
 Overfull \hbox (5.95834pt too wide) in paragraph at lines 122--132
-\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 $
  []
 
 
@@ -6269,7 +6253,7 @@ Overfull \hbox (12.882pt too wide) in paragraph at lines 147--149
 
 
 Overfull \hbox (10.4653pt too wide) in paragraph at lines 147--149
-\OML/cmm/m/it/10 J[]$
+$\OML/cmm/m/it/10 J[]$
  []
 
 
@@ -6284,27 +6268,27 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 147--149
 
 
 Overfull \hbox (4.97223pt too wide) in paragraph at lines 147--149
-\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 $
  []
 
 
 Overfull \hbox (15.02866pt too wide) in paragraph at lines 147--149
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
 Overfull \hbox (12.882pt too wide) in paragraph at lines 147--149
-\OML/cmm/m/it/10 a[]$
+$\OML/cmm/m/it/10 a[]$
  []
 
 
 Overfull \hbox (6.18402pt too wide) in paragraph at lines 147--149
-\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 $
  []
 
 
 Overfull \hbox (18.55103pt too wide) in paragraph at lines 147--149
-\OML/cmm/m/it/10 f[]$ 
+$\OML/cmm/m/it/10 f[]$ 
  []
 
 
@@ -7439,12 +7423,12 @@ Overfull \hbox (4.97223pt too wide) in paragraph at lines 152--163
 
 
 Overfull \hbox (4.97223pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 $
  []
 
 
 Overfull \hbox (6.18402pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 $
  []
 
 
@@ -7454,12 +7438,12 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 152--163
 
 
 Overfull \hbox (4.97223pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 $
  []
 
 
 Overfull \hbox (8.9696pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
@@ -7469,42 +7453,42 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 152--163
 
 
 Overfull \hbox (8.9696pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
 Overfull \hbox (12.49197pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
 Overfull \hbox (8.9696pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
 Overfull \hbox (12.49197pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
 Overfull \hbox (8.9696pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
 Overfull \hbox (12.49197pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
 Overfull \hbox (8.9696pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
 Overfull \hbox (12.49197pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 f[]$
+$\OML/cmm/m/it/10 f[]$
  []
 
 
@@ -7519,7 +7503,7 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 152--163
 
 
 Overfull \hbox (6.43404pt too wide) in paragraph at lines 152--163
-\OML/cmm/m/it/10 $ 
+$\OML/cmm/m/it/10 $ 
  []
 
 
@@ -9350,22 +9334,22 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 166--188
 
 
 Overfull \hbox (14.20494pt too wide) in paragraph at lines 166--188
-\OML/cmm/m/it/10 n[]$
+$\OML/cmm/m/it/10 n[]$
  []
 
 
 Overfull \hbox (14.20494pt too wide) in paragraph at lines 166--188
-\OML/cmm/m/it/10 n[]$
+$\OML/cmm/m/it/10 n[]$
  []
 
 
 Overfull \hbox (11.66661pt too wide) in paragraph at lines 166--188
-[]$
+$[]$
  []
 
 
 Overfull \hbox (11.66661pt too wide) in paragraph at lines 166--188
-[]$
+$[]$
  []
 
 
@@ -9829,7 +9813,7 @@ Overfull \hbox (7.7778pt too wide) in paragraph at lines 191--196
 
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 191--196
-\OMS/cmsy/m/n/10 $
+$\OMS/cmsy/m/n/10 $
  []
 
 
@@ -9848,7 +9832,7 @@ Missing character: There is no - in font nullfont!
 Missing character: There is no 1 in font nullfont!
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 197--198
-\OML/cmm/m/it/10 >$ 
+$\OML/cmm/m/it/10 >$ 
  []
 
 Missing character: There is no 3 in font nullfont!
@@ -9860,12 +9844,12 @@ Missing character: There is no - in font nullfont!
 Missing character: There is no 1 in font nullfont!
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 198--199
-\OML/cmm/m/it/10 >$
+$\OML/cmm/m/it/10 >$
  []
 
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 198--199
-\OML/cmm/m/it/10 >$ 
+$\OML/cmm/m/it/10 >$ 
  []
 
 Missing character: There is no 4 in font nullfont!
@@ -9880,17 +9864,17 @@ Missing character: There is no - in font nullfont!
 Missing character: There is no 1 in font nullfont!
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 199--200
-\OML/cmm/m/it/10 >$
+$\OML/cmm/m/it/10 >$
  []
 
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 199--200
-\OML/cmm/m/it/10 >$
+$\OML/cmm/m/it/10 >$
  []
 
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 199--200
-\OML/cmm/m/it/10 >$ 
+$\OML/cmm/m/it/10 >$ 
  []
 
 Missing character: There is no 4 in font nullfont!
@@ -9904,12 +9888,12 @@ Missing character: There is no - in font nullfont!
 Missing character: There is no 1 in font nullfont!
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 200--201
-\OML/cmm/m/it/10 >$
+$\OML/cmm/m/it/10 >$
  []
 
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 200--201
-\OML/cmm/m/it/10 >$ 
+$\OML/cmm/m/it/10 >$ 
  []
 
 
@@ -10709,14 +10693,14 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no . in font nullfont!
 )
 ! Emergency stop.
-<*> chapter2.tex
+<*> Chapter2.tex
                 
 *** (job aborted, no legal \end found)
 
  
 Here is how much of TeX's memory you used:
  49 strings out of 494045
- 746 string characters out of 3145969
+ 788 string characters out of 3145969
  58890 words of memory out of 3000000
  3435 multiletter control sequences out of 15000+200000
  4955 words of font info for 18 fonts, out of 3000000 for 9000
