@@ -15,65 +15,60 @@
 \contentsline {figure}{\numberline {2.11}{\ignorespaces The amplitude of the sidebands.\relax }}{8}{figure.caption.46}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Functional design of the FM synthesizer program}}{9}{figure.caption.50}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Waspmote going from ON to Deep Sleep\relax }}{10}{figure.caption.57}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Waspmote going from ON to Hibernate\relax }}{11}{figure.caption.59}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Battery life in High performance mode\relax }}{13}{figure.caption.71}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Energy usage in High performance mode\relax }}{14}{figure.caption.72}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Battery life High Performance vs. Power Saver\relax }}{15}{figure.caption.75}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Energy usage in Power Saver mode\relax }}{15}{figure.caption.76}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Example of envelope\relax }}{18}{figure.caption.92}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Envelope with the parameters for the equations\relax }}{18}{figure.caption.92}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Different slopes for the attack\relax }}{19}{figure.caption.97}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Labview algorithm for keyboard control\relax }}{22}{figure.caption.109}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Keyboard buttons\relax }}{22}{figure.caption.110}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Arduino XBee Shield\relax }}{10}{figure.caption.54}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Libelium SquidBee\relax }}{10}{figure.caption.54}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Waspmote V1.1 with Bluetooth expansion module \relax }}{11}{figure.caption.55}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Waspmote PRO\relax }}{11}{figure.caption.55}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Main Waspmote components\relax }}{12}{figure.caption.58}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Waspmote block diagram\relax }}{12}{figure.caption.60}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Waspmote going from ON to Deep Sleep\relax }}{14}{figure.caption.69}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Waspmote going from ON to Hibernate\relax }}{15}{figure.caption.71}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Battery life in High performance mode\relax }}{17}{figure.caption.83}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Energy usage in High performance mode\relax }}{17}{figure.caption.84}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Battery life High Performance vs. Power Saver\relax }}{18}{figure.caption.87}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Energy usage in Power Saver mode\relax }}{19}{figure.caption.88}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Effect of overdrive in time domain\relax }}{24}{figure.caption.114}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Overdrive threshold 1\relax }}{24}{figure.caption.115}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Overdrive threshold 0.5\relax }}{24}{figure.caption.115}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces FFT of a basic signal\relax }}{25}{figure.caption.118}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Symmetric clipping\relax }}{25}{figure.caption.121}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Asymmetric clipping\relax }}{25}{figure.caption.121}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Architecture of the equaliser\relax }}{26}{figure.caption.124}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Magnitude response lowpass filter\relax }}{26}{figure.caption.126}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Magnitude response bandpass filter\relax }}{27}{figure.caption.127}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Magnitude response highpass filter\relax }}{27}{figure.caption.128}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Gain$_{LP}$ = 0, Gain$_{BP}$ = 1, Gain$_{HP}$ = 1\relax }}{28}{figure.caption.130}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Gain$_{LP}$ = 1, Gain$_{BP}$ = 0, Gain$_{HP}$ = 1\relax }}{28}{figure.caption.131}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Gain$_{LP}$ = 1, Gain$_{BP}$ = 1, Gain$_{HP}$ = 0\relax }}{28}{figure.caption.131}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Effect of overdrive in time domain\relax }}{23}{figure.caption.107}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Overdrive threshold 1\relax }}{23}{figure.caption.108}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Overdrive threshold 0.5\relax }}{23}{figure.caption.108}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces FFT of a basic signal\relax }}{24}{figure.caption.111}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Symmetric clipping\relax }}{25}{figure.caption.114}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Asymmetric clipping\relax }}{25}{figure.caption.114}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Architecture of the equaliser\relax }}{25}{figure.caption.117}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Magnitude response lowpass filter\relax }}{26}{figure.caption.119}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Magnitude response bandpass filter\relax }}{26}{figure.caption.120}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Magnitude response highpass filter\relax }}{26}{figure.caption.121}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Gain$_{LP}$ = 0, Gain$_{BP}$ = 1, Gain$_{HP}$ = 1\relax }}{27}{figure.caption.123}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Gain$_{LP}$ = 1, Gain$_{BP}$ = 0, Gain$_{HP}$ = 1\relax }}{27}{figure.caption.124}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Gain$_{LP}$ = 1, Gain$_{BP}$ = 1, Gain$_{HP}$ = 0\relax }}{27}{figure.caption.124}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces DSP Principle\relax }}{31}{figure.caption.137}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Signal sampling representation\relax }}{31}{figure.caption.139}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Structere of a DSP}}{32}{figure.caption.141}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces 8-bit Barrel Shifter}}{32}{figure.caption.144}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces DSP architecture}}{33}{figure.caption.145}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Harvard vs. Von Neuman}}{33}{figure.caption.147}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces DSP Principle\relax }}{30}{figure.caption.130}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Signal sampling representation\relax }}{30}{figure.caption.132}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Structere of a DSP}}{31}{figure.caption.134}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 8-bit Barrel Shifter}}{31}{figure.caption.137}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces DSP architecture}}{32}{figure.caption.138}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Harvard vs. Von Neuman}}{32}{figure.caption.140}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Serial communication interface\relax }}{36}{figure.caption.159}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces System Architecture Block Diagram\relax }}{38}{figure.caption.164}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Peripherals Architecture Block Diagram\relax }}{38}{figure.caption.165}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Pin Buffer\relax }}{39}{figure.caption.167}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces AD1835A on the ADSP-21369 DSP Board\relax }}{40}{figure.caption.170}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Peripherals Architecture Block Diagram\relax }}{40}{figure.caption.171}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Flow chart of the DSP Synthesizer program}}{43}{figure.caption.178}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Serial communication interface\relax }}{35}{figure.caption.152}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces System Architecture Block Diagram\relax }}{37}{figure.caption.157}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Peripherals Architecture Block Diagram\relax }}{37}{figure.caption.158}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Pin Buffer\relax }}{38}{figure.caption.160}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces AD1835A on the ADSP-21369 DSP Board\relax }}{39}{figure.caption.163}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Peripherals Architecture Block Diagram\relax }}{39}{figure.caption.164}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Flow chart of the DSP Synthesizer program}}{42}{figure.caption.171}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces A typical UART data frame\relax }}{47}{figure.caption.185}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces System Architecture Block Diagram\relax }}{47}{figure.caption.187}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Schematic for connection of UART port\relax }}{48}{figure.caption.188}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces UART Functional Block Diagram\relax }}{49}{figure.caption.191}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Write/Read a string to and from a COM port\relax }}{50}{figure.caption.197}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Formatting a string before writing to DSP\relax }}{51}{figure.caption.202}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces A part of writing parameters to Operator 1 program\relax }}{51}{figure.caption.203}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces PICR2 Register\relax }}{52}{figure.caption.205}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces VI Hierarchy of LabVIEW User Interface\relax }}{53}{figure.caption.207}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Front Panel of the application\relax }}{54}{figure.caption.208}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces The algorithm for three operators\relax }}{54}{figure.caption.209}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces A typical UART data frame\relax }}{46}{figure.caption.178}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces System Architecture Block Diagram\relax }}{46}{figure.caption.180}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Schematic for connection of UART port\relax }}{47}{figure.caption.181}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces UART Functional Block Diagram\relax }}{48}{figure.caption.184}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Write/Read a string to and from a COM port\relax }}{49}{figure.caption.190}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Formatting a string before writing to DSP\relax }}{50}{figure.caption.195}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces A part of writing parameters to Operator 1 program\relax }}{50}{figure.caption.196}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces PICR2 Register\relax }}{51}{figure.caption.198}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces VI Hierarchy of LabVIEW User Interface\relax }}{52}{figure.caption.200}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Front Panel of the application\relax }}{53}{figure.caption.201}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces The algorithm for three operators\relax }}{53}{figure.caption.202}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Spectrum of a 1000Hz signal}}{61}{figure.caption.226}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Bessel function of order 0}}{62}{figure.caption.227}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Bessel function of order 1}}{62}{figure.caption.228}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Spectrum of 1000Hz modulated with 100Hz signal}}{63}{figure.caption.230}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Bessel function of order 0, I = 1}}{63}{figure.caption.231}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Bessel function of order 1, I = 1}}{64}{figure.caption.232}
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Bessel function of order 2, I = 1}}{64}{figure.caption.233}
-\contentsline {figure}{\numberline {A.8}{\ignorespaces Bessel functions in Labview}}{64}{figure.caption.234}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces XBee join and send times: distance relation}}{61}{figure.caption.224}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces XBee join and send times: first time reduction}}{62}{figure.caption.230}

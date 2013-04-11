@@ -1,10 +1,104 @@
 % Chapter 4
-\chapter{Effects and equaliser} % Main chapter title
+\chapter{A WSN with Waspmotes: Implementation aspects} % Main chapter title
 \label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter1} 
-\lhead{Chapter 4. \emph{Effects and equaliser}}
-\textsl{Written by Frederik De Greef}
+\lhead{Chapter 4. \emph{A WSN with Waspmotes: Implementation aspects}}
+%\textsl{Written by Frederik De Greef}
 %----------------------------------------------------------------------------------------
 \section{Overdrive}
+
+for the practical part: memory (SRAM) problems:  using  = freeMemory();
+Joe is true. V11 API wastes a lot of memory including always all libraries despite of you are not using them.
+
+Try to remove every class you do not use, and also there are some certain cases that you have to remove the usage of some constants and functions.
+
+just go one by one to the compiler msgs. We can help you if you are not sure removing something.
+
+Regards
+I'm experiencing similar problems with my Waspmotes due to other issues, a recomendation is to remove from the API library, all that classes that you don't use such as SD .h and .cpp, or GPS, etc. bear in mind that you have to remove any reference from the file WaspClasses and where the compilator throws you an exception.
+
+XCTU problems (cannot read / reset / writes always)  cannot change device role via Libelium
+  
+\subsection{Device start-up}
+Whether we come out of a hardware reset or a hibernate reset, the first thing the node will do is try to establish a connection with the network. Depending which reset we come from different routines will be executed. In normal operation mode this process only takes about 2 seconds (Please see appendix \ref{fig:envA} for more measurement results). However, when a node is not able to join a network it will go into panic mode. This means that if the operating sleeping time is small, this time will be ignored and the node will wake up less frequently until it is able to rejoin the network, that way saving battery power. Supposing the node is able to rejoin the network, it will send the number of panics it experienced to the coordinator so a network administrator can investigate of the severity of the problem.
+
+\subsubsection{Full initialization}
+When the program is executed for the first time or when a hardware reset is detected the XBee will execute a full initialization process and the RTC will be set to zero. This means the default PAN ID and possibly other user settings like node ID will be written to the XBee. After this write the XBee must be re-setted (turn the power off and back on) and only than the joining attempts can start. This means full initialization takes about 9 seconds on average. 
+
+\subsubsection{Reduced initialization}
+By not resetting the PAN ID but fetching it from the XBee's memory the joining process only takes about two seconds. Unfortunately a disadvantage of this shortened setup is that the XBee is no longer able to detect if the coordinator or his parent is actually available. The program will only notices this for the first time when it is trying to send a message. If this function results in a send error the program will do a full setup routine and resend the message. If the node then fails again to send the message we can conclude that the coordinator is really off-line or that there are no joinable nodes within range. 
+
+
+
+
+"Now, let's try to make a simple code which hibernates well. We recommend you to put a delay of a few seconds or a led blink before PWR.hibernate() sentence to allow removing hibernate jumper correctly."
+
+%----------------------------------------------------------------------------------------
+\section{Power savings}
+\subsection{In the algorithm}
+\subsection{Sleep vs. Hibernate}
+Compare battery life
+\subsection{Variable sleep times}
+In default configuration the Waspmote will send only its battery level to the default gateway and go into hibernate mode for 15 minutes. After this the cycle repeats. However it is possible that the node has more sensors implemented and the user wishes to obtain these values at different frequencies. In that case the node will have various different sleep times. \\
+The next subsections will discuss different techniques to determine those sleeping intervals. In hibernation mode the node is completely disconnected from the main battery and the program stops. This makes that all variables lose their values and must be stored in EEPROM memory if they must be known during the next cycle. Each of the next techniques present with benefits and drawbacks and since we are working with embedded systems with limited possibilities, one should also consider to limit the users options to facilitate the calculations.
+\subsubsection{Calculate only the next time to sleep}
+Each algorithm will have to store the individual sleep times per sensor. To support this algorithm also a copy of the original time will be saved and each time the node wakes up it will look for the smallest next time to sleep. This number will be subtracted from the other sleep times in the array. When a value becomes zero it will be restored with its original value and the cycle continues.  The following example demonstrates the process:\\
+\begin{table}[!hb]
+\begin{center}
+\begin{tabular}[!hb]{|c|c|c|c|c|}
+\hline
+\textbf{Sensor[4]} & \textbf{Sensor[3]} & \textbf{Sensor[2]} & \textbf{Sensor[1]} &\textbf{Sensor[0]}\\
+\hline
+100  & 50 & 35 & 10 & 20\\
+\hline
+\end{tabular}
+\caption{Individual Sensor Sleep Times in seconds}
+\label{tab:sleep1}
+\end{center}
+\end{table}
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}[!ht]{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Cycle} & \textbf{Sensor[4]} & \textbf{Sensor[3]} & \textbf{Sensor[2]} & \textbf{Sensor[1]} &\textbf{Sensor[0]} & \textbf{Sleep time}\\
+\hline
+0 & 100 & 50 & 35 & \textbf{10} & 20 & 10\\
+\hline
+1 & 90 & 40 & 25 & \textbf{10} & \textbf{10} & 10\\
+\hline
+2 & 80 & 30 & 15 & \textbf{10} & 20 & 10\\
+\hline
+3 & 70 & 20 & \textbf{5} & 10 & 10 & 5\\
+\hline
+4 & 65 & 15 & 25 & \textbf{5} & \textbf{5} & 5\\
+\hline
+5 & 60 & \textbf{10} & 20 & \textbf{10} & 20 & 10\\
+\hline
+6 & 50 & 50 & \textbf{10} & \textbf{10} & \textbf{10} & 10\\
+\hline
+\end{tabular}
+\caption{Example of sleep algorithm 1}
+\label{tab:sleep2}
+\end{center}
+\end{table}
+This process is fast and simple. However, the main advantage is that the node has to write to EEPROM each time it wakes up. According to Atmel the EEPROM of the ATmega1281 has an endurance of at least 100,000 write / erase cycles. The following equation indicates the problem for an interval of 10 seconds:
+\begin{equation}
+\frac{100000 \mathrm{writes} \cdot 10 \mathrm{s}}{60 \mathrm{s} \cdot 60 \mathrm{min} \cdot 24 \mathrm{h}}= 11,57 \: \mathrm{days} 
+\label{eq:1}
+\end{equation}
+But the processors has 4Kbytes EEPROM on board so we don't have to write to the same place every time. Since EEPROM is written on a 'per cell' basis this can extend the lifetime. Our sensor mask can contain up to 16 values of 2 bytes. This leads to the next result:
+\begin{equation}
+\frac{100000 \mathrm{writes} \cdot 10 \mathrm{s} \cdot 4\mathrm{KB}}{60 \mathrm{s} \cdot 60 \mathrm{min} \cdot 24 \mathrm{h} \cdot 365\mathrm{days} \cdot 32\mathrm{B}} = 3,96\: \mathrm{years}
+\end{equation}
+We still must store where the data is stored but this won't cause big problems since we only have to rewrite this cell 125 times:
+\begin{equation}
+\frac{4\mathrm{KB}}{32\mathrm{B}} = 125 \: \mathrm{writes}
+\end{equation}
+
+\subsubsection{Calculate all next times to sleep}
+Another possibility is calculate as much as possible or if maybe even all sleep times. 
+\subsubsection{Limit user control}
+
+
 \subsection{Overdrive function}
 The overdrive effect amplifies the audio signal in a non-linear way. There are different possible schemes, we used the three layer non-linear soft saturation scheme below. The treshold value is set at 1/3, given that the input audio values are between -1 and 1. 
 \[ f(x) = \left\{

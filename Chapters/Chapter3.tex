@@ -1,8 +1,94 @@
 % Chapter 3
-\chapter{ZigBee network: Waspmotes} % Main chapter title
+\chapter{A WSN with Waspmotes: Theoretical aspects} % Main chapter title
 \label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter1} 
-\lhead{Chapter 3. \emph{ZigBee network: Waspmotes}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 3. \emph{A WSN with Waspmotes: Theoretical aspects}} % This is for the header on each page - perhaps a shortened title
 
+
+\section{Introduction}
+Waspmote is more than just another piece of hardware. In fact it is an open source platform for wireless sensors, specially focusing on low consumption and autonomy. Waspmotes promise to offer a variable lifetime between 1 and 5 years, depending on the duty cycle and the used radio.\\ 
+But it didn't just start with Waspmote and it will definitely not end with it. In 2007 developers from Libelium collaborated with the Arduino Team creating the first open hardware shield for Arduino, the "Arduino XBee Shield". The shield allowed an Arduino board to communicate wirelessly via ZigBee. Libelium used the shield to develop their first sensor device, the SquidBee, intended for creating sensor networks. Although the SquidBee is self-powered and implements wireless communications, it is more sensor device than wireless sensor device. The 3.3V - 5V regulator could not be turned off, as a result there is a constant consumption of 50mA discharging the battery within hours. The SquidBee was created for teaching and educational purposes only. Since the platform was not radio certified the motes could not be deployed in real scenarios like cities, factories or even houses, so it did not fit Libelium's corporate customer requirements at all. However, the tone of an open hardware and source wireless sensor device was definitely set.
+\begin{figure}[ht]
+  \hfill
+  \begin{minipage}[t]{.45\textwidth}
+    \begin{center}  
+      \epsfig{file=arduinoShield1, scale=0.20}
+      \caption{Arduino XBee Shield}
+      \label{fig:arduinoShield}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{.45\textwidth}
+    \begin{center}  
+      \epsfig{file=squidbee, scale=0.25}
+      \caption{Libelium SquidBee}
+      \label{fig:squidbee}
+    \end{center}
+  \end{minipage}
+  \hfill
+\end{figure}\\
+In 2009 the Waspmote was born, meeting all the above requirements: low consumption and meeting three radio certification requirements (CE for Europe, FCC for the US and IC for Canada). In addition the Waspmote was built with a complete modular philosophy. The idea behind this design is to integrate only the needed modules in each device, optimizing costs. This is why all modules are connected to the Waspmote via sockets.\\Since its introduction, more than 2000 developers have been using Waspmote (v1.1) and the platform has received many suggestions and possible improvements. Libelium carefully listened to all these proposals and decided to bring out a new version with the name of Waspmote PRO (v1.2) in February 2013. This new version comes with upgraded hardware and an improved API, which is unfortunately not compatible with the older API. The most important improvements of the hardware is that the code can be uploaded much quicker and the XBee radio must no longer be removed, which is a huge improvement. There are also no more jumpers and there is no need of a coin battery. Regarding the API, Libelium claims it is much more robust and easier to use than the previous one and they also improved their programming guides. 
+\begin{figure}[ht]
+  \hfill
+  \begin{minipage}[t]{.45\textwidth}
+    \begin{center}  
+      \epsfig{file=waspmote3, scale=0.45}
+      \caption{Waspmote V1.1 with Bluetooth expansion module }
+      \label{fig:arduinoShield}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{.45\textwidth}
+    \begin{center}  
+      \epsfig{file=waspmotePro, scale=0.40}
+      \caption{Waspmote PRO}
+      \label{fig:squidbee}
+    \end{center}
+  \end{minipage}
+  \hfill
+\end{figure}\\   
+%----------------------------------------------------------------------------------------
+\section{Hardware}
+\subsection{Modular Architecture}
+As mentioned in this chapter's introduction, Waspmote is based on a modular architecture, doing so optimizing costs and able to change according to the specific user's requirements. The available modules are split up into five categories:
+\begin{itemize}
+\item ZigBee
+\item GSM - 3G/GPRS
+\item GPS
+\item Sensor Boards
+\item Storage
+\end{itemize}  
+Figure \ref{fig:waspMote1} indicates the Waspmote main components.
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6.5cm]{waspmote2}
+\rule{30em}{0.5pt}
+\caption{Main Waspmote components}
+\label{fig:waspMote1}
+\end{figure}
+%-------------------------------------------
+\subsection{Microcontroller and memory}
+Just like on any other PCB, the CPU is the heart of the module. Waspmote integrates an 8-bit ATmega 1281 microcontroller with 128KB programmable flash, 8KB SRAM runtime memory and 4KB EEPROM memory. Since SRAM is is built with cleverly combined MOSFETs it must not be periodically refreshed, but it is still volatile memory. The main advantage compared to DRAM is that, when moderately clocked like in the Waspmote, it consumes very little power.\\
+Because of the modular design of the Waspmote the block diagram is very simple. This is shown in figure \ref{fig:block}.
+\begin{figure}[ht]
+\centering
+\includegraphics[height=11.5cm]{block}
+\rule{30em}{0.5pt}
+\caption{Waspmote block diagram}
+\label{fig:block}
+\end{figure}
+%-------------------------------------------
+\subsection{Timers}
+The Waspmote's system clock is an 8MHz quartz oscillator. This means that every 125ns a machine language instruction is executed by the microcontroller. Keep in mind that one C++ instruction consists of several instructions in machine language. To generate interrupts the Waspmote has an internal watchdog and a Real Time Clock (RTC).
+\subsubsection{Watchdog}
+The Watchdog is integrated on the Atmega 1281 and counts the clock cycles generated by a 128KHz oscillator. When the WDT counter reaches a set value it generates an interruption signal. The WDT is used to awake the microcontroller from \textit{Sleep} mode, because of its high precision. Thus, \textit{Sleep} mode allows small intervals, going from 16 milliseconds to a maximum of 8 seconds.
+\subsubsection{Real Time Clock}
+To store an absolute time base the RTC can be used. Alarms programmed in the RTC specify days, hours, minutes and seconds. For the RTC the waspmote uses a Maxim DS3231SN 32.768Hz oscillator. Because this clock has an internal compensation mechanism for variations caused by temperature changes this is one of the most accurate clocks on the market. This clock is used to wake the Waspmote from the higher energy saving modes \textit{Deep Sleep} and \textit{Hibernate}, with intervals from 8 seconds to even days. It is important to notice that in \textit{Hibernate}, the RTC is no longer powerd through the main battery but through the auxiliary (button) battery. So when problems occur when using hibernate probably it is recommended to measure the button battery's voltage and possibly must be replaced.
+%----------------------------------------------------------------------------------------
+\section{Programming}
+To develop on the Waspmote, Libelium offers an API and IDE. For more information on the API, please see chapter \ref{Chapter4}. Waspmote uses the same IDE (compiler and core libraries) as Arduino, so as long as things like pin layout and I/O schemes are adjusted, code should be compatible in both platforms. So Waspmote and Arduino are pretty much the same, however don't forget that Waspmote has Radio Certifications and Arduino doesn't.\\  
+When the Waspmote is started, the microcontroller will execute the bootloader and start loading the compiled program from FLASH into the SRAM working memory.\\
+The code is divided into two basic parts: \textbf{setup} and \textbf{loop}, each with sequential behaviour. When the Waspmote is switched on or reset, the code starts at the setup function and then enters the loop function. Because the second part forms an infinite loop a common technique to save energy is to block the program until some interruption is detected.\\
+Since in \textit{Hibernate} mode the Waspmote is completely disconnected from the main battery also the program is interrupted. This means the SRAM has lost all variable values and at wake up the code restarts at the \textbf{setup} function. To store values during hibernate cycles it is necessary to write them to EEPROM or the SD card.
 %----------------------------------------------------------------------------------------
 \section{Power considerations}
 \subsection{Waspmote power modes}
@@ -36,8 +122,9 @@ In deep sleep mode the main program is paused and the CPU passes to a latent sta
 \label{fig:deepSleep}
 \end{figure}\bigskip
 \\In figure \ref{fig:deepSleep} the process from going to operational mode ON to Deep Sleep is shown. The main advantage of this mode is that the program is only paused, so the program stack and thus all variable values keep their values. When the Waspmote is turned back on it simply executes the next instruction.
+%-------------------------------------------
 \subsubsection{Hibernate}
-Hibernate mode consumes roughly 100 times less energy than Deep Sleep. This is made possible by disconnecting all the Waspmote's modules, including the microcontroller. The RTC gets his power through the auxiliary battery. So if hibernate mode stops working it is probably necessary to replace the Waspmote's button battery. Figure \ref{fig:hibernate} demonstrates the process from ON to hibernate. \\
+Hibernate mode consumes roughly 100 times less energy than Deep Sleep. This is made possible by disconnecting all the Waspmote's modules, including the microcontroller. The RTC gets his power through the auxiliary battery. So if hibernate mode stops working it is probably necessary to replace the Waspmote's button battery. Figure \ref{fig:hibernate} demonstrates the process from ON to hibernate.\\
 \begin{figure}[ht]
 \centering
 \includegraphics[height=4.5cm]{hibernate}
@@ -188,240 +275,22 @@ Table \ref{tab:cons2} summarizes the battery duration in years of both performan
 \subsubsection{Battery life with extra optimizations}
 As shown earlier in this section, sending values requires that the Waspmote is on for at least 3 seconds. In addition the XBee uses about five times the energy of the Waspmote. For end devices it is obviously recommended to turn on the XBee as little as possible, within a user defined limit.\\ Figure \ref{fig:batCalcPS} shows the same results as the application scenario discussed in section \ref{batLife1} and adds the results for a mode further referred to as Power Saver.\\
 The implementation of this mode will depend on the nodes sleep settings. For \textit{Deep Sleep} the values can simply be stored on the heap, but for \textit{Hibernate} the values must be written to EEPROM.\\
-Because of the size limit of a ZigBee packet we can store maximum 30 values and send them in one packet. However, if the sensor measuring interval is small the user can opt to store more values and send two or more packets after each other. The values for Power Saver in table \ref{tab:cons2} are of an example scenario that takes 60 measurements and then sends them in two packets to the gateway. It are also those results which are put in function of time in figure \ref{fig:batCalcPS}.  
+Because of the size limit of a ZigBee packet we can store maximum 30 values and send them in one packet. However, if the sensor measuring interval is small the user can opt to store more values and send two or more packets after each other. The values for Power Saver in table \ref{tab:cons2} are of an example scenario that takes 60 measurements and then sends them in two packets to the gateway. It are also those results which are put in function of time in figure \ref{fig:batCalcPS}.\\
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=8.5cm]{battery2}
 \rule{30em}{0.5pt}
 \caption{Battery life High Performance vs. Power Saver}
 \label{fig:batCalcPS}
-\end{figure}
+\end{figure}\bigskip
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=8.5cm]{battery3}
 \rule{30em}{0.5pt}
 \caption{Energy usage in Power Saver mode}
 \label{fig:batCalcPS1}
-\end{figure}\\
+\end{figure}
+
 As visible on figure \ref{fig:batCalcPS} \textit{Hibernate} has more influence in Power Saver mode, already extending battery life significantly at a 20 seconds interval comparing to a 10 minutes interval in High Performance mode. Also the energy breakdown graph in figure \ref{fig:batCalcPS1} shows that the interval times must be increased much less before the dominant factor is self-discharge and sleep mode energy consumption, compared to figure \ref{fig:batCalcHP1}.\\By reducing the sensor measurement accuracy battery life can be extended with modest 3 - 4\%, best case scenario. Please see appendix \ref{appendixA} for details.\\
 In case the measuring intervals are small it is recommended to use \textit{Deep Sleep} instead of \textit{Hibernate}, since in hibernate the values are written to EEPROM. Equation \ref{eq:1} shows this can be very destructive for the Waspmote. Depending on how much freedom the user is given, the program can make the decision to switch to \textit{Deep Sleep} on itself, or the installation's administrator can control this.
-
-  
-\subsection{Device start-up}
-Whether we come out of a hardware reset or a hibernate reset, the first thing the node will do is try to establish a connection with the network. Depending which reset we come from different routines will be executed. In normal operation mode this process only takes about 2 seconds (Please see appendix \ref{fig:envA} for more measurement results). However, when a node is not able to join a network it will go into panic mode. This means that if the operating sleeping time is small, this time will be ignored and the node will wake up less frequently until it is able to rejoin the network, that way saving battery power. Supposing the node is able to rejoin the network, it will send the number of panics it experienced to the coordinator so a network administrator can investigate of the severity of the problem.
-
-\subsubsection{Full initialization}
-When the program is executed for the first time or when a hardware reset is detected the XBee will execute a full initialization process and the RTC will be set to zero. This means the default PAN ID and possibly other user settings like node ID will be written to the XBee. After this write the XBee must be re-setted (turn the power off and back on) and only than the joining attempts can start. This means full initialization takes about 9 seconds on average. 
-
-\subsubsection{Reduced initialization}
-By not resetting the PAN ID but fetching it from the XBee's memory the joining process only takes about two seconds. Unfortunately a disadvantage of this shortened setup is that the XBee is no longer able to detect if the coordinator or his parent is actually available. The program will only notices this for the first time when it is trying to send a message. If this function results in a send error the program will do a full setup routine and resend the message. If the node then fails again to send the message we can conclude that the coordinator is really off-line or that there are no joinable nodes within range. 
-
-
-
-
-"Now, let's try to make a simple code which hibernates well. We recommend you to put a delay of a few seconds or a led blink before PWR.hibernate() sentence to allow removing hibernate jumper correctly."
-
-%----------------------------------------------------------------------------------------
-\section{Power savings}
-\subsection{In the algorithm}
-\subsection{Sleep vs. Hibernate}
-Compare battery life
-\subsection{Variable sleep times}
-In default configuration the Waspmote will send only its battery level to the default gateway and go into hibernate mode for 15 minutes. After this the cycle repeats. However it is possible that the node has more sensors implemented and the user wishes to obtain these values at different frequencies. In that case the node will have various different sleep times. \\
-The next subsections will discuss different techniques to determine those sleeping intervals. In hibernation mode the node is completely disconnected from the main battery and the program stops. This makes that all variables lose their values and must be stored in EEPROM memory if they must be known during the next cycle. Each of the next techniques present with benefits and drawbacks and since we are working with embedded systems with limited possibilities, one should also consider to limit the users options to facilitate the calculations.
-\subsubsection{Calculate only the next time to sleep}
-Each algorithm will have to store the individual sleep times per sensor. To support this algorithm also a copy of the original time will be saved and each time the node wakes up it will look for the smallest next time to sleep. This number will be subtracted from the other sleep times in the array. When a value becomes zero it will be restored with its original value and the cycle continues.  The following example demonstrates the process:\\
-\begin{table}[!hb]
-\begin{center}
-\begin{tabular}[!hb]{|c|c|c|c|c|}
-\hline
-\textbf{Sensor[4]} & \textbf{Sensor[3]} & \textbf{Sensor[2]} & \textbf{Sensor[1]} &\textbf{Sensor[0]}\\
-\hline
-100  & 50 & 35 & 10 & 20\\
-\hline
-\end{tabular}
-\caption{Individual Sensor Sleep Times in seconds}
-\label{tab:sleep1}
-\end{center}
-\end{table}
-\begin{table}[!ht]
-\begin{center}
-\begin{tabular}[!ht]{|c|c|c|c|c|c|c|}
-\hline
-\textbf{Cycle} & \textbf{Sensor[4]} & \textbf{Sensor[3]} & \textbf{Sensor[2]} & \textbf{Sensor[1]} &\textbf{Sensor[0]} & \textbf{Sleep time}\\
-\hline
-0 & 100 & 50 & 35 & \textbf{10} & 20 & 10\\
-\hline
-1 & 90 & 40 & 25 & \textbf{10} & \textbf{10} & 10\\
-\hline
-2 & 80 & 30 & 15 & \textbf{10} & 20 & 10\\
-\hline
-3 & 70 & 20 & \textbf{5} & 10 & 10 & 5\\
-\hline
-4 & 65 & 15 & 25 & \textbf{5} & \textbf{5} & 5\\
-\hline
-5 & 60 & \textbf{10} & 20 & \textbf{10} & 20 & 10\\
-\hline
-6 & 50 & 50 & \textbf{10} & \textbf{10} & \textbf{10} & 10\\
-\hline
-\end{tabular}
-\caption{Example of sleep algorithm 1}
-\label{tab:sleep2}
-\end{center}
-\end{table}
-This process is fast and simple. However, the main advantage is that the node has to write to EEPROM each time it wakes up. According to Atmel the EEPROM of the ATmega1281 has an endurance of at least 100,000 write / erase cycles. The following equation indicates the problem for an interval of 10 seconds:
-\begin{equation}
-\frac{100000 \mathrm{writes} \cdot 10 \mathrm{s}}{60 \mathrm{s} \cdot 60 \mathrm{min} \cdot 24 \mathrm{h}}= 11,57 \: \mathrm{days} 
-\label{eq:1}
-\end{equation}
-But the processors has 4Kbytes EEPROM on board so we don't have to write to the same place every time. Since EEPROM is written on a 'per cell' basis this can extend the lifetime. Our sensor mask can contain up to 16 values of 2 bytes. This leads to the next result:
-\begin{equation}
-\frac{100000 \mathrm{writes} \cdot 10 \mathrm{s} \cdot 4\mathrm{KB}}{60 \mathrm{s} \cdot 60 \mathrm{min} \cdot 24 \mathrm{h} \cdot 365\mathrm{days} \cdot 32\mathrm{B}} = 3,96\: \mathrm{years}
-\end{equation}
-We still must store where the data is stored but this won't cause big problems since we only have to rewrite this cell 125 times:
-\begin{equation}
-\frac{4\mathrm{KB}}{32\mathrm{B}} = 125 \: \mathrm{writes}
-\end{equation}
-
-\subsubsection{Calculate all next times to sleep}
-Another possibility is calculate as much as possible or if maybe even all sleep times. 
-\subsubsection{Limit user control}
-
-When the synthesizer generates a sound, then the frequency of that signal determines how the signal sounds. The frequency, however, does not affect the loudness of the sound. Loudness is determined by the amplitude. At the start, when a sound gets generated or at the end, when the sound dies out, the amplitude changes. The way the amplitude changes during the life cycle of the sound is the envelope.\\
-Figure \ref{fig:envA} gives an example of the envelope of a signal. It is divided into 3 sections. The first section is called "attack". It is the rise of the amplitude at the start of the signal generation. The amplitude is at its maximum at the end of the attack. The time the total attack takes is predetermined but if the generation of the signal gets disrupted before the attack time is expired, then the envelope goes directly to the last(third) section, called "release".\\
-The release is the section where the signal dies out. The amplitude will decrease until it finally becomes 0. The release time is just like the attack time predetermined.\\
-The second section is called "decay". In this section of the envelope the signal's amplitude decreases from the final amplitude of the attack to a lower one. The decay time is also predetermined.\\
-\begin{figure}[!ht]
-  \hfill
-  \begin{minipage}[t]{.45\textwidth}
-    \begin{center}  
-      \epsfig{file=envA, scale=0.40}
-      \caption{Example of envelope}
-      \label{fig:envA}
-    \end{center}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{.45\textwidth}
-    \begin{center}  
-      \epsfig{file=envB, scale=0.40}
-      \caption{Envelope with the parameters for the equations}
-      \label{fig:envB}
-    \end{center}
-  \end{minipage}
-  \hfill
-\end{figure}\\
-There is also a fourth section but it is not shown in figure \ref{fig:envA}. This section is called "sustain". It is actually the section between the decay and the release. The reason it is not shown is because sustain time is not predetermined. The sustain lasts until, in the case of a synthesizer , a button is released after the attack and decay. Then the envelope passes into the release. The amplitude of the sustain is constant and is equal to the final amplitude of the decay.
-%----------------------------------------------------------------------------------------
-\subsection{Mathematical equations}
-The attack, decay and release all have a different but similar equation, respectively equations \ref{eq:1}, \ref{eq:2} and \ref{eq:3}:
-\begin{equation}
-A = \frac{A_{1}}{t_{1}^{slope_{1}}} \cdot t^{slope_{1}}
-\end{equation}
-\begin{equation}
-A = \frac{A_{2} - A_{1}}{ (t_{2} - t_{1})^{slope_{2}}} \cdot (t  -t_{1})^{slope_{2}} + A_{1}
-\end{equation}
-\begin{equation}
-A = \frac{- A_{2}}{(t_{3} - t_{2})^{slope_{3}}} \cdot (t - t_{2})^{slope_{3}} + A_{2}
-\end{equation}
-The variables A1, A2, t1, t2 and t3 are represented in figure \ref{fig:envB}. Slope 1, slope2 and slope 3 are the slopes of section 1, 2 and 3 respectively. \\
-Figure \ref{fig:slopes} shows examples of the attack with different slopes. The straight line in the middle is an attack with a slope of 1. If slope becomes larger than 1, the attack will rise first at a slow rate and then faster in an exponential way. The larger the slope, the faster the attack will rise at the end. If the slope is larger than 0 but smaller than 1, the attack will first rise fast and then slower in an exponential way.
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=6cm]{envC}
-\rule{30em}{0.5pt}
-\caption{Different slopes for the attack}
-\label{fig:slopes}
-\end{figure}
-%----------------------------------------------------------------------------------------
-\subsection{Envelopes and modulation}
-When modulating a signal, only the carrier is hearable (Bjorn does not agree with this!). With an envelope you can make a sound for example fade in or out. The modulators only change the original (carrier) signal but the modulators aren't directly hearable.\\  
-The modulators, however, do have an envelope as well. We know that when we modulate a signal, the modulation is also dependent on the modulation index ''I". This value is an indication for how hard the original signal gets modulated. The envelope of the modulators change the value ''I". In this way a modulation is affected by the envelope.
-%----------------------------------------------------------------------------------------
-\subsection{Envelopes in the program}
-Each operator has a variable" envEn"(Bool), "time"(int) and "count"(int). The parameter envEn is a boolean and it is used to switch the envelopes on or off. While modulating (Bjorn: also without modulation), the program checks if envEn is true. If this is the case time increases by 1. If this is not the case time and count each become 0. If envEn is true and time is equal to the sampling frequency (96000Hz), count increases by one. This is to indicate that a period of 1 second has elapsed. \\
-Below is the algorithm for the envelopes shown. The variable "totTime" is the total time of the envelope. The program checks if the envelopes are enabled. If this is true, it checks if the totTime
- $<=$ endPointATKt, $>$ endPointATKt and $<=$ endPointDECt or $>$ endPointRELt. This is a way for the program to know in which phase of the envelope totTime is located (attack, decay or release). If totTime is greater than endPointRELt, the variable envEn becomes false so the envelope will repeat itself as long as the user doesn't turn off the envelopes.
-If the envelopes are not enabled, the amplitude of the wave is constant and equal to the amplitude the user chose on the interface. 
-\begin{alltt}
-for(i=0; i<4; i++)
-{
-   (op[i].envEn == TRUE) ? (op[i].env.time)++ : (op[i].env.time = op[i].env.count = 0);
-   if(op[i].envEn == TRUE && !(op[i].env.time%=sampleFreq)) op[i].env.count++;
-}
-
-if(op->envEn)
-{
-   totTime = op->env.time + op->env.count * sampleFreq;	
-
-   if(totTime <= endPointATKt)
-      result=(op->amplitude/(powf(endPointATKt,slope1)))*powf(totTime,slope1);
-   else if(totTime > endPointATKt && totTime <= endPointDECt)
-      result=((((endPointDECa - op->amplitude)/powf((endPointDECt - endPointATKt),slope2)) 
-             *powf((totTime - endPointATKt),slope2)) + op->amplitude);
-   else if(totTime > endPointDECt && totTime <= endPointRELt)
-      result=(((-endPointDECa/powf((endPointRELt-endPointDECt),slope3))*powf((totTime 
-             - endPointDECt),slope3)) + endPointDECa);
-   else if(totTime > endPointRELt)
-      op->envEn = FALSE;			
-}
-else  result = op->amplitude;
-
-return result;
-\end{alltt}
-%----------------------------------------------------------------------------------------
-\subsection{Problems that occurred during the course of the project}
-There were a lot of problems with the envelopes. At first there was only one variable time for all the operators. This way the envelopes worked too but it was confusing to program with and the envelope would not start from the beginning. It was also not possible to make the envelopes repeat properly without individual timers for each operator (Bjorn: not true!). \\
-Another problem was the variable count. At first count would not increase of each operator individually. The counts of all enabled envelopes would increase at the same time when time\%=96000 would equal to 0. The problem that would occur was that count would only increase every 4 seconds instead of 1. Every time a block of 1024 samples is processed, time increases by 1024. This, however, would cause time\%=96000 to be only 0 when time reached 384000 which is equal to 96000*4.\\
-To solve this problem we would let the counts of the enabled envelopes increase in the function "createSignal" itself. The function \verb+updateEnvelopes()+ increases the counts of all enabled envelopes. Now count would increase properly every second. Another problem occurred when modulating. If we for example modulate with 2 operators. If time would become 96000, count of operator 1 and operator 2 would both increase. If the envelope of the first operator would then be calculated there would be no problem. The problem would occur with the second operator. Count of this operator would have increased at the same time as count of the first operator. This would cause the envelope of the second operator to skip samples because totTime of that envelope would not have the right value. This problem could be solved by making the counts of the enabled envelopes increase individually. 
-\begin{alltt}
-void createSignal(Operator *op, int t)
-{
-   int i;
-   float scalar;
-   scalar=powf(2.0,23.0);
-   switch(op->wave)
-   {	
-   case SINE:
-      for(i=0; i<NUM_SAMPLES; i++)
-      {
-            op->signal[i] = envelope(op, &t)*sin( 2.0 * 3.141592 * 
-                                            op->frequency / sampleFreq * t );
-            t+= 1;
-            if(!(t\%=sampleFreq)) updateEnvelopes(); //nrT++
-            t\%=sampleFreq;
-      }
-      break;
-	}
-}
-\end{alltt}
-\begin{remark}
-Please see the section ''Key functions'' \ref{code:createSignal} for the correct version of this function and without unused variables and double operations.
-\end{remark}
-%----------------------------------------------------------------------------------------
-\section{Keyboard control}
-The synthesizer must be able to play different music notes with the press of a key on the keyboard like a piano.\\ 
-Figure \ref{fig:piano} shows the labview algorithm for keyboard control of the synthesizer. This sample algorithm checks if "B" on the keyboard is pressed. In short these are the steps the program goes through to accomplish this: 
-\begin{enumerate}
-\item The algorithm first checks if the Boolean to switch on the keyboard is true. If this is the case, the algorithm goes to step 2 (this step is not shown on figure \ref{fig:piano1}).
-\item The pressed key gets registered by the program. On figure \ref{fig:piano1} the keyboard is shown with all the buttons.
-\item The name of the pressed key is stored in an array and the pressed keys on the keyboard interface get a darker color as long as the keys are pressed. Labview assumes you are using a QWERTY keyboard so in figure 2 the requirement is "Z" but on an AZERTY keyboard this is "W". The user doesn't have to know this because he/she only has to look at the interface of the keyboard.
-\item The case structure checks if the name of the key is equal to "Z" in this case.
-\item If the key is pressed: The associated key on the interface becomes darker and the frequency of the sound that gets created becomes 31Hz in this case. The frequencies of the other buttons are $2^{\frac{1}{12}}$ times the frequency of the previous one. For example, the frequency of "S" is $2^{\frac{1}{12}}$ times the frequency of "W" and the frequency of "X" is $2^{\frac{1}{12}}$ times the frequency of "S".
-If no key is pressed: frequency of the sound automatically becomes 0.
-\item The while loop repeats.
-\end{enumerate}
-We made 2 octaves of buttons for the interface which means that every button in the second octave has a frequency that is twice the frequency of the corresponding button on the first octave.
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=10cm]{piano}
-\rule{30em}{0.5pt}
-\caption{Labview algorithm for keyboard control}
-\label{fig:piano}
-\end{figure} \\
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=5cm]{piano1}
-\rule{30em}{0.5pt}
-\caption{Keyboard buttons}
-\label{fig:piano1}
-\end{figure} 
