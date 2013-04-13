@@ -91,6 +91,7 @@ The code is divided into two basic parts: \textbf{setup} and \textbf{loop}, each
 Since in \textit{Hibernate} mode the Waspmote is completely disconnected from the main battery also the program is interrupted. This means the SRAM has lost all variable values and at wake up the code restarts at the \textbf{setup} function. To store values during hibernate cycles it is necessary to write them to EEPROM or the SD card.
 %----------------------------------------------------------------------------------------
 \section{Power considerations}
+\label{pow}
 \subsection{Waspmote power modes}
 The libelium Waspmote has 4 operational modes: ON, Sleep, Deep Sleep and Hibernate. They differ from which type of interruptions they can be woken up and duration interval. For our application we want sleep intervals of 30 seconds and more, so only Deep Sleep and Hibernate mode are of interest. Table \ref{tab:cons1} summarizes the Waspmotes operational modes.
 \begin{table}[!ht]

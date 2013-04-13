@@ -4,7 +4,67 @@
 \lhead{Chapter 4. \emph{A WSN with Waspmotes: Implementation aspects}}
 %\textsl{Written by Frederik De Greef}
 %----------------------------------------------------------------------------------------
-\section{Overdrive}
+\section{Introduction}
+To start programming the Waspmotes the first step is to install the Waspmote-IDE. This IDE uses the same compiler (AVR) and core libraries as the Arduino IDE. According to Libelium their IDE has been properly tested and proven to assure optimum operation. Unfortunately we cannot agree with this. The Waspmote-IDE also includes Libelium API libraries to help you creating your Waspmote programs. Libelium also offers a lot of program examples on their website. Sadly most of them don't work like Libelium claims they do.
+\section{Libelium IDE and API}
+\subsection{Waspmote-IDE}
+The Libelium IDE offers some advantages compared to using other IDE's. For example by using Eclipse it is possible to update programs that are to big ( > 120KB ) for the Waspmote, over-writing the bootloader. Then they must be sent back to Libelium to restore them. The Waspmote IDE does not allow this accident, so Libelium does not support using other IDE's in an official way so that there is no valid warranty if you've erased the bootloader. Their IDE is far from perfect however, some issues we've experienced are:\\
+\begin{itemize}
+\item Opening a second or more instance of the IDE sometimes re-opens the previously active files, making it confusing to detect which one you were working in so you end up with two unsaved versions of the same code.
+\item Once you start compiling (which takes a lot of time) there's no way to stop it, the stop button does not work.
+\item Uploading immediately after compiling will first re-compile it anyway.
+\item There is no complete C/C++ support. For example using simple enums is not possible. A workaround is to place the code in additional .h or .cpp files.
+\item Auto-completion for the Libelium API functionality would be a great addition.
+\end{itemize}
+\bigskip
+Also the Waspmote's (V1.1) hardware slows down the programming process:
+\begin{itemize}
+\item Uploading the code takes a lot of time: 1.5 - 2 minutes.
+\item The uploading process fails if:
+\begin{itemize}
+\item The XBee is present
+\item The hibernate jumper is not present when the mote is in hibernate
+\item The little power switch has been turned off
+\end{itemize}
+\end{itemize}
+Often you will want to turn off the power switch temporarily to analyse the content of the serial monitor. Especially in pair programming there is often one requirement you forget and the Waspmote does not check for this on beforehand. It will first compile and do as if it is uploading your code, disappointing you at the end of the process.\\
+When debugging bigger program these actions come even more annoying. Suppose you are testing a program which measures sensors, sends the values and hibernates. Then you must:
+\begin{enumerate}
+\item Remove the sensor board
+\item Place the hibernate jumper
+\item Remove the XBee
+\item Upload
+\item Place the XBee
+\item Remove the hibernate jumper
+\item Re-mount the sensor board
+\end{enumerate}
+And this is not the end of the list. Removing the hibernate jumper causes the Waspmote to crash one out of two times. Resetting the mote has no effect in this case, just keep inserting and removing the little jumper until it agrees with what you want.
+%------------------------------------
+\subsection{Waspmote-API}
+To facilitate the programming Libelium offers a quite big API and after some exploring you are quickly started with it. The structure of the API is very simple, there is little to no inheritance. In this section, the most important classes are indicated with a red box and are recommended to explore before starting future programming.
+\subsubsection{Original structure}
+Each module or concept has its own class, for example all RTC functions are in 'WaspRTC.h' and 'WaspRTC.cpp'. To be able to use those functions in the IDE an object from the class 'WaspRTC' must be created. This object is created by default by the library and it is public to all libraries. All types to be run on the API can be found in the 'WaspClasses.h' file and each file also includes this file so it is aware of all available types. Please see appendix \ref{appendixC} for a complete overview.\\
+For our application WaspXBeeZB is one of the most important classes. It inherits from WaspXBee Core and this way it is also related to the WaspXBee class. Figure \ref{fig:API1} indicates this relation.\\
+Figure \ref{fig:API2} displays the relationship with the more basic Libelium/Arduino libraries and the Waspmote hardware. For example \verb+typedef unsigned char uint8_t+ can be found in 'stdint.h'.\\ 
+\begin{figure}[ht]
+\centering
+\includegraphics[height=3.5cm]{API1}
+\rule{30em}{0.5pt}
+\caption{Reduced dependency graph for WaspXBeeZB}
+\label{fig:API1}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=5.3cm]{API2}
+\rule{30em}{0.5pt}
+\caption{Reduced dependency of core libraries}
+\label{fig:API2}
+\end{figure}
+
+During the development of our program the Waspmote showed several strange effects that could only be explained by bad stack management or heap and stack conflicts. Because of this lack of free memory (SRAM, 8KB) we discovered that the V1.1 API wastes a lot of memory by always including all libraries despite not using them. As a fix Libelium recommends to remove all classes you do not use, and there fields that are used in other classes, 'just' going through the compiler errors one by one. After this our program had enough free memory and showed normal behaviour.
+\subsubsection{Added functionality}
+To facilitate programming extra functionality has been added to the Libelium API. They are inside files containing the original name with the 'Utils' addition, for example 'WaspRTCUtils.h' and can be found in 'BjornClasses.h'. To get an overview of the classes  
 
 for the practical part: memory (SRAM) problems:  using  = freeMemory();
 Joe is true. V11 API wastes a lot of memory including always all libraries despite of you are not using them.

@@ -1,118 +1,133 @@
 \vspace {1em}
 \contentsline {chapter}{Abstract}{ii}{dummy.1}
 \vspace {1em}
-\contentsline {chapter}{List of Figures}{vi}{dummy.3}
-\contentsline {chapter}{Abbreviations}{viii}{dummy.5}
+\contentsline {chapter}{List of Figures}{vi}{chapter*.3}
+\contentsline {chapter}{Abbreviations}{ix}{dummy.4}
 \vspace {2em}
-\contentsline {chapter}{\numberline {1}Introduction to Wireless Sensor Networks}{1}{chapter.8}
-\contentsline {section}{\numberline {1.1}Introduction}{1}{section.9}
-\contentsline {section}{\numberline {1.2}Sound characteristics}{1}{section.11}
-\contentsline {subsection}{\numberline {1.2.1}Pitch and tone}{1}{subsection.12}
-\contentsline {subsection}{\numberline {1.2.2}Timbre}{1}{subsection.13}
-\contentsline {subsubsection}{\numberline {1.2.2.1}Spectral diagram}{2}{subsubsection.14}
-\contentsline {chapter}{\numberline {2}Why ZigBee}{3}{chapter.17}
-\contentsline {section}{\numberline {2.1}Introduction}{3}{section.18}
-\contentsline {subsection}{\numberline {2.1.1}Basic concepts of modulation synthesis}{3}{subsection.19}
-\contentsline {subsection}{\numberline {2.1.2}Oscillators and operators}{4}{subsection.21}
-\contentsline {subsection}{\numberline {2.1.3}Waveforms}{4}{subsection.22}
-\contentsline {section}{\numberline {2.2}Mathematical approach}{5}{section.32}
-\contentsline {section}{\numberline {2.3}Bandwidth considerations}{7}{section.47}
-\contentsline {section}{\numberline {2.4}Practical implementation}{8}{section.49}
-\contentsline {section}{\numberline {2.5}Summary}{9}{section.51}
-\contentsline {chapter}{\numberline {3}A WSN with Waspmotes: Theoretical aspects}{10}{chapter.52}
-\contentsline {section}{\numberline {3.1}Introduction}{10}{section.53}
-\contentsline {section}{\numberline {3.2}Hardware}{11}{section.56}
-\contentsline {subsection}{\numberline {3.2.1}Modular Architecture}{11}{subsection.57}
-\contentsline {subsection}{\numberline {3.2.2}Microcontroller and memory}{11}{subsection.59}
-\contentsline {subsection}{\numberline {3.2.3}Timers}{13}{subsection.61}
-\contentsline {subsubsection}{\numberline {3.2.3.1}Watchdog}{13}{subsubsection.62}
-\contentsline {subsubsection}{\numberline {3.2.3.2}Real Time Clock}{13}{subsubsection.63}
-\contentsline {section}{\numberline {3.3}Programming}{13}{section.64}
-\contentsline {section}{\numberline {3.4}Power considerations}{13}{section.65}
-\contentsline {subsection}{\numberline {3.4.1}Waspmote power modes}{13}{subsection.66}
-\contentsline {subsubsection}{\numberline {3.4.1.1}Deep Sleep}{14}{subsubsection.68}
-\contentsline {subsubsection}{\numberline {3.4.1.2}Hibernate}{14}{subsubsection.70}
-\contentsline {subsection}{\numberline {3.4.2}Sampling sensors}{15}{subsection.72}
-\contentsline {subsection}{\numberline {3.4.3}Battery life estimation}{15}{subsection.73}
-\contentsline {subsubsection}{\numberline {3.4.3.1}XBee and Waspmote start-up times}{16}{subsubsection.75}
-\contentsline {subsubsection}{\numberline {3.4.3.2}Battery life with standard program optimizations}{16}{subsubsection.82}
-\contentsline {subsubsection}{\numberline {3.4.3.3}Battery life with extra optimizations}{18}{subsubsection.86}
-\contentsline {chapter}{\numberline {4}A WSN with Waspmotes: Implementation aspects}{20}{chapter.89}
-\contentsline {section}{\numberline {4.1}Overdrive}{20}{section.90}
-\contentsline {subsection}{\numberline {4.1.1}Device start-up}{20}{subsection.91}
-\contentsline {subsubsection}{\numberline {4.1.1.1}Full initialization}{20}{subsubsection.92}
-\contentsline {subsubsection}{\numberline {4.1.1.2}Reduced initialization}{21}{subsubsection.93}
-\contentsline {section}{\numberline {4.2}Power savings}{21}{section.94}
-\contentsline {subsection}{\numberline {4.2.1}In the algorithm}{21}{subsection.95}
-\contentsline {subsection}{\numberline {4.2.2}Sleep vs. Hibernate}{21}{subsection.96}
-\contentsline {subsection}{\numberline {4.2.3}Variable sleep times}{21}{subsection.97}
-\contentsline {subsubsection}{\numberline {4.2.3.1}Calculate only the next time to sleep}{21}{subsubsection.98}
-\contentsline {subsubsection}{\numberline {4.2.3.2}Calculate all next times to sleep}{22}{subsubsection.104}
-\contentsline {subsubsection}{\numberline {4.2.3.3}Limit user control}{22}{subsubsection.105}
-\contentsline {subsection}{\numberline {4.2.4}Overdrive function}{22}{subsection.106}
-\contentsline {subsubsection}{\numberline {4.2.4.1}Influence of the overdrive effect on the frequency spectrum}{24}{subsubsection.109}
-\contentsline {subsubsection}{\numberline {4.2.4.2}Symmetrical clipping}{24}{subsubsection.112}
-\contentsline {subsubsection}{\numberline {4.2.4.3}Asymmetrical clipping}{24}{subsubsection.113}
-\contentsline {section}{\numberline {4.3}Equaliser}{25}{section.115}
-\contentsline {subsection}{\numberline {4.3.1}Design of the equaliser}{25}{subsection.116}
-\contentsline {subsection}{\numberline {4.3.2}Amplitude response of the FIR filters}{27}{subsection.118}
-\contentsline {subsection}{\numberline {4.3.3}Testing of the equalizer in MATLAB}{27}{subsection.122}
-\contentsline {subsection}{\numberline {4.3.4}Problems and solutions}{28}{subsection.125}
-\contentsline {chapter}{\numberline {5}Digital Signal Processor}{29}{chapter.126}
-\contentsline {section}{\numberline {5.1}Introduction}{29}{section.127}
-\contentsline {subsection}{\numberline {5.1.1}What is digital signal processing?}{29}{subsection.128}
-\contentsline {subsection}{\numberline {5.1.2}How are DSP processors used?}{29}{subsection.129}
-\contentsline {section}{\numberline {5.2}Digitization}{30}{section.131}
-\contentsline {section}{\numberline {5.3}Digital Signal Processors}{30}{section.133}
-\contentsline {subsection}{\numberline {5.3.1}Numeric architecture}{31}{subsection.135}
-\contentsline {subsection}{\numberline {5.3.2}Memory architecture}{32}{subsection.139}
-\contentsline {subsection}{\numberline {5.3.3}Sequencer architecture}{33}{subsection.141}
-\contentsline {subsection}{\numberline {5.3.4}Input/Output architecture}{33}{subsection.142}
-\contentsline {section}{\numberline {5.4}Fixed-point vs. floating-point DSP}{33}{section.143}
-\contentsline {subsection}{\numberline {5.4.1}Advantages of floating-point digital signal processors}{33}{subsection.144}
-\contentsline {subsection}{\numberline {5.4.2}Considerations}{33}{subsection.145}
-\contentsline {chapter}{\numberline {6}Implementation: C}{34}{chapter.146}
-\contentsline {section}{\numberline {6.1}Introduction}{34}{section.147}
-\contentsline {section}{\numberline {6.2}Time management}{34}{section.148}
-\contentsline {subsection}{\numberline {6.2.1}Interrupts}{34}{subsection.149}
-\contentsline {subsection}{\numberline {6.2.2}Data handling}{35}{subsection.150}
-\contentsline {subsection}{\numberline {6.2.3}Real-time interface issues}{35}{subsection.151}
-\contentsline {section}{\numberline {6.3}Analog Devices Sharc DSP Board}{36}{section.153}
-\contentsline {subsection}{\numberline {6.3.1}Introduction}{36}{subsection.154}
-\contentsline {subsection}{\numberline {6.3.2}Initializing communication between the DSP and the audio jack}{36}{subsection.155}
-\contentsline {subsubsection}{\numberline {6.3.2.1}Digital Applications Interface (DAI)}{36}{subsubsection.156}
-\contentsline {subsubsection}{\numberline {6.3.2.2}Signal Routing Unit (SRC)}{36}{subsubsection.159}
-\contentsline {subsubsection}{\numberline {6.3.2.3}AD1835A}{38}{subsubsection.161}
-\contentsline {subsubsection}{\numberline {6.3.2.4}SPORT}{40}{subsubsection.165}
-\contentsline {section}{\numberline {6.4}The DSP Synthesizer program}{41}{section.169}
-\contentsline {subsection}{\numberline {6.4.1}Program execution}{41}{subsection.170}
-\contentsline {subsubsection}{\numberline {6.4.1.1}Not-realtime}{41}{subsubsection.172}
-\contentsline {subsubsection}{\numberline {6.4.1.2}Realtime: let's play}{43}{subsubsection.173}
-\contentsline {subsection}{\numberline {6.4.2}Key functions}{44}{subsection.174}
-\contentsline {chapter}{\numberline {7}Communication with LabVIEW User Interface using UART Port Controller}{45}{chapter.175}
-\contentsline {section}{\numberline {7.1}Introduction}{45}{section.176}
-\contentsline {section}{\numberline {7.2}UART data frame}{45}{section.177}
-\contentsline {section}{\numberline {7.3}UART external interface}{46}{section.179}
-\contentsline {section}{\numberline {7.4}UART configuration in DSP Processor for communication}{47}{section.182}
-\contentsline {section}{\numberline {7.5}Programming for communication between DSP Processor and LabVIEW User Interface}{49}{section.188}
-\contentsline {subsection}{\numberline {7.5.1}LabVIEW program for writing data}{49}{subsection.189}
-\contentsline {subsection}{\numberline {7.5.2}UART Interrupt}{51}{subsection.197}
-\contentsline {subsection}{\numberline {7.5.3}The FM synthesizer application}{52}{subsection.199}
-\contentsline {section}{\numberline {7.6}Conclusion}{53}{section.203}
-\contentsline {chapter}{\numberline {8}Critical reflections}{54}{chapter.204}
-\contentsline {section}{\numberline {8.1}Implementation problems}{54}{section.205}
-\contentsline {subsection}{\numberline {8.1.1}Communication with the Labview interface}{54}{subsection.206}
-\contentsline {subsection}{\numberline {8.1.2}Combining different program parts and general programming issues}{54}{subsection.207}
-\contentsline {subsection}{\numberline {8.1.3}Connecting the DSP board and use of the IDEs}{55}{subsection.208}
-\contentsline {subsection}{\numberline {8.1.4}Extreme programming}{56}{subsection.209}
-\contentsline {subsection}{\numberline {8.1.5}Latex}{56}{subsection.210}
-\contentsline {section}{\numberline {8.2}Team problems}{56}{section.211}
-\contentsline {section}{\numberline {8.3}Achieved activities}{56}{section.212}
-\contentsline {section}{\numberline {8.4}Future work}{57}{section.215}
+\contentsline {chapter}{\numberline {1}Introduction to Wireless Sensor Networks}{1}{chapter.7}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.8}
+\contentsline {section}{\numberline {1.2}Wireless is everywhere}{2}{section.10}
+\contentsline {subsection}{\numberline {1.2.1}Definition of Wireless Sensor Network}{2}{subsection.11}
+\contentsline {subsection}{\numberline {1.2.2}Internet of Things}{2}{subsection.12}
+\contentsline {subsection}{\numberline {1.2.3}Third wave of wireless}{2}{subsection.15}
+\contentsline {section}{\numberline {1.3}Wireless Standards and Technology}{2}{section.16}
+\contentsline {subsection}{\numberline {1.3.1}Standards enable growth: ZigBee}{2}{subsection.17}
+\contentsline {subsection}{\numberline {1.3.2}Sensor nodes}{3}{subsection.20}
+\contentsline {subsection}{\numberline {1.3.3}Fundamental Challenges in WSNs}{3}{subsection.21}
+\contentsline {subsection}{\numberline {1.3.4}Power considerations}{4}{subsection.22}
+\contentsline {subsection}{\numberline {1.3.5}Network topologies}{4}{subsection.25}
+\contentsline {subsection}{\numberline {1.3.6}Security}{4}{subsection.26}
+\contentsline {section}{\numberline {1.4}Benefits of Wireless Measurements}{4}{section.27}
+\contentsline {section}{\numberline {1.5}WSNs: Innovative ways of interacting with the world}{5}{section.31}
+\contentsline {chapter}{\numberline {2}Why ZigBee}{6}{chapter.32}
+\contentsline {section}{\numberline {2.1}Introduction}{6}{section.33}
+\contentsline {subsection}{\numberline {2.1.1}Basic concepts of modulation synthesis}{6}{subsection.34}
+\contentsline {subsection}{\numberline {2.1.2}Oscillators and operators}{7}{subsection.36}
+\contentsline {subsection}{\numberline {2.1.3}Waveforms}{7}{subsection.37}
+\contentsline {section}{\numberline {2.2}Mathematical approach}{8}{section.47}
+\contentsline {section}{\numberline {2.3}Bandwidth considerations}{10}{section.62}
+\contentsline {section}{\numberline {2.4}Practical implementation}{11}{section.64}
+\contentsline {section}{\numberline {2.5}Summary}{12}{section.66}
+\contentsline {chapter}{\numberline {3}A WSN with Waspmotes: Theoretical aspects}{13}{chapter.67}
+\contentsline {section}{\numberline {3.1}Introduction}{13}{section.68}
+\contentsline {section}{\numberline {3.2}Hardware}{14}{section.71}
+\contentsline {subsection}{\numberline {3.2.1}Modular Architecture}{14}{subsection.72}
+\contentsline {subsection}{\numberline {3.2.2}Microcontroller and memory}{14}{subsection.74}
+\contentsline {subsection}{\numberline {3.2.3}Timers}{16}{subsection.76}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Watchdog}{16}{subsubsection.77}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Real Time Clock}{16}{subsubsection.78}
+\contentsline {section}{\numberline {3.3}Programming}{16}{section.79}
+\contentsline {section}{\numberline {3.4}Power considerations}{16}{section.80}
+\contentsline {subsection}{\numberline {3.4.1}Waspmote power modes}{16}{subsection.81}
+\contentsline {subsubsection}{\numberline {3.4.1.1}Deep Sleep}{17}{subsubsection.83}
+\contentsline {subsubsection}{\numberline {3.4.1.2}Hibernate}{17}{subsubsection.85}
+\contentsline {subsection}{\numberline {3.4.2}Sampling sensors}{18}{subsection.87}
+\contentsline {subsection}{\numberline {3.4.3}Battery life estimation}{18}{subsection.88}
+\contentsline {subsubsection}{\numberline {3.4.3.1}XBee and Waspmote start-up times}{19}{subsubsection.90}
+\contentsline {subsubsection}{\numberline {3.4.3.2}Battery life with standard program optimizations}{19}{subsubsection.97}
+\contentsline {subsubsection}{\numberline {3.4.3.3}Battery life with extra optimizations}{21}{subsubsection.101}
+\contentsline {chapter}{\numberline {4}A WSN with Waspmotes: Implementation aspects}{23}{chapter.104}
+\contentsline {section}{\numberline {4.1}Introduction}{23}{section.105}
+\contentsline {section}{\numberline {4.2}Libelium IDE and API}{23}{section.106}
+\contentsline {subsection}{\numberline {4.2.1}Waspmote-IDE}{23}{subsection.107}
+\contentsline {subsection}{\numberline {4.2.2}Waspmote-API}{24}{subsection.115}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Original structure}{24}{subsubsection.116}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Added functionality}{25}{subsubsection.119}
+\contentsline {subsection}{\numberline {4.2.3}Device start-up}{26}{subsection.120}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Full initialization}{26}{subsubsection.121}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Reduced initialization}{26}{subsubsection.122}
+\contentsline {section}{\numberline {4.3}Power savings}{26}{section.123}
+\contentsline {subsection}{\numberline {4.3.1}In the algorithm}{26}{subsection.124}
+\contentsline {subsection}{\numberline {4.3.2}Sleep vs. Hibernate}{26}{subsection.125}
+\contentsline {subsection}{\numberline {4.3.3}Variable sleep times}{26}{subsection.126}
+\contentsline {subsubsection}{\numberline {4.3.3.1}Calculate only the next time to sleep}{27}{subsubsection.127}
+\contentsline {subsubsection}{\numberline {4.3.3.2}Calculate all next times to sleep}{27}{subsubsection.133}
+\contentsline {subsubsection}{\numberline {4.3.3.3}Limit user control}{28}{subsubsection.134}
+\contentsline {subsection}{\numberline {4.3.4}Overdrive function}{28}{subsection.135}
+\contentsline {subsubsection}{\numberline {4.3.4.1}Influence of the overdrive effect on the frequency spectrum}{29}{subsubsection.138}
+\contentsline {subsubsection}{\numberline {4.3.4.2}Symmetrical clipping}{29}{subsubsection.141}
+\contentsline {subsubsection}{\numberline {4.3.4.3}Asymmetrical clipping}{30}{subsubsection.142}
+\contentsline {section}{\numberline {4.4}Equaliser}{30}{section.144}
+\contentsline {subsection}{\numberline {4.4.1}Design of the equaliser}{30}{subsection.145}
+\contentsline {subsection}{\numberline {4.4.2}Amplitude response of the FIR filters}{30}{subsection.147}
+\contentsline {subsection}{\numberline {4.4.3}Testing of the equalizer in MATLAB}{30}{subsection.151}
+\contentsline {subsection}{\numberline {4.4.4}Problems and solutions}{32}{subsection.154}
+\contentsline {chapter}{\numberline {5}Optimizing Wireless Sensor Networks}{34}{chapter.155}
+\contentsline {section}{\numberline {5.1}Introduction}{34}{section.156}
+\contentsline {subsection}{\numberline {5.1.1}What is digital signal processing?}{34}{subsection.157}
+\contentsline {subsection}{\numberline {5.1.2}How are DSP processors used?}{34}{subsection.158}
+\contentsline {section}{\numberline {5.2}Digitization}{35}{section.160}
+\contentsline {section}{\numberline {5.3}Digital Signal Processors}{35}{section.162}
+\contentsline {subsection}{\numberline {5.3.1}Numeric architecture}{36}{subsection.164}
+\contentsline {subsection}{\numberline {5.3.2}Memory architecture}{37}{subsection.168}
+\contentsline {subsection}{\numberline {5.3.3}Sequencer architecture}{38}{subsection.170}
+\contentsline {subsection}{\numberline {5.3.4}Input/Output architecture}{38}{subsection.171}
+\contentsline {section}{\numberline {5.4}Fixed-point vs. floating-point DSP}{38}{section.172}
+\contentsline {subsection}{\numberline {5.4.1}Advantages of floating-point digital signal processors}{38}{subsection.173}
+\contentsline {subsection}{\numberline {5.4.2}Considerations}{38}{subsection.174}
+\contentsline {chapter}{\numberline {6}Implementation: C}{39}{chapter.175}
+\contentsline {section}{\numberline {6.1}Introduction}{39}{section.176}
+\contentsline {section}{\numberline {6.2}Time management}{39}{section.177}
+\contentsline {subsection}{\numberline {6.2.1}Interrupts}{39}{subsection.178}
+\contentsline {subsection}{\numberline {6.2.2}Data handling}{40}{subsection.179}
+\contentsline {subsection}{\numberline {6.2.3}Real-time interface issues}{40}{subsection.180}
+\contentsline {section}{\numberline {6.3}Analog Devices Sharc DSP Board}{41}{section.182}
+\contentsline {subsection}{\numberline {6.3.1}Introduction}{41}{subsection.183}
+\contentsline {subsection}{\numberline {6.3.2}Initializing communication between the DSP and the audio jack}{41}{subsection.184}
+\contentsline {subsubsection}{\numberline {6.3.2.1}Digital Applications Interface (DAI)}{41}{subsubsection.185}
+\contentsline {subsubsection}{\numberline {6.3.2.2}Signal Routing Unit (SRC)}{41}{subsubsection.188}
+\contentsline {subsubsection}{\numberline {6.3.2.3}AD1835A}{43}{subsubsection.190}
+\contentsline {subsubsection}{\numberline {6.3.2.4}SPORT}{45}{subsubsection.194}
+\contentsline {section}{\numberline {6.4}The DSP Synthesizer program}{46}{section.198}
+\contentsline {subsection}{\numberline {6.4.1}Program execution}{46}{subsection.199}
+\contentsline {subsubsection}{\numberline {6.4.1.1}Not-realtime}{46}{subsubsection.201}
+\contentsline {subsubsection}{\numberline {6.4.1.2}Realtime: let's play}{48}{subsubsection.202}
+\contentsline {subsection}{\numberline {6.4.2}Key functions}{49}{subsection.203}
+\contentsline {chapter}{\numberline {7}Communication with LabVIEW User Interface using UART Port Controller}{50}{chapter.204}
+\contentsline {section}{\numberline {7.1}Introduction}{50}{section.205}
+\contentsline {section}{\numberline {7.2}UART data frame}{50}{section.206}
+\contentsline {section}{\numberline {7.3}UART external interface}{51}{section.208}
+\contentsline {section}{\numberline {7.4}UART configuration in DSP Processor for communication}{52}{section.211}
+\contentsline {section}{\numberline {7.5}Programming for communication between DSP Processor and LabVIEW User Interface}{54}{section.217}
+\contentsline {subsection}{\numberline {7.5.1}LabVIEW program for writing data}{54}{subsection.218}
+\contentsline {subsection}{\numberline {7.5.2}UART Interrupt}{56}{subsection.226}
+\contentsline {subsection}{\numberline {7.5.3}The FM synthesizer application}{57}{subsection.228}
+\contentsline {section}{\numberline {7.6}Conclusion}{58}{section.232}
+\contentsline {chapter}{\numberline {8}Critical reflections}{59}{chapter.233}
+\contentsline {section}{\numberline {8.1}Implementation problems}{59}{section.234}
+\contentsline {subsection}{\numberline {8.1.1}Communication with the Labview interface}{59}{subsection.235}
+\contentsline {subsection}{\numberline {8.1.2}Combining different program parts and general programming issues}{59}{subsection.236}
+\contentsline {subsection}{\numberline {8.1.3}Connecting the DSP board and use of the IDEs}{60}{subsection.237}
+\contentsline {subsection}{\numberline {8.1.4}Extreme programming}{61}{subsection.238}
+\contentsline {subsection}{\numberline {8.1.5}Latex}{61}{subsection.239}
+\contentsline {section}{\numberline {8.2}Team problems}{61}{section.240}
+\contentsline {section}{\numberline {8.3}Achieved activities}{61}{section.241}
+\contentsline {section}{\numberline {8.4}Future work}{62}{section.244}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{57}{section.215}
+\contentsline {chapter}{Bibliography}{62}{section.244}
+\contentsline {chapter}{\numberline {9}Bibliography}{63}{chapter.245}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}XBee join and send time experiments}{60}{appendix.217}
-\contentsline {section}{\numberline {A.1}Distance relation test}{60}{section.218}
-\contentsline {section}{\numberline {A.2}First time reduction}{62}{section.225}
+\contentsline {chapter}{\numberline {A}XBee join and send time experiments}{65}{appendix.246}
+\contentsline {section}{\numberline {A.1}Distance relation test}{65}{section.247}
+\contentsline {section}{\numberline {A.2}First time reduction}{67}{section.254}
 \vspace {2em}

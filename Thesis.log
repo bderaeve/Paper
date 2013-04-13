@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.3.18)  11 APR 2013 22:48
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.3.18)  13 APR 2013 21:51
 entering extended mode
 **Thesis.tex
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Thesis.tex"
@@ -500,9 +500,19 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen152
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 19.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocbibind\tocbibind.sty"
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
 
-("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Thesis.aux"
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 19.
+ ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Thesis.aux"
+
+LaTeX Warning: Label `fig:typicalCons' multiply defined.
+
 
 LaTeX Warning: Label `fig:arduinoShield' multiply defined.
 
@@ -583,14 +593,14 @@ LaTeX Info: Redefining \nameref on input line 22.
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Thesis.out")
 \@outlinefile=\write3
 
-<./Pictures/Logo.jpg, id=450, 311.4837pt x 95.1555pt>
+<./Pictures/Logo.jpg, id=510, 311.4837pt x 95.1555pt>
 File: ./Pictures/Logo.jpg Graphic file (type jpg)
 
 <use ./Pictures/Logo.jpg>
 Package pdftex.def Info: ./Pictures/Logo.jpg used on input line 40.
 (pdftex.def)             Requested size: 311.48294pt x 95.15524pt.
 
-<./Pictures/waspmote.png, id=452, 671.50874pt x 746.79pt>
+<./Pictures/waspmote.png, id=512, 671.50874pt x 746.79pt>
 File: ./Pictures/waspmote.png Graphic file (type png)
 
 <use ./Pictures/waspmote.png>
@@ -650,22 +660,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--122
 ]
 [4])
 \tf@toc=\write4
- [5]
-------------------------------------------------------------------------------
- List of Figures
-------------------------------------------------------------------------------
-("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Thesis.lof" [6
+ [5] ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Thesis.lof" [6
 
 
-])
+] [7])
 \tf@lof=\write5
-
-[7]
+ [8]
 ------------------------------------------------------------------------------
  Abbreviations
 ------------------------------------------------------------------------------
-[8
-
+[9
 
 
 ]
@@ -675,46 +679,83 @@ Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction to Wireless Sensor Networks
 ------------------------------------------------------------------------------
-<./Pictures/spectral.jpg, id=746, 543.02875pt x 287.0725pt>
-File: ./Pictures/spectral.jpg Graphic file (type jpg)
-
-<use ./Pictures/spectral.jpg>
-Package pdftex.def Info: ./Pictures/spectral.jpg used on input line 33.
-(pdftex.def)             Requested size: 269.11078pt x 142.26378pt.
-
-<./Pictures//fourier.jpg, id=749, 91.542pt x 112.0185pt>
-File: ./Pictures//fourier.jpg Graphic file (type jpg)
-
-<use ./Pictures//fourier.jpg>
-Package pdftex.def Info: ./Pictures//fourier.jpg used on input line 44.
-(pdftex.def)             Requested size: 86.72377pt x 106.12466pt.
- [1
+[1
 
 
 
-])
+]
+Underfull \hbox (badness 10000) in paragraph at lines 28--31
+
+ []
+
+<./Pictures/zigbeeRange.png, id=843, 807.015pt x 430.60875pt>
+File: ./Pictures/zigbeeRange.png Graphic file (type png)
+
+<use ./Pictures/zigbeeRange.png>
+Package pdftex.def Info: ./Pictures/zigbeeRange.png used on input line 39.
+(pdftex.def)             Requested size: 319.94342pt x 170.71652pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 50--69
+
+ []
+
+
+LaTeX Warning: Reference `powerSect' on page 3 undefined on input line 76.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+
+ []
+
+<./Pictures/typicalCons.png, id=853, 381.425pt x 248.93pt>
+File: ./Pictures/typicalCons.png Graphic file (type png)
+
+<use ./Pictures/typicalCons.png>
+Package pdftex.def Info: ./Pictures/typicalCons.png used on input line 82.
+(pdftex.def)             Requested size: 261.58882pt x 170.71652pt.
+ [3 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/zigbeeRa
+nge.png>]
+<./Pictures/powerCons.png, id=861, 1234.6125pt x 155.58125pt>
+File: ./Pictures/powerCons.png Graphic file (type png)
+
+<use ./Pictures/powerCons.png>
+Package pdftex.def Info: ./Pictures/powerCons.png used on input line 89.
+(pdftex.def)             Requested size: 1354.7247pt x 170.71652pt.
+
+Overfull \hbox (937.25163pt too wide) in paragraph at lines 89--91
+ [][] 
+ []
+
+[4 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/typicalCo
+ns.png> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/powe
+rCons.png>])
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Chapters\Chapter2.te
-x" [2 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/spectr
-al.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/four
-ier.jpg>]
+x" [5]
 Chapter 2.
 ------------------------------------------------------------------------------
  2 Why ZigBee
 ------------------------------------------------------------------------------
-<./Pictures/additive.jpg, id=765, 599.23875pt x 807.015pt>
+<./Pictures/additive.jpg, id=875, 599.23875pt x 807.015pt>
 File: ./Pictures/additive.jpg Graphic file (type jpg)
 
 <use ./Pictures/additive.jpg>
 Package pdftex.def Info: ./Pictures/additive.jpg used on input line 19.
 (pdftex.def)             Requested size: 131.83293pt x 177.54384pt.
 
-<./Pictures/basicWaveforms.png, id=766, 562.1pt x 421.575pt>
+<./Pictures/basicWaveforms.png, id=876, 562.1pt x 421.575pt>
 File: ./Pictures/basicWaveforms.png Graphic file (type png)
 
 <use ./Pictures/basicWaveforms.png>
 Package pdftex.def Info: ./Pictures/basicWaveforms.png used on input line 27.
 (pdftex.def)             Requested size: 185.49358pt x 139.12018pt.
- [3
+ [6
 
  <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/additive.jp
 g> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/basicWave
@@ -723,7 +764,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--40
 
  []
 
-<./Pictures/waves.png, id=776, 881.2925pt x 173.64874pt>
+<./Pictures/waves.png, id=886, 881.2925pt x 173.64874pt>
 File: ./Pictures/waves.png Graphic file (type png)
 
 <use ./Pictures/waves.png>
@@ -734,59 +775,59 @@ Overfull \hbox (15.74911pt too wide) in paragraph at lines 68--70
  [][] 
  []
 
-<./Pictures/freqSquare.png, id=783, 562.2606pt x 421.8159pt>
+<./Pictures/freqSquare.png, id=893, 562.2606pt x 421.8159pt>
 File: ./Pictures/freqSquare.png Graphic file (type png)
 
 <use ./Pictures/freqSquare.png>
 Package pdftex.def Info: ./Pictures/freqSquare.png used on input line 78.
 (pdftex.def)             Requested size: 168.67947pt x 126.54575pt.
 
-<./Pictures/freqTriangle.png, id=785, 562.2606pt x 421.8159pt>
+<./Pictures/freqTriangle.png, id=895, 562.2606pt x 421.8159pt>
 File: ./Pictures/freqTriangle.png Graphic file (type png)
 
 <use ./Pictures/freqTriangle.png>
 Package pdftex.def Info: ./Pictures/freqTriangle.png used on input line 86.
 (pdftex.def)             Requested size: 168.67947pt x 126.54575pt.
 
-<./Pictures/freqSaw.png, id=786, 562.2606pt x 421.8159pt>
+<./Pictures/freqSaw.png, id=896, 562.2606pt x 421.8159pt>
 File: ./Pictures/freqSaw.png Graphic file (type png)
 
 <use ./Pictures/freqSaw.png>
 Package pdftex.def Info: ./Pictures/freqSaw.png used on input line 95.
 (pdftex.def)             Requested size: 182.04617pt x 136.5733pt.
- [4 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/waves.pn
+ [7 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/waves.pn
 g>]
 Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
-[5 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/freqSquar
+[8 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/freqSquar
 e.png> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/freqT
 riangle.png> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures
-/freqSaw.png>] <./Pictures/phasefunction.jpg, id=815, 402.50375pt x 216.81pt>
+/freqSaw.png>] <./Pictures/phasefunction.jpg, id=925, 402.50375pt x 216.81pt>
 File: ./Pictures/phasefunction.jpg Graphic file (type jpg)
 
 <use ./Pictures/phasefunction.jpg>
 Package pdftex.def Info: ./Pictures/phasefunction.jpg used on input line 126.
 (pdftex.def)             Requested size: 184.8776pt x 99.58464pt.
 
-<./Pictures/sidebands.png, id=818, 387.4475pt x 234.8775pt>
+<./Pictures/sidebands.png, id=928, 387.4475pt x 234.8775pt>
 File: ./Pictures/sidebands.png Graphic file (type png)
 
 <use ./Pictures/sidebands.png>
 Package pdftex.def Info: ./Pictures/sidebands.png used on input line 138.
 (pdftex.def)             Requested size: 164.26985pt x 99.58464pt.
- [6 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/phasefun
+ [9 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/phasefun
 ction.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/s
 idebands.png>]
-<./Pictures/besselSpect.jpg, id=833, 958.58125pt x 236.885pt>
+<./Pictures/besselSpect.jpg, id=944, 958.58125pt x 236.885pt>
 File: ./Pictures/besselSpect.jpg Graphic file (type jpg)
 
 <use ./Pictures/besselSpect.jpg>
 Package pdftex.def Info: ./Pictures/besselSpect.jpg used on input line 157.
 (pdftex.def)             Requested size: 241.78023pt x 59.75095pt.
 
-<./Pictures/besselFunctions.png, id=837, 406.51875pt x 247.92625pt>
+<./Pictures/besselFunctions.png, id=948, 406.51875pt x 247.92625pt>
 File: ./Pictures/besselFunctions.png Graphic file (type png)
 
 <use ./Pictures/besselFunctions.png>
@@ -794,7 +835,7 @@ Package pdftex.def Info: ./Pictures/besselFunctions.png used on input line 171.
 
 (pdftex.def)             Requested size: 228.6042pt x 139.41832pt.
 
-<./Pictures/sidebands2.jpg, id=840, 436.63126pt x 253.94875pt>
+<./Pictures/sidebands2.jpg, id=951, 436.63126pt x 253.94875pt>
 File: ./Pictures/sidebands2.jpg Graphic file (type jpg)
 
 <use ./Pictures/sidebands2.jpg>
@@ -805,17 +846,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--186
 
  []
 
-[7 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/besselSpe
-ct.jpg>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 197.
-
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 197.
-
-<./Pictures/funDesign.jpg, id=854, 1204.5pt x 417.2388pt>
+[10 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/besselSp
+ect.jpg>] <./Pictures/funDesign.jpg, id=963, 1204.5pt x 417.2388pt>
 File: ./Pictures/funDesign.jpg Graphic file (type jpg)
 
 <use ./Pictures/funDesign.jpg>
@@ -833,36 +865,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
 )
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Chapters\Chapter3.te
-x" [8 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/bessel
-Functions.png> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictur
-es/sidebands2.jpg>] [9 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Pape
-r/Pictures/funDesign.jpg>]
+x" [11 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/besse
+lFunctions.png> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictu
+res/sidebands2.jpg>] [12 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Pa
+per/Pictures/funDesign.jpg>]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 A WSN with Waspmotes: Theoretical aspects
 ------------------------------------------------------------------------------
-<./Pictures/arduinoShield1.jpg, id=869, 848.16875pt x 643.40375pt>
+<./Pictures/arduinoShield1.jpg, id=978, 848.16875pt x 643.40375pt>
 File: ./Pictures/arduinoShield1.jpg Graphic file (type jpg)
 
 <use ./Pictures/arduinoShield1.jpg>
 Package pdftex.def Info: ./Pictures/arduinoShield1.jpg used on input line 14.
 (pdftex.def)             Requested size: 169.63074pt x 128.67847pt.
 
-<./Pictures/squidbee.png, id=870, 588.1975pt x 541.02126pt>
+<./Pictures/squidbee.png, id=979, 588.1975pt x 541.02126pt>
 File: ./Pictures/squidbee.png Graphic file (type png)
 
 <use ./Pictures/squidbee.png>
 Package pdftex.def Info: ./Pictures/squidbee.png used on input line 22.
 (pdftex.def)             Requested size: 147.04901pt x 135.25497pt.
 
-<./Pictures/waspmote3.jpg, id=871, 376.40625pt x 401.5pt>
+<./Pictures/waspmote3.jpg, id=980, 376.40625pt x 401.5pt>
 File: ./Pictures/waspmote3.jpg Graphic file (type jpg)
 
 <use ./Pictures/waspmote3.jpg>
 Package pdftex.def Info: ./Pictures/waspmote3.jpg used on input line 34.
 (pdftex.def)             Requested size: 169.38124pt x 180.67332pt.
 
-<./Pictures/waspmotePro.jpg, id=872, 401.5pt x 429.605pt>
+<./Pictures/waspmotePro.jpg, id=981, 401.5pt x 429.605pt>
 File: ./Pictures/waspmotePro.jpg Graphic file (type jpg)
 
 <use ./Pictures/waspmotePro.jpg>
@@ -873,285 +905,320 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--50
 
  []
 
-[10
+[13
 
  <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/arduinoShie
 ld1.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/squ
-idbee.png>] <./Pictures/waspmote2.png, id=879, 1043.9pt x 690.58pt>
+idbee.png>] <./Pictures/waspmote2.png, id=987, 1043.9pt x 690.58pt>
 File: ./Pictures/waspmote2.png Graphic file (type png)
 
 <use ./Pictures/waspmote2.png>
 Package pdftex.def Info: ./Pictures/waspmote2.png used on input line 63.
 (pdftex.def)             Requested size: 279.56305pt x 184.9429pt.
 
-<./Pictures/block.png, id=881, 887.315pt x 768.8725pt>
+<./Pictures/block.png, id=989, 887.315pt x 768.8725pt>
 File: ./Pictures/block.png Graphic file (type png)
 
 <use ./Pictures/block.png>
 Package pdftex.def Info: ./Pictures/block.png used on input line 74.
 (pdftex.def)             Requested size: 377.6116pt x 327.20668pt.
- [11 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/waspmot
+ [14 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/waspmot
 e3.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/wasp
-motePro.jpg>] [12 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pic
+motePro.jpg>] [15 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pic
 tures/waspmote2.png> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/
-Pictures/block.png>] [13]
-<./Pictures/deepSleep.png, id=896, 1266.7325pt x 306.14375pt>
+Pictures/block.png>] [16]
+<./Pictures/deepSleep.png, id=1005, 1266.7325pt x 306.14375pt>
 File: ./Pictures/deepSleep.png Graphic file (type png)
 
 <use ./Pictures/deepSleep.png>
-Package pdftex.def Info: ./Pictures/deepSleep.png used on input line 119.
+Package pdftex.def Info: ./Pictures/deepSleep.png used on input line 120.
 (pdftex.def)             Requested size: 353.17503pt x 85.35826pt.
 
-<./Pictures/hibernate.png, id=899, 1271.75125pt x 455.7025pt>
+<./Pictures/hibernate.png, id=1008, 1271.75125pt x 455.7025pt>
 File: ./Pictures/hibernate.png Graphic file (type png)
 
 <use ./Pictures/hibernate.png>
-Package pdftex.def Info: ./Pictures/hibernate.png used on input line 130.
+Package pdftex.def Info: ./Pictures/hibernate.png used on input line 131.
 (pdftex.def)             Requested size: 357.32986pt x 128.0374pt.
 
 
-LaTeX Warning: Reference `apendixSensorSensitivity' on page 14 undefined on inp
-ut line 138.
+LaTeX Warning: Reference `apendixSensorSensitivity' on page 17 undefined on inp
+ut line 139.
 
-[14 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/deepSlee
+[17 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/deepSlee
 p.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 142--174
+Underfull \hbox (badness 10000) in paragraph at lines 143--175
 
  []
 
-[15 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/hibernat
+[18 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/hibernat
 e.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 227
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 228
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 227.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 228.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 227.
+(Font)              for symbol `textbraceleft' on input line 228.
 
-[16] <./Pictures/batCalcHP.png, id=929, 629.35126pt x 391.4625pt>
+[19] <./Pictures/batCalcHP.png, id=1037, 629.35126pt x 391.4625pt>
 File: ./Pictures/batCalcHP.png Graphic file (type png)
 
 <use ./Pictures/batCalcHP.png>
-Package pdftex.def Info: ./Pictures/batCalcHP.png used on input line 231.
+Package pdftex.def Info: ./Pictures/batCalcHP.png used on input line 232.
 (pdftex.def)             Requested size: 388.8205pt x 241.84842pt.
 
-<./Pictures/battery1.png, id=930, 621.32124pt x 391.4625pt>
+<./Pictures/battery1.png, id=1038, 621.32124pt x 391.4625pt>
 File: ./Pictures/battery1.png Graphic file (type png)
 
 <use ./Pictures/battery1.png>
-Package pdftex.def Info: ./Pictures/battery1.png used on input line 238.
+Package pdftex.def Info: ./Pictures/battery1.png used on input line 239.
 (pdftex.def)             Requested size: 383.85947pt x 241.84842pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--273
+Underfull \hbox (badness 10000) in paragraph at lines 244--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--279
+Underfull \hbox (badness 10000) in paragraph at lines 277--280
 
  []
 
-[17 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/batCalcH
+[20 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/batCalcH
 P.png> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/batte
-ry1.png>] <./Pictures/battery2.png, id=940, 808.01875pt x 454.69875pt>
+ry1.png>] <./Pictures/battery2.png, id=1048, 808.01875pt x 454.69875pt>
 File: ./Pictures/battery2.png Graphic file (type png)
 
 <use ./Pictures/battery2.png>
-Package pdftex.def Info: ./Pictures/battery2.png used on input line 282.
+Package pdftex.def Info: ./Pictures/battery2.png used on input line 283.
 (pdftex.def)             Requested size: 429.77675pt x 241.84842pt.
 
-Overfull \hbox (12.30368pt too wide) in paragraph at lines 282--284
+Overfull \hbox (12.30368pt too wide) in paragraph at lines 283--285
  [][] 
  []
 
-<./Pictures/battery3.png, id=941, 621.32124pt x 351.3125pt>
+<./Pictures/battery3.png, id=1049, 621.32124pt x 351.3125pt>
 File: ./Pictures/battery3.png Graphic file (type png)
 
 <use ./Pictures/battery3.png>
-Package pdftex.def Info: ./Pictures/battery3.png used on input line 289.
+Package pdftex.def Info: ./Pictures/battery3.png used on input line 290.
 (pdftex.def)             Requested size: 427.73563pt x 241.84842pt.
 
-Overfull \hbox (10.26256pt too wide) in paragraph at lines 289--291
+Overfull \hbox (10.26256pt too wide) in paragraph at lines 290--292
  [][] 
  []
 
 
-LaTeX Warning: Reference `appendixA' on page 18 undefined on input line 295.
+LaTeX Warning: Reference `appendixA' on page 21 undefined on input line 296.
 
 )
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Chapters\Chapter4.te
-x" [18 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/batte
-ry2.png>] [19 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Picture
+x" [21 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/batte
+ry2.png>] [22 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Picture
 s/battery3.png>]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 A WSN with Waspmotes: Implementation aspects
 ------------------------------------------------------------------------------
 
-LaTeX Warning: Reference `fig:envA' on page 20 undefined on input line 22.
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
-[20
+ []
 
-] [21] <./Pictures/over.jpg, id=965, 400.49625pt x 339.2675pt>
+[23
+
+]
+
+LaTeX Warning: Reference `appendixC' on page 24 undefined on input line 46.
+
+<./Pictures/API1.png, id=1070, 605.6226pt x 203.8014pt>
+File: ./Pictures/API1.png Graphic file (type png)
+
+<use ./Pictures/API1.png>
+Package pdftex.def Info: ./Pictures/API1.png used on input line 51.
+(pdftex.def)             Requested size: 295.92598pt x 99.58464pt.
+
+Overfull \hbox (1.62842pt too wide) in paragraph at lines 46--56
+\OT1/cmr/m/n/10 For our ap-pli-ca-tion WaspXBeeZB is one of the most im-por-tan
+t classes. It in-her-its from WaspXBee
+ []
+
+<./Pictures/API2.png, id=1071, 1070.0778pt x 364.7226pt>
+File: ./Pictures/API2.png Graphic file (type png)
+
+<use ./Pictures/API2.png>
+Package pdftex.def Info: ./Pictures/API2.png used on input line 59.
+(pdftex.def)             Requested size: 442.44121pt x 150.79968pt.
+
+Overfull \hbox (24.96814pt too wide) in paragraph at lines 59--61
+ [][] 
+ []
+
+[24]
+
+LaTeX Warning: Reference `fig:envA' on page 25 undefined on input line 82.
+
+[25 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/API1.png
+> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/API2.png>]
+[26] [27] <./Pictures/over.jpg, id=1103, 400.49625pt x 339.2675pt>
 File: ./Pictures/over.jpg Graphic file (type jpg)
 
 <use ./Pictures/over.jpg>
-Package pdftex.def Info: ./Pictures/over.jpg used on input line 118.
+Package pdftex.def Info: ./Pictures/over.jpg used on input line 178.
 (pdftex.def)             Requested size: 218.31807pt x 184.9429pt.
 
-<./Pictures/over1.jpg, id=968, 392.46625pt x 305.14pt>
+<./Pictures/over1.jpg, id=1106, 392.46625pt x 305.14pt>
 File: ./Pictures/over1.jpg Graphic file (type jpg)
 
 <use ./Pictures/over1.jpg>
-Package pdftex.def Info: ./Pictures/over1.jpg used on input line 133.
+Package pdftex.def Info: ./Pictures/over1.jpg used on input line 193.
 (pdftex.def)             Requested size: 176.60817pt x 137.31172pt.
 
-<./Pictures/over2.jpg, id=969, 392.46625pt x 305.14pt>
+<./Pictures/over2.jpg, id=1107, 392.46625pt x 305.14pt>
 File: ./Pictures/over2.jpg Graphic file (type jpg)
 
 <use ./Pictures/over2.jpg>
-Package pdftex.def Info: ./Pictures/over2.jpg used on input line 141.
+Package pdftex.def Info: ./Pictures/over2.jpg used on input line 201.
 (pdftex.def)             Requested size: 176.60817pt x 137.31172pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--148
+Underfull \hbox (badness 10000) in paragraph at lines 175--208
 
  []
 
-[22] [23 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/ove
-r.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over1
-.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over2.
-jpg>] <./Pictures/over3.jpg, id=983, 489.83pt x 398.48875pt>
+[28 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over.jpg
+>] <./Pictures/over3.jpg, id=1114, 489.83pt x 398.48875pt>
 File: ./Pictures/over3.jpg Graphic file (type jpg)
 
 <use ./Pictures/over3.jpg>
-Package pdftex.def Info: ./Pictures/over3.jpg used on input line 156.
+Package pdftex.def Info: ./Pictures/over3.jpg used on input line 216.
 (pdftex.def)             Requested size: 192.35585pt x 156.49014pt.
 
-<./Pictures/over4.jpg, id=986, 489.83pt x 398.48875pt>
+<./Pictures/over4.jpg, id=1117, 489.83pt x 398.48875pt>
 File: ./Pictures/over4.jpg Graphic file (type jpg)
 
 <use ./Pictures/over4.jpg>
-Package pdftex.def Info: ./Pictures/over4.jpg used on input line 178.
+Package pdftex.def Info: ./Pictures/over4.jpg used on input line 238.
 (pdftex.def)             Requested size: 195.92853pt x 159.39267pt.
 
-Overfull \hbox (8.06693pt too wide) in paragraph at lines 178--179
+Overfull \hbox (8.06693pt too wide) in paragraph at lines 238--239
  [] 
  []
 
-<./Pictures/over5.jpg, id=987, 489.83pt x 398.48875pt>
+<./Pictures/over5.jpg, id=1118, 489.83pt x 398.48875pt>
 File: ./Pictures/over5.jpg Graphic file (type jpg)
 
 <use ./Pictures/over5.jpg>
-Package pdftex.def Info: ./Pictures/over5.jpg used on input line 186.
+Package pdftex.def Info: ./Pictures/over5.jpg used on input line 246.
 (pdftex.def)             Requested size: 195.92853pt x 159.39267pt.
 
-Overfull \hbox (8.06693pt too wide) in paragraph at lines 186--187
+Overfull \hbox (8.06693pt too wide) in paragraph at lines 246--247
  [] 
  []
 
-[24 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over3.jp
-g>] <./Pictures/equal.jpg, id=994, 376.40625pt x 388.45125pt>
+[29 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over1.jp
+g> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over2.jpg
+> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over3.jpg>
+] <./Pictures/equal.jpg, id=1125, 376.40625pt x 388.45125pt>
 File: ./Pictures/equal.jpg Graphic file (type jpg)
 
 <use ./Pictures/equal.jpg>
-Package pdftex.def Info: ./Pictures/equal.jpg used on input line 214.
+Package pdftex.def Info: ./Pictures/equal.jpg used on input line 274.
 (pdftex.def)             Requested size: 151.6396pt x 156.49014pt.
 
-<./Pictures/equal1.jpg, id=995, 452.69125pt x 244.915pt>
+<./Pictures/equal1.jpg, id=1126, 452.69125pt x 244.915pt>
 File: ./Pictures/equal1.jpg Graphic file (type jpg)
 
 <use ./Pictures/equal1.jpg>
-Package pdftex.def Info: ./Pictures/equal1.jpg used on input line 222.
+Package pdftex.def Info: ./Pictures/equal1.jpg used on input line 282.
 (pdftex.def)             Requested size: 289.2586pt x 156.49014pt.
 
-<./Pictures/equal2.jpg, id=996, 452.69125pt x 235.88126pt>
+<./Pictures/equal2.jpg, id=1127, 452.69125pt x 235.88126pt>
 File: ./Pictures/equal2.jpg Graphic file (type jpg)
 
 <use ./Pictures/equal2.jpg>
-Package pdftex.def Info: ./Pictures/equal2.jpg used on input line 229.
+Package pdftex.def Info: ./Pictures/equal2.jpg used on input line 289.
 (pdftex.def)             Requested size: 300.33133pt x 156.49014pt.
 
-<./Pictures/equal3.jpg, id=997, 452.69125pt x 246.9225pt>
+<./Pictures/equal3.jpg, id=1128, 452.69125pt x 246.9225pt>
 File: ./Pictures/equal3.jpg Graphic file (type jpg)
 
 <use ./Pictures/equal3.jpg>
-Package pdftex.def Info: ./Pictures/equal3.jpg used on input line 236.
+Package pdftex.def Info: ./Pictures/equal3.jpg used on input line 296.
 (pdftex.def)             Requested size: 286.89624pt x 156.49014pt.
 
-<./Pictures/equal4.jpg, id=1001, 482.80376pt x 389.455pt>
+<./Pictures/equal4.jpg, id=1132, 482.80376pt x 389.455pt>
 File: ./Pictures/equal4.jpg Graphic file (type jpg)
 
 <use ./Pictures/equal4.jpg>
-Package pdftex.def Info: ./Pictures/equal4.jpg used on input line 246.
+Package pdftex.def Info: ./Pictures/equal4.jpg used on input line 306.
 (pdftex.def)             Requested size: 193.99475pt x 156.49014pt.
 
-<./Pictures/equal5.jpg, id=1002, 482.80376pt x 389.455pt>
+<./Pictures/equal5.jpg, id=1133, 482.80376pt x 389.455pt>
 File: ./Pictures/equal5.jpg Graphic file (type jpg)
 
 <use ./Pictures/equal5.jpg>
-Package pdftex.def Info: ./Pictures/equal5.jpg used on input line 255.
+Package pdftex.def Info: ./Pictures/equal5.jpg used on input line 315.
 (pdftex.def)             Requested size: 193.11807pt x 155.77924pt.
 
-Overfull \hbox (5.25647pt too wide) in paragraph at lines 255--256
+Overfull \hbox (5.25647pt too wide) in paragraph at lines 315--316
  [] 
  []
 
-<./Pictures/equal6.jpg, id=1003, 482.80376pt x 389.455pt>
+<./Pictures/equal6.jpg, id=1134, 482.80376pt x 389.455pt>
 File: ./Pictures/equal6.jpg Graphic file (type jpg)
 
 <use ./Pictures/equal6.jpg>
-Package pdftex.def Info: ./Pictures/equal6.jpg used on input line 263.
+Package pdftex.def Info: ./Pictures/equal6.jpg used on input line 323.
 (pdftex.def)             Requested size: 193.11807pt x 155.77924pt.
 
-Overfull \hbox (5.25647pt too wide) in paragraph at lines 263--264
+Overfull \hbox (5.25647pt too wide) in paragraph at lines 323--324
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--275
+Underfull \hbox (badness 10000) in paragraph at lines 303--335
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--275
+Underfull \hbox (badness 10000) in paragraph at lines 303--335
 
  []
 
-[25 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over4.jp
+[30 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over4.jp
 g> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/over5.jpg
-> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/equal.jpg>
-] [26 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/equal1
+>] [31 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/equal
+.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/equal1
 .jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/equal2
-.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/equal3
-.jpg>] [27 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/e
-qual4.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/e
-qual5.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/e
-qual6.jpg>])
+.jpg>] [32 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/e
+qual3.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/e
+qual4.jpg>])
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Chapters\Chapter5.te
-x" [28]
+x" [33 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/equal
+5.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/equal
+6.jpg>]
 Chapter 5.
 ------------------------------------------------------------------------------
- 5 Digital Signal Processor
+ 5 Optimizing Wireless Sensor Networks
 ------------------------------------------------------------------------------
-<./Pictures/dspPrinciple.jpg, id=1022, 401.5pt x 120.45pt>
+<./Pictures/dspPrinciple.jpg, id=1153, 401.5pt x 120.45pt>
 File: ./Pictures/dspPrinciple.jpg Graphic file (type jpg)
 
 <use ./Pictures/dspPrinciple.jpg>
 Package pdftex.def Info: ./Pictures/dspPrinciple.jpg used on input line 20.
 (pdftex.def)             Requested size: 284.53398pt x 85.35826pt.
 
-<./Pictures/sampling.jpg, id=1023, 777.90625pt x 500.87125pt>
+<./Pictures/sampling.jpg, id=1154, 777.90625pt x 500.87125pt>
 File: ./Pictures/sampling.jpg Graphic file (type jpg)
 
 <use ./Pictures/sampling.jpg>
 Package pdftex.def Info: ./Pictures/sampling.jpg used on input line 32.
 (pdftex.def)             Requested size: 132.56279pt x 85.35826pt.
- [29
+ [34
 
 ]
-<./Pictures/insideDSP.jpg, id=1028, 403.5075pt x 154.5775pt>
+<./Pictures/insideDSP.jpg, id=1159, 403.5075pt x 154.5775pt>
 File: ./Pictures/insideDSP.jpg Graphic file (type jpg)
 
 <use ./Pictures/insideDSP.jpg>
@@ -1162,44 +1229,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--58
 
  []
 
-[30 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/dspPrinc
+[35 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/dspPrinc
 iple.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/sa
-mpling.jpg>] <./Pictures/barrelShifter.jpg, id=1034, 735.74875pt x 527.9725pt>
+mpling.jpg>] <./Pictures/barrelShifter.jpg, id=1165, 735.74875pt x 527.9725pt>
 File: ./Pictures/barrelShifter.jpg Graphic file (type jpg)
 
 <use ./Pictures/barrelShifter.jpg>
 Package pdftex.def Info: ./Pictures/barrelShifter.jpg used on input line 71.
 (pdftex.def)             Requested size: 257.71799pt x 184.9429pt.
 
-<./Pictures/usefullDSPArchitecture.jpg, id=1036, 490.83376pt x 359.3425pt>
+<./Pictures/usefullDSPArchitecture.jpg, id=1167, 490.83376pt x 359.3425pt>
 File: ./Pictures/usefullDSPArchitecture.jpg Graphic file (type jpg)
 
 <use ./Pictures/usefullDSPArchitecture.jpg>
 Package pdftex.def Info: ./Pictures/usefullDSPArchitecture.jpg used on input li
 ne 81.
 (pdftex.def)             Requested size: 233.19339pt x 170.71652pt.
- [31 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/insideD
+ [36 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/insideD
 SP.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/barr
 elShifter.jpg>]
-<./Pictures/harvardVonNeuman.jpg, id=1043, 288.07625pt x 103.38625pt>
+<./Pictures/harvardVonNeuman.jpg, id=1174, 288.07625pt x 103.38625pt>
 File: ./Pictures/harvardVonNeuman.jpg Graphic file (type jpg)
 
 <use ./Pictures/harvardVonNeuman.jpg>
 Package pdftex.def Info: ./Pictures/harvardVonNeuman.jpg used on input line 93.
 
 (pdftex.def)             Requested size: 158.56549pt x 56.9055pt.
- [32 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/usefull
+ [37 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/usefull
 DSPArchitecture.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/
 Pictures/harvardVonNeuman.jpg>])
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Chapters\Chapter6.te
-x" [33]
+x" [38]
 Chapter 6.
 ------------------------------------------------------------------------------
  6 Implementation: C
 ------------------------------------------------------------------------------
-[34
+[39
 
-] <./Pictures//serial.png, id=1058, 289.08pt x 207.77625pt>
+] <./Pictures//serial.png, id=1189, 289.08pt x 207.77625pt>
 File: ./Pictures//serial.png Graphic file (type png)
 
 <use ./Pictures//serial.png>
@@ -1207,16 +1274,16 @@ Package pdftex.def Info: ./Pictures//serial.png used on input line 39.
 (pdftex.def)             Requested size: 79.6678pt x 57.2607pt.
 
 
-LaTeX Warning: Reference `AppendixC' on page 35 undefined on input line 48.
+LaTeX Warning: Reference `AppendixC' on page 40 undefined on input line 48.
 
-[35 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/serial.p
+[40 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/serial.p
 ng>]
 Overfull \hbox (1.08205pt too wide) in paragraph at lines 52--53
 []\OT1/cmr/m/n/10 supporting ac-cess to user-definable pe-riph-er-als like SPOR
 Ts,
  []
 
-<./Pictures/systemArchitectureDAI.jpg, id=1068, 577.1964pt x 459.1554pt>
+<./Pictures/systemArchitectureDAI.jpg, id=1199, 577.1964pt x 459.1554pt>
 File: ./Pictures/systemArchitectureDAI.jpg Graphic file (type jpg)
 
 <use ./Pictures/systemArchitectureDAI.jpg>
@@ -1224,17 +1291,17 @@ Package pdftex.def Info: ./Pictures/systemArchitectureDAI.jpg used on input lin
 e 62.
 (pdftex.def)             Requested size: 357.69072pt x 284.52756pt.
 
-<./Pictures/systemFunctionalDAI.jpg, id=1069, 796.9775pt x 468.75125pt>
+<./Pictures/systemFunctionalDAI.jpg, id=1200, 796.9775pt x 468.75125pt>
 File: ./Pictures/systemFunctionalDAI.jpg Graphic file (type jpg)
 
 <use ./Pictures/systemFunctionalDAI.jpg>
 Package pdftex.def Info: ./Pictures/systemFunctionalDAI.jpg used on input line 
 69.
 (pdftex.def)             Requested size: 406.35585pt x 239.00298pt.
- [36] [37 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/sy
+ [41] [42 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/sy
 stemArchitectureDAI.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Pa
 per/Pictures/systemFunctionalDAI.jpg>]
-<./Pictures/pinbuffer.jpg, id=1079, 412.54124pt x 240.9pt>
+<./Pictures/pinbuffer.jpg, id=1210, 412.54124pt x 240.9pt>
 File: ./Pictures/pinbuffer.jpg Graphic file (type jpg)
 
 <use ./Pictures/pinbuffer.jpg>
@@ -1242,23 +1309,23 @@ Package pdftex.def Info: ./Pictures/pinbuffer.jpg used on input line 90.
 (pdftex.def)             Requested size: 194.90158pt x 113.81102pt.
 
 
-LaTeX Warning: Reference `AppendixD' on page 38 undefined on input line 95.
+LaTeX Warning: Reference `AppendixD' on page 43 undefined on input line 95.
 
-<./Pictures/ad1835A.jpg, id=1082, 1204.5pt x 875.1897pt>
+<./Pictures/ad1835A.jpg, id=1213, 1204.5pt x 875.1897pt>
 File: ./Pictures/ad1835A.jpg Graphic file (type jpg)
 
 <use ./Pictures/ad1835A.jpg>
 Package pdftex.def Info: ./Pictures/ad1835A.jpg used on input line 118.
 (pdftex.def)             Requested size: 411.16032pt x 298.75394pt.
 
-<./Pictures/ADIAD1835.jpg, id=1083, 521.95pt x 368.37625pt>
+<./Pictures/ADIAD1835.jpg, id=1214, 521.95pt x 368.37625pt>
 File: ./Pictures/ADIAD1835.jpg Graphic file (type jpg)
 
 <use ./Pictures/ADIAD1835.jpg>
 Package pdftex.def Info: ./Pictures/ADIAD1835.jpg used on input line 125.
 (pdftex.def)             Requested size: 403.14517pt x 284.52756pt.
- [38 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/pinbuff
-er.jpg>] [39 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures
+ [43 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/pinbuff
+er.jpg>] [44 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures
 /ad1835A.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Picture
 s/ADIAD1835.jpg>]
 Overfull \hbox (7.52367pt too wide) in paragraph at lines 166--166
@@ -1271,7 +1338,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
-[40] <./Pictures/flowChart.jpg, id=1104, 735.74875pt x 642.4pt>
+[45] <./Pictures/flowChart.jpg, id=1235, 735.74875pt x 642.4pt>
 File: ./Pictures/flowChart.jpg Graphic file (type jpg)
 
 <use ./Pictures/flowChart.jpg>
@@ -1292,7 +1359,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
-[41]
+[46]
 Overfull \hbox (23.52309pt too wide) in paragraph at lines 214--214
 []   \OT1/cmtt/m/n/10 //Clear the Block Ready Semaphore, Set the isProcessing S
 emaphore before starting[] 
@@ -1304,14 +1371,14 @@ Overfull \hbox (65.52272pt too wide) in paragraph at lines 220--220
 ampleFreq * ( (int)(*time)++ ));[] 
  []
 
-[42 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/flowChar
+[47 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/flowChar
 t.jpg>]
 Overfull \hbox (1.02359pt too wide) in paragraph at lines 235--235
  []\OT1/cmtt/m/n/10 Modulation *modulator[4] = \OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/
 10 &TwoOperators, &ThreeOperators, &FourOperators,[] 
  []
 
-[43]
+[48]
 Overfull \hbox (27.5233pt too wide) in paragraph at lines 291--291
  []            \OT1/cmtt/m/n/10 op->signal[i] = 1-(fabs((t++*op->frequency%samp
 leFreq)-sampleFreq/2)[] 
@@ -1335,21 +1402,21 @@ Overfull \hbox (14.09474pt too wide) in paragraph at lines 311--312
 
 )
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Chapters\Chapter7.te
-x" [44]
+x" [49]
 Chapter 7.
 ------------------------------------------------------------------------------
  7 Communication with LabVIEW User Interface using UART Port Controller
 ------------------------------------------------------------------------------
-<./Pictures/uart.jpg, id=1125, 504.88625pt x 133.49875pt>
+<./Pictures/uart.jpg, id=1256, 504.88625pt x 133.49875pt>
 File: ./Pictures/uart.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart.jpg>
 Package pdftex.def Info: ./Pictures/uart.jpg used on input line 18.
 (pdftex.def)             Requested size: 322.83333pt x 85.35826pt.
- [45
+ [50
 
 ]
-<./Pictures/systemArchitectureDPI.jpg, id=1131, 579.8463pt x 457.71pt>
+<./Pictures/systemArchitectureDPI.jpg, id=1262, 579.8463pt x 457.71pt>
 File: ./Pictures/systemArchitectureDPI.jpg Graphic file (type jpg)
 
 <use ./Pictures/systemArchitectureDPI.jpg>
@@ -1357,17 +1424,17 @@ Package pdftex.def Info: ./Pictures/systemArchitectureDPI.jpg used on input lin
 e 45.
 (pdftex.def)             Requested size: 306.37921pt x 241.84842pt.
 
-<./Pictures/uart2.jpg, id=1132, 516.93124pt x 317.185pt>
+<./Pictures/uart2.jpg, id=1263, 516.93124pt x 317.185pt>
 File: ./Pictures/uart2.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart2.jpg>
 Package pdftex.def Info: ./Pictures/uart2.jpg used on input line 52.
 (pdftex.def)             Requested size: 301.42154pt x 184.9429pt.
- [46 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart.jp
+ [51 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart.jp
 g> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/systemArc
-hitectureDPI.jpg>] [47 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Pape
+hitectureDPI.jpg>] [52 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Pape
 r/Pictures/uart2.jpg>]
-<./Pictures/uart3.jpg, id=1142, 516.93124pt x 305.14pt>
+<./Pictures/uart3.jpg, id=1273, 516.93124pt x 305.14pt>
 File: ./Pictures/uart3.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart3.jpg>
@@ -1375,7 +1442,7 @@ Package pdftex.def Info: ./Pictures/uart3.jpg used on input line 80.
 (pdftex.def)             Requested size: 313.31622pt x 184.9429pt.
 Missing character: There is no × in font cmr10!
 
-<./Pictures/uart4.jpg, id=1143, 573.14125pt x 232.87pt>
+<./Pictures/uart4.jpg, id=1274, 573.14125pt x 232.87pt>
 File: ./Pictures/uart4.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart4.jpg>
@@ -1386,25 +1453,25 @@ Overfull \hbox (2.70938pt too wide) in paragraph at lines 103--105
  [][] 
  []
 
-[48 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart3.jp
-g>] <./Pictures/uart5.jpg, id=1152, 539.01375pt x 176.66pt>
+[53 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart3.jp
+g>] <./Pictures/uart5.jpg, id=1283, 539.01375pt x 176.66pt>
 File: ./Pictures/uart5.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart5.jpg>
 Package pdftex.def Info: ./Pictures/uart5.jpg used on input line 118.
 (pdftex.def)             Requested size: 416.71147pt x 136.5733pt.
 
-<./Pictures/uart6.jpg, id=1155, 552.0625pt x 254.9525pt>
+<./Pictures/uart6.jpg, id=1286, 552.0625pt x 254.9525pt>
 File: ./Pictures/uart6.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart6.jpg>
 Package pdftex.def Info: ./Pictures/uart6.jpg used on input line 127.
 (pdftex.def)             Requested size: 406.64977pt x 187.78836pt.
- [49 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart4.j
-pg>] [50 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uar
+ [54 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart4.j
+pg>] [55 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uar
 t5.jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart
 6.jpg>]
-<./Pictures/uart7.jpg, id=1168, 604.2575pt x 93.34875pt>
+<./Pictures/uart7.jpg, id=1299, 604.2575pt x 93.34875pt>
 File: ./Pictures/uart7.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart7.jpg>
@@ -1416,44 +1483,44 @@ Overfull \hbox (28.77304pt too wide) in paragraph at lines 152--152
 e URAT0 receive interrupt[] 
  []
 
-[51 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart7.jp
+[56 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart7.jp
 g>]
 Overfull \hbox (28.77304pt too wide) in paragraph at lines 173--173
 []   \OT1/cmtt/m/n/10 // The character in buffer is "w" (ASC-II of "w" = 0x77 e
 quivalent to 119 decimal)[] 
  []
 
-<./Pictures/uart8.jpg, id=1174, 484.81125pt x 287.0725pt>
+<./Pictures/uart8.jpg, id=1305, 484.81125pt x 287.0725pt>
 File: ./Pictures/uart8.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart8.jpg>
 Package pdftex.def Info: ./Pictures/uart8.jpg used on input line 203.
 (pdftex.def)             Requested size: 240.25972pt x 142.26378pt.
 
-<./Pictures/uart9.jpg, id=1175, 603.25375pt x 266.9975pt>
+<./Pictures/uart9.jpg, id=1306, 603.25375pt x 266.9975pt>
 File: ./Pictures/uart9.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart9.jpg>
 Package pdftex.def Info: ./Pictures/uart9.jpg used on input line 210.
 (pdftex.def)             Requested size: 321.44427pt x 142.26378pt.
 
-<./Pictures/uart10.jpg, id=1176, 571.13374pt x 215.80624pt>
+<./Pictures/uart10.jpg, id=1307, 571.13374pt x 215.80624pt>
 File: ./Pictures/uart10.jpg Graphic file (type jpg)
 
 <use ./Pictures/uart10.jpg>
 Package pdftex.def Info: ./Pictures/uart10.jpg used on input line 218.
 (pdftex.def)             Requested size: 376.5137pt x 142.26378pt.
- [52 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart8.j
+ [57 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart8.j
 pg>])
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Chapters\Chapter8.te
-x" [53 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart9
+x" [58 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart9
 .jpg> <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/uart10
 .jpg>]
 Chapter 8.
 ------------------------------------------------------------------------------
  8 Critical reflections
 ------------------------------------------------------------------------------
-[54
+[59
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 19--20
@@ -1475,67 +1542,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[55] [56]) ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Thesis.bb
-l" [57]
-Missing character: There is no ® in font cmti10!
-Missing character: There is no ® in font cmti10!
-Missing character: There is no ® in font cmti10!
+[60] [61]) ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Thesis.bb
+l" [62]
+Chapter 9.
+------------------------------------------------------------------------------
+ 9 Bibliography
+------------------------------------------------------------------------------
 
-Overfull \hbox (96.01141pt too wide) in paragraph at lines 56--59
-[]\OT1/cmr/m/n/10 J. Thomas, ``Mak-ing a stu-dio pt.3,'' May 2009.  http://en.a
-udiofanzine.com/homestudio/editorial/articles/making-
+Underfull \hbox (badness 1127) in paragraph at lines 26--30
+\OT1/cmr/m/n/10 open source plat-form.  [][]$\OT1/cmtt/m/n/10 http : / / www . 
+cooking-[]hacks . com / index . php / documentation /$
  []
 
+[63
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
-[]\OT1/cmr/m/n/10 G. Read, ``Synth se-crets, part 10: Mod-u-la-tion,'' Febru-ar
-y 2000.
- []
-
-
-Underfull \hbox (badness 1762) in paragraph at lines 78--80
-[]\OT1/cmr/m/n/10 G. Read, ``Synth se-crets, part 13: More on fre-quency mod-u-
-la-tion,'' May 2000.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--90
-[]\OT1/cmr/m/n/10 E. W. Weis-stein, ``Fourier se-ries - saw-tooth wave.''
- []
-
-
-Overfull \hbox (96.65001pt too wide) in paragraph at lines 92--94
-[]\OT1/cmr/m/n/10 E. W. Weis-stein, ``Fourier se-ries - square wave.''  http://
-mathworld.wolfram.com/FourierSeriesSawtoothWave.html. 
- []
-
-[58
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 96--98
-[]\OT1/cmr/m/n/10 E. W. Weis-stein, ``Fourier se-ries - tri-an-gle wave.''
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
-[]\OT1/cmr/m/n/10 E. W. Weis-stein, ``Bessel func-tion of the first kind.''
- []
-
-
-Underfull \hbox (badness 2119) in paragraph at lines 104--108
-[]\OT1/cmr/m/n/10 P. Burk, L. Polan-sky, D. Repetto, M. Roberts, and D. Rock-mo
-re, \OT1/cmr/m/it/10 Mu-sic and
- []
-
-
-Underfull \hbox (badness 4353) in paragraph at lines 104--108
-\OT1/cmr/m/it/10 Com-put-ers: A The-o-ret-i-cal and His-tor-i-cal Ap-proach\OT1
-/cmr/m/n/10 .  Key Col-lege Pub-lish-ing.
- []
-
-)
+])
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Appendices\AppendixA
-.tex" [59]
+.tex" [64]
 Appendix A.
 ------------------------------------------------------------------------------
  A XBee join and send time experiments
@@ -1545,7 +1568,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-<./Pictures/floors1.png, id=1244, 712.6625pt x 248.93pt>
+<./Pictures/floors1.png, id=1382, 712.6625pt x 248.93pt>
 File: ./Pictures/floors1.png Graphic file (type png)
 
 <use ./Pictures/floors1.png>
@@ -1556,7 +1579,7 @@ Overfull \hbox (30.54974pt too wide) in paragraph at lines 16--20
  [][] 
  []
 
-<./Pictures/floors2.png, id=1245, 714.67pt x 1049.9225pt>
+<./Pictures/floors2.png, id=1383, 714.67pt x 1049.9225pt>
 File: ./Pictures/floors2.png Graphic file (type png)
 
 <use ./Pictures/floors2.png>
@@ -1575,11 +1598,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--28
 
  []
 
-[60
+[65
 
  <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/floors1.png
->] [61 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/floor
-s2.png>] <./Pictures/floors3.png, id=1259, 623.32875pt x 425.59pt>
+>] [66 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/floor
+s2.png>] <./Pictures/floors3.png, id=1397, 623.32875pt x 425.59pt>
 File: ./Pictures/floors3.png Graphic file (type png)
 
 <use ./Pictures/floors3.png>
@@ -1590,18 +1613,18 @@ Overfull \hbox (20.10956pt too wide) in paragraph at lines 42--44
  [][] 
  []
 
-) [62 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/floors
+) [67 <D:/Dropbox/Bjorn/Documents/GROEP T - MASTER/THESIS/Paper/Pictures/floors
 3.png>]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 272.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 272.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
 ("D:\Dropbox\Bjorn\Documents\GROEP T - MASTER\THESIS\Paper\Thesis.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 272.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 272.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 66926D9796A7681BDA583256FAF9CFF5;23282.
+(rerunfilecheck)             Checksum: DFB58740A7B10F5974A6EF9767E077D1;26673.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1614,11 +1637,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11459 strings out of 494045
- 167442 string characters out of 3145969
- 248360 words of memory out of 3000000
- 14125 multiletter control sequences out of 15000+200000
- 18462 words of font info for 71 fonts, out of 3000000 for 9000
+ 11614 strings out of 494045
+ 169709 string characters out of 3145969
+ 249455 words of memory out of 3000000
+ 14238 multiletter control sequences out of 15000+200000
+ 18815 words of font info for 72 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  49i,12n,45p,1281b,524s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
@@ -1635,17 +1658,18 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-hoekwater/stmary10.pfb>
-Output written on Thesis.pdf (71 pages, 7954506 bytes).
+s/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ho
+ekwater/stmary10.pfb>
+Output written on Thesis.pdf (77 pages, 9004208 bytes).
 PDF statistics:
- 1408 PDF objects out of 1440 (max. 8388607)
- 327 named destinations out of 1000 (max. 500000)
- 1237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1557 PDF objects out of 1728 (max. 8388607)
+ 361 named destinations out of 1000 (max. 500000)
+ 1372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

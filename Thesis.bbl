@@ -1,109 +1,118 @@
 \begin{thebibliography}{10}
 
-\bibitem{ID1}
-Analog Devices, Inc., {\em ADSP-21367/ADSP-21368/ADSP-21369 SHARC Processor
-  Data Sheet}, a~ed.
-
-\bibitem{ID2}
-Analog Devices, Inc., {\em ADSP-21369 EZ-KIT Lite Evaluation System Manual},
-  2.2~ed., September 2009.
-
-\bibitem{ID3}
-Analog Devices, Inc., {\em ADM3202/ADM3222/ADM1385 Data Sheet}.
-\newblock Line Drivers/Receivers.
-
-\bibitem{ID4}
-Analog Devices, Inc., {\em Using the UART Port Controller on SHARC®
-  Processors}, ee-296~ed.
-
-\bibitem{ID5}
-Maxim, Inc., {\em Determining Clock Accuracy Requirements for UART
-  Communications}.
-
-\bibitem{ID14}
-Analog Devices, Inc., {\em AD1835A Data Sheet}, a~ed., 2003.
-
-\bibitem{ID15}
-Analog Devices, Inc., {\em ADSP-2136(7/8/9) SHARC® Processor Hardware
-  Reference}, 1.0~ed., August 2006.
-
-\bibitem{ID16}
-Analog Devices, Inc., {\em Using the Expert DAI for SHARC® Processors},
-  ee-243~ed., June 2010.
-
-\bibitem{ID6}
-P.~A.Blume, {\em The LabVIEW Style Book}.
-\newblock Prentice Hall, 1~ed., March 2007.
-
-\bibitem{ID7}
-R.~W. Larsen, {\em LabVIEW for Engineers}.
-\newblock Prentice Hall, 1~ed., February 2010.
-
-\bibitem{ID8}
-J.~G. Proakis and V.~K. Ingle, {\em Digital Signal Processing Using MATLAB}.
-\newblock Global Engineering: Christopher M. Shortt, 3~ed., August 2006.
-
-\bibitem{ID9}
-J.~Chowning and D.~Bristow, {\em FM Theory and Applications}.
-\newblock Shimomeguro Meguroku, Tokyo, Japan: Yamaha Music Foundation, 3~ed.,
-  1986.
-
-\bibitem{ID10}
-K.~Fujimoto, ``How to make and play sound with matlab.''
-\newblock http://www.h6.dion.ne.jp/~fff/old/technique/auditory/matlab.html.
-
-\bibitem{ID11}
-J.~Thomas, ``Making a studio pt.3,'' May 2009.
-\newblock
-  http://en.audiofanzine.com/homestudio/editorial/articles/making-a-studio-pt3.html.
+\bibitem{ID20}
+Cristina Alcaraz, Pablo Najera, Javier Lopez, and Rodrigo Roman.
+\newblock {\em Wireless Sensor Networks and The Internet of Things: Do We Need
+  a Complete Integration?}
+\newblock Computer Science Department University of Malaga, Spain, 2010.
 
 \bibitem{ID12}
-T.~Zuckerman, ``Pitches, in hertz, produced by a keyboard instrument with 88
-  digitals, tuned to equal temperament.''
-\newblock http://shakahara.com/pianopitch2.php.
-
-\bibitem{ID13}
-K.~Eneman, ``Coursebook on digital signal processing,'' 2011-2012.
-
-\bibitem{ID17}
-G.~Read, ``Synth secrets, part 10: Modulation,'' February 2000.
-\newblock http://www.soundonsound.com/sos/feb00/articles/synthsecrets.htm.
-
-\bibitem{ID19}
-G.~Read, ``Synth secrets, part 12: An introduction to frequency modulation,''
-  April 2000.
-\newblock http://www.soundonsound.com/sos/apr00/articles/synthsecrets.htm.
-
-\bibitem{ID18}
-G.~Read, ``Synth secrets, part 13: More on frequency modulation,'' May 2000.
-\newblock http://www.soundonsound.com/sos/may00/articles/synth.htm.
-
-\bibitem{ID20}
-A.~D. Inc., ``Digital signal processing 101- an introductory course in dsp
-  system design.''
-\newblock
-  http://www.analog.com/en/processors-dsp/processors/beginners\_guide\_to\_dsp/fca.html.
+Atmel.
+\newblock {\em 8-bit Atmel Microcontroller with 64K-128K-256K Bytes In-System
+  Programmable Flash}, October 2012.
 
 \bibitem{ID21}
-E.~W. Weisstein, ``Fourier series - sawtooth wave.''
-\newblock http://mathworld.wolfram.com/FourierSeriesSawtoothWave.html.
+Isidor Buchmann.
+\newblock Elevating self-discharge, 2013.
+\newblock
+  \url{http://batteryuniversity.com/learn/article/elevating_self_discharge/}.
 
 \bibitem{ID22}
-E.~W. Weisstein, ``Fourier series - square wave.''
-\newblock http://mathworld.wolfram.com/FourierSeriesSawtoothWave.html.
+Sebastian Buttrich.
+\newblock Wireless sensor networks, 2010.
+\newblock Course Lecture SPVC2010.
+
+\bibitem{ID18}
+Cooking~Hacks by~Libelium Comunicaciones Distribuidas~S.L.
+\newblock Wireless sensor networks open source platform.
+\newblock
+  \url{http://www.cooking-hacks.com/index.php/documentation/tutorials/waspmote/}.
+
+\bibitem{ID14}
+Digi International Inc.
+\newblock {\em X-CTU Configuration \& Test Utility Software}, 90001003a
+  edition, August 2008.
+
+\bibitem{ID13}
+Digi International Inc.
+\newblock {\em XBee XBee-PRO ZB RF Modules}, 90000976l edition, April 2012.
+
+\bibitem{ID15}
+Robert Faludi.
+\newblock {\em Building Wireless Sensor Networks}.
+\newblock O'Reilly Media Inc., first edition, 2011.
 
 \bibitem{ID23}
-E.~W. Weisstein, ``Fourier series - triangle wave.''
-\newblock http://mathworld.wolfram.com/FourierSeriesSawtoothWave.html.
+Kenneth Flamm.
+\newblock {\em Creating the Computer}.
+\newblock The Brookings Institution, 1988.
+
+\bibitem{ID19}
+Wireless Sensor Networks~Research Group.
+\newblock Libelium launches new generation of waspmote sensor nodes.
+\newblock April 2013.
+\newblock \url{http://www.sensor-networks.org/index.php?page=1309909904/}.
+
+\bibitem{ID16}
+Libelium.
+\newblock 50 sensor applications for a smarter world. get inspired!
+\newblock May 2012.
+\newblock \url{http://www.libelium.com/50_sensor_applications/}.
+
+\bibitem{ID3}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Agriculture 2.0 Technical Guide}, 2-0.3 edition, November 2012.
+
+\bibitem{ID4}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Gases 2.0 Technical Guide}, 2-0.2 edition, November 2012.
+
+\bibitem{ID2}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Waspmote Datasheet}, 2.3 edition, November 2012.
+
+\bibitem{ID11}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Waspmote Interruptions Programming Guide}, 0.2 edition, June
+  2012.
+
+\bibitem{ID7}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Waspmote Power Programming Guide}, 0.6 edition, July 2012.
+
+\bibitem{ID8}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Waspmote RTC Programming Guide}, 0.4 edition, June 2012.
+
+\bibitem{ID1}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Waspmote Technical Guide}, 3.4 edition, November 2012.
+
+\bibitem{ID9}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Waspmote Utilities Programming Guide}, 0.2 edition, June 2012.
+
+\bibitem{ID10}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Waspmote ZigBee Networking Guide}, 1.0 edition, November 2012.
+
+\bibitem{ID5}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Catalogue Wireless Sensor Networks 2013}, 4.2 edition, February
+  2013.
+
+\bibitem{ID6}
+Libelium Comunicaciones Distribuidas S.L.
+\newblock {\em Sensor Compatibility}, 0.5 edition, January 2013.
 
 \bibitem{ID24}
-E.~W. Weisstein, ``Bessel function of the first kind.''
-\newblock http://mathworld.wolfram.com/BesselFunctionoftheFirstKind.html.
+John~A. Stankovic.
+\newblock {\em Wireless Sensor Networks}.
+\newblock University of Virginia, Department of Computer Science, 2006.
 
-\bibitem{ID25}
-P.~Burk, L.~Polansky, D.~Repetto, M.~Roberts, and D.~Rockmore, {\em Music and
-  Computers: A Theoretical and Historical Approach}.
-\newblock Key College Publishing.
-\newblock http://music.columbia.edu/cmc/MusicAndComputers/.
+\bibitem{ID17}
+Arduino Team.
+\newblock Xbee shield.
+\newblock \url{http://arduino.cc/en/Main/ArduinoXbeeShield/}.
 
 \end{thebibliography}
