@@ -1,0 +1,119 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[AVR(2008)]{AVR}
+\emph{AVR-libc}, 1.6.4 edition, 2008.
+
+\bibitem[Alcaraz et~al.(2010)Alcaraz, Najera, Lopez, and Roman]{ALCA}
+Cristina Alcaraz, Pablo Najera, Javier Lopez, and Rodrigo Roman.
+\newblock \emph{Wireless Sensor Networks and The Internet of Things: Do We Need
+  a Complete Integration?}
+\newblock Computer Science Department University of Malaga, Spain, 2010.
+
+\bibitem[Atm(2012)]{ATMEGA}
+\emph{8-bit Atmel Microcontroller with 64K/128K/256K Bytes In-System
+  Programmable Flash}.
+\newblock Atmel, 2549p edition, 2012.
+
+\bibitem[Balansingham and Wang(2010)]{DAR}
+Ilangko Balansingham and Qinqhua Wang.
+\newblock \emph{Wireless Sensor Networks: Application - Centric Design}.
+\newblock Yen Kheng Tan, 2010.
+\newblock Available from:
+  \url{http://www.intechopen.com/books/wireless-sensor-networks-application-centric-design/wireless-sensor-networks-an-introduction}.
+
+\bibitem[Berger(2009)]{NIWSN}
+Robert Berger.
+\newblock \emph{Introduction to Wireless Sensor Networks}.
+\newblock NI Technical Symposium, 2009.
+
+\bibitem[Buchmann(2013)]{LION}
+Isodor Buchmann.
+\newblock Elevating self-discharge.
+\newblock \emph{Battery University}, 2013.
+\newblock
+  \url{http://batteryuniversity.com/learn/article/elevating_self_discharge}.
+
+\bibitem[Buttrich(2010)]{SEBA}
+Sebastian Buttrich.
+\newblock Wireless sensor networks, 2010.
+\newblock Course Lecture SPVC2010.
+
+\bibitem[deGategno and Garret(2010)]{ATLANTIC}
+Patrick deGategno and Banning Garret.
+\newblock The second wave of wireless communications: A game changer for global
+  development?
+\newblock \emph{Atlantic Council\/National Intelligence Council}, October 2010.
+
+\bibitem[Dig(2012)]{XBEE}
+\emph{XBee XBee-PRO ZB RF Modules}.
+\newblock Digi International Inc., 90000976l edition, April 2012.
+
+\bibitem[Farahani(2008)]{ZBWSN}
+Sahan Farahani.
+\newblock \emph{ZigBee Wirlesss Networks and Transceivers}.
+\newblock Elsevier, 2008.
+
+\bibitem[Fischione(2011)]{KTH}
+Carlo Fischione.
+\newblock \emph{An Introduction to Wireless Sensor Networks}.
+\newblock KTH Royal Institute of Technology, November 2011.
+
+\bibitem[Flamm(1988)]{FLAMM}
+Kenneth Flamm.
+\newblock \emph{Creating the Computer}.
+\newblock The Brookings Institution, 1988.
+
+\bibitem[Group(2013)]{NEW}
+WSN~Research Group.
+\newblock Libelium launches new generation of waspmote sensor nodes.
+\newblock April 2013.
+\newblock \url{http://www.sensor-networks.org/index.php?page=1309909904}.
+
+\bibitem[Hacks(2013)]{CH}
+Cooking Hacks.
+\newblock Wireless sensor networks open source platform.
+\newblock February 2013.
+\newblock
+  \url{http://www.cooking-hacks.com/index.php/documentation/tutorials/waspmote/}.
+
+\bibitem[Lib(2012)]{ZBGUIDE}
+\emph{Waspmote ZigBee Networking Guide}.
+\newblock Libelium Comunicaciones Distribuidas S.L., 1.0 edition, November
+  2012.
+
+\bibitem[Lib(2013)]{PRO}
+\emph{Waspmote (v1.1) vs Waspmote PRO (v1.2)}.
+\newblock Libelium Comunicaciones Distribuidas S.L., 4.0 edition, February
+  2013.
+
+\bibitem[S.L.()]{SQUID}
+Libelium Comuniaciones~Distribuidas S.L.
+\newblock Squidbee main page.
+\newblock \url{http://www.libelium.com/squidbee/index.php?title=Main_Page}.
+
+\bibitem[Team(2012)]{SHIELD}
+Arduino Team.
+\newblock Xbee shield, February 2012.
+\newblock \url{http://arduino.cc/en/Main/ArduinoXbeeShield/}.
+
+\bibitem[Wikipedia(2013{\natexlab{a}})]{AUTO}
+Wikipedia.
+\newblock Auto-id labs.
+\newblock March 2013{\natexlab{a}}.
+
+\bibitem[Wikipedia(2013{\natexlab{b}})]{DARWIKI}
+Wikipedia.
+\newblock Darpa.
+\newblock April 2013{\natexlab{b}}.
+
+\bibitem[Zennaro(2008)]{CHINA}
+Marco Zennaro.
+\newblock Wsn in china.
+\newblock \emph{Wireless Sensor Networks Blog}, January 2008.
+
+\end{thebibliography}

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{err}{\PYZsh{}}\PY{n}{define} \PY{n}{Message} \PY{l+s}{\PYZdq{}}\PY{l+s}{Test Message}\PY{l+s}{\PYZdq{}}\PY{o}{!}
+  \PY{n}{USB}\PY{p}{.}\PY{n}{println}\PY{p}{(}\PY{n}{Message}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

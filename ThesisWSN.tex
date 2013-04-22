@@ -1,0 +1,185 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%pdflatex -synctex=1 -interaction=nonstopmode %.tex
+
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\graphicspath{{./Pictures/}}
+\usepackage{StyleEN}
+
+\usepackage{titlesec}	%for \paragraph{•}
+\setcounter{secnumdepth}{4}
+
+\usepackage{enumitem}	%reduces space between bullets
+%\setlist[1]{itemsep=-5pt}
+%\setenumerate{topsep=-\baselineskip}
+\setlist{nolistsep}
+
+%\newcommand\TestAppExists[3]{#2}
+%\usepackage{minted}
+%\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\usepackage{texments}
+%\usepackage{fontspec}
+%\usepackage{minted}
+
+\usepackage{wrapfig}
+
+%\setsansfont{Calibri}
+%\setmonofont{Consolas}
+
+
+
+
+\usepackage{hyperref}
+\usepackage{flushend}
+\usepackage{multicol} 
+\usepackage{float}		%figures in one col!!
+%\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+\usepackage{graphicx}% http://ctan.org/pkg/graphicx
+
+\usepackage{stmaryrd}
+\usepackage{epsfig}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{array}
+\usepackage{multirow} 
+%\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{natbib}
+
+%Notice that the two logos on top of the page are .eps, so you have .eps figures anyway.
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+    \pdffalse
+\else
+    \pdftrue
+    \pdfoutput=1
+\fi
+
+\ifpdf
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\epstopdfsetup{suffix=}
+\usepackage{epsfig}
+\DeclareGraphicsRule{.eps}{pdf}{.pdf}{`epstopdf #1}
+\pdfcompresslevel=9
+\else
+\usepackage{graphicx}
+\usepackage{epsfig}
+\fi
+
+\usepackage{amsmath,amssymb}
+\usepackage[english]{babel}
+%\usepackage[numberedbib]{apacite}
+
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\title{Design of a Wireless Sensor Networking Test-Bed}
+
+\author{Bjorn Deraeve\supit{*}, Roel Storms\supit{*} \\ \vspace*{0.25cm}
+            \small{\supit{*}Master student $<$EA-ICT focus Internet Computing,$>$, GROUP T - Leuven Engineering College, Vesaliusstraat 13, 3000 Leuven \\ \vspace*{1.5cm}
+            Supervisor: Dr. Luc Vandeurzen \\            
+            Unit Information, GROUP T - Leuven Engineering College, Vesaliusstraat 13, 3000 Leuven, \href{mailto:luc.vandeurzen@groept.be}{luc.vandeurzen@groept.be}} \\ \vspace*{1em}
+            Co-supervisor(s): $<$Names$>$\\
+            $<$Department,$\ldots>$, $<$Company$>$, $<$Company Address$>$\\
+            }
+  
+\input{TitlePageEN.tex}
+\pagebreak  
+%----------------------------------------------------------------------------------------
+%	CONTENT - SECTIONS
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	REAL TITLE PAGE
+%	Your institution may give you a different text to place here
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+%----------------------------------------------------------------------------------------
+%\def\x{{\mathbf x}}
+%\def\L{{\cal L}}
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+\twocolumn
+\input{./Chapters/Chapter1}
+\input{./Chapters/Chapter2}
+\input{./Chapters/Chapter3}
+\input{./Chapters/Chapter4}
+\input{./Chapters/Chapter5}
+\input{./Chapters/Chapter6}
+%\pagebreak
+
+
+
+% To start a new column (but not a new page) and help balance the last-page
+% column length use \vfill\pagebreak.
+% -------------------------------------------------------------------------
+%\vfill
+%\pagebreak
+
+\vspace{2em}
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\refname}{REFERENCES}
+\bibliographystyle{plainnat}
+%\nocite{*}
+\bibliography{./Bibliography}
+
+%----------------------------------------------------------------------------------------
+%	CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+\onecolumn
+\appendix
+\input{./Appendices/AppendixA}
+%\input{./Appendices/AppendixG}
+%\pagebreak
+\input{./Appendices/AppendixB}
+\input{./Appendices/AppendixC}
+\input{./Appendices/AppendixD}
+\input{./Appendices/AppendixE}
+\input{./Appendices/AppendixF}
+\end{document}

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{typedef} \PY{k}{enum}\PY{p}{\PYZob{}}\PY{n}{HIGHPERFORMANCE}\PY{p}{,} \PY{n}{POWERSAVER}\PY{p}{\PYZcb{}} 
+	\PY{n}{PowerPlan}\PY{p}{;} 
+\end{Verbatim}

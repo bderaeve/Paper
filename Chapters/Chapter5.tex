@@ -1,120 +1,36 @@
 % Chapter 5
+%----------------------------------------------------------------------------------------
+\section{Extracting the data}
+\subsection{Programming language choice}
+To start programming a choice had to be made. Which programming language and what operating system? Since we only knew Java, C++ and C these languages had our preference. Another requirement was that running the program on an embedded device. Linux has more options is the embedded domain then windows. For instance the raspberry pi is a cheap embedded device with an Ethernet connection and 2 usb ports and a 700mhz ARM processor that can run different linux distributions.\\
+The easiest language is definitely java. It is easy because a lot of libraries are already included in the language. For a gateway several libraries are necessary. A HTTP library to send requests to ipsum and receive requests directly from the web application. Second, an XML or JSON library to format data in these HTTP requests. Since the cloud storage system, Ipsum, uses XML the rest of the gateway also uses XML instead of JSON.\\
+On the other side there is the zigbee network which communicates using RS232. In java this serial communication is also build in. In C or C++ it depends on the OS, for linux it is possible to use read and write to and from file descriptors.\\
+So on first sight java seems to be the preferred choice. But since it has to run embedded and processing power might be limited java is less ideal. On a raspberry pi computing power is no problem. Maybe in the future more services should run on the same device so there is an advantages in using C or C++.\\
+So this leaves C and C++. They are both equally fast in execution but C++ is easier to develop since  it support more libraries (libraries for C van also be used in C++ but not the other way around) and it has a lot more typechecking so that code that compiles will probably also execute without errors. In C there is a lot of static casting to void pointers and this often results in harder to find bugs. C++ also supports objects and classes that make it easier to create a larger program. There are several other advantages in C++ over C. An entire chapter is dedicated to the advantages of C++ over C in the book “thinking in C++” by Bruce Eckel. Also we wanted to have some more experience in C++ and writing this program in C++ sure improved our programming.
+%-------------------------------------------------------------------
+\subsection{Implementation aspects}
+For the gateway it took some time to come up with the correct structure. Since a gateway generally has to wait a lot for incoming messages on different connections it is logical to construct a lot of threads which can wait while other threads keep on running. An option would be to use the pipeline pattern where 1 thread “generates” packets. This would be the zigbee receiver or the webservice. Then a few threads would act as filters on these packets, doing the necessary processing.\\
+One simple pipe would not work since there are more threads generating packets. For instance the ipsum thread can also generate packets to indicate that some packets could not be processed correctly. If ipsum is down this thread needs to store messages in the sql database.\\
+There is not really one flow of information going from one	 place to another. Information is coming in at different places and is also leaving the program at different places.\\
+A more flexible pattern is the thread pool pattern. This pattern is often used for webservers. Each thread then handles an incoming connection. Although mongoose uses this pattern in this way, it is not entirely the same for the gateway program. The gateway has a few threads, one for each type of connection. 
+%---------------------------------
+\subsubsection{Ipsum}
+There is one thread for ipsum where the connection to the ipsum database is maintained. Uploading data, changing frequency or in use setting of sensors are all tasks this thread has. The ipsum thread has an incoming queue and an outgoing queue. The incoming queue can contain several packets to indicate what data should be uploaded, what sensor frequencies should change or what nodes should be activated. If for some reason something goes wrong, ipsum will push packets on the outgoing queue to the main thread.
+%---------------------------------
+\subsubsection{ZigBee}
+On the zigbee side there are 2 threads, one for sending and one for receiving packets. Received packets are pushed onto a queue that is read out in the main thread. Received packets can be sensor data, errors and responses from sent packets. When the main thread needs something to be done in the zigbee network it will push a packet onto the queue going to the zigbee sender thread. For instance: changes sample frequencies, request IO data, activate a node.
+%---------------------------------
+\subsubsection{Web service}
+As mentioned before, mongoose is used as webserver. Mongoose sets up some threads to handle incoming connections. All these threads can push packets onto a queue going to the main thread. In the main threads the XML data is analyzed and the right actions are performed. Possible webservice requests are: add node, add sensor, request IO and change frequency.
+%---------------------------------
+\subsubsection{Main thread}
+All intelligence can be found in the main thread. There it is decided what to do with incoming packets. Most often this means creating packets and putting them in the appropriate queues. \\
+The main thread also has access to local storage in the form of an sqlite database. Node information has to be stored locally in order to link zigbee addresses to the correct Ipsum ID’s. When a sensor data packet is received the main needs to look up to what ipsum sensors it has to upload this data. The relation between Ipsum ID and zigbee address is made when the webservice receives add node and add sensor requests.\\
+The local database also stores Ipsum packets that could not be sent. This could happen when the connection to Ipsum is down or the Ipsum service has crashed. Since losing data is not acceptable, it is also stored in in the sql database.\\
+Also errors could be logged in the database. For now errors are printed to \verb+cerr+. 
+%------------------------------------------------------------------
+\subsection{Hardware}
+The gateway consists of a zigbee radio connected to a computer via RS232. This computer could evolve into an embedded linux device such as the raspberry pi (http://www.raspberrypi.org/). It is important that it runs on linux since some libraries are necessary and the serial communication is based on system calls to the kernel. For instance xerces for XML parsing or boost for the multithreading and some other small features.\\
+The library for the webserver is mongoose and the one for en sql database is sqlite. Both libraries are written in C and consist out of 1 header and 1 source file and are both compiled into the final program. So unlike xerces and boost the OS will not need to install these libraries since they are not dynamically linked.\\
+RS232 is a simple serial protocol that is used for low data rates. In linux an RS232 connection is easily set up by opening a file descriptor with the necessary options to configure baud rate, parity, stop bits, etc. After that you can use read and write functions to receive and send data from the zigbee radio.
 
-\chapter{Optimizing Wireless Sensor Networks} % Main chapter title
-\label{Chapter5} % For referencing the chapter elsewhere, use \ref{Chapter2} 
-\lhead{Chapter 5. \emph{Digital Signal Processor}} % This is for the header on each page - perhaps a shortened title
-\textsf{\textsl{Written by Bjorn Deraeve}}
-%----------------------------------------------------------------------------------------
-\section{Introduction}
-\subsection{What is digital signal processing?}
-Signal processing falls within the scope of electrical engineering and applied mathematics that deals with the analysis of signals or operations on signals. In order to do this signals are presented in descrete time, discrete frequency or other discrete signal domains. The set of algorithmic solutions that are used to process digital signals are limited by the processing capabilities of the available hardware. 
-Digital Signal Processing (DSP) algorithms have long been run on standard computers. Today additional technologies such as specialized processors called Digital Signal Processors (DSP) are used. DSP processors can  perform typical DSP operations more efficiently thanks to single-cycle multiply-accumulate (MAC) units, shift registers and extra large accumulators. To increase speed and possible DSP realizations DSP processors are used in purpose-built hardware such as application-specific integrated circuits (ASICs) or field-programmable gate arrays (FPGAs).
-
-%----------------------------------------------------------------------------------------
-
-\subsection{How are DSP processors used?}
-DSPs receive real-world signals like voice, audio, video, ... that have been diditized and then mathematically manipulate them. DSP processors are a special type of microprocessors which are designed for performing mathematical functions like "add", "substract", "multiply" and "divide" very quickly.
-Real-world analog signals are converted by Analog-to-Digital converters and are turned into the digital format of 0s and 1s. Now the DSP can start working on this digitized information. When all processing is done the new samples are mostly feed back in the real world via Digital-to-Analog converters. This whole process happens at very high speeds.\\
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=3cm]{dspPrinciple}
-\rule{30em}{0.5pt}
-\caption{DSP Principle}
-\label{fig:dspPrinciple}
-\end{figure} \\
-For our FM synthesizer application the first step is different. The DSP processing algorithms consist of algorithms that create the signal and signals that manipulate those signals so the AD converters on our FPGA are not used.
-
-%----------------------------------------------------------------------------------------
-\section{Digitization}  %sampling theorem
-Real-world continuous signals have to be reduced to discrete signals (a numeric sequence) before a DSP can manipulate them. This sampling is done by an analog-to-digital converter (ADC) and the resulting samples are transported serially to the DSP.
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=3cm]{sampling}
-\rule{30em}{0.5pt}
-\caption{Signal sampling representation}
-\label{fig:sampling}
-\end{figure} \\
-The sampling frequency $f_{s}$ is the number of samples taken in one second. According to the Nyquist criterion, the sampling frequency must at least be twice the frequency of the highest frequency component of interest. If the sampling frequency is greater than or equal to twice the bandwidth of a bandlimited signal then the signal can be (re)constructed without aliasing. This frequency is called the Nyquist rate. 
-%----------------------------------------------------------------------------------------
-
-\section{Digital Signal Processors}
-As briefly mentioned in this chapter's introduction DSPs are processors with hardware, software, instruction sets, parallelism and data addressing that are optimized for high-speed numeric operations. 
-A DSP contains the following key components:
-\begin{itemize}
-\item \textbf{Program Memory:} here the processing algorithms are stored
-\item \textbf{Data Memory:} stores the signals to be processed
-\item \textbf{Compute Engine:} performs the mathematical operations, coordinates access to program and data memory
-\item \textbf{Input/Output:} connections to the outside world
-\end{itemize}
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=2.5cm]{insideDSP}
-\rule{30em}{0.5pt}
-\caption[Structere of a DSP]{DSP structure}
-\label{fig:insideDSP}
-\end{figure} 
-The need for high speed processors is because most DSP calculations are done on real-time signals. The inputsignal comes to the DSP as a train of individual samples from the AD converter. To do for example filtering in real-time, all calculations and operations on a sample must be completed before the next sample arrives. Usually also previous samples are needed so these must be stored somewhere and have to be quickly accesible. \\ 
-%----------------------------------------------------------------------------------------
-\subsection{Numeric architecture}
-We know that DSPs must complete multiply-accumulate, additions and bit-shift operations in a single instruction cycle. Hardware optimized for such numeric operations is typical to DSP processors and distinguishes them from other general-purpose microprocessors.
-The numeric operations are done by the DSP's MAC units, the arithmetic-logic unit (ALU) and barrel shifters:
-\begin{itemize}
-\item \textbf{MAC:} performs sum-of-products operations (used by FIR and IIR filters and fast Fourier transforms). The multiply-accumulate operation computes the product of two numbers and adds it to an accumulater:
-\begin{equation}
-a \shortleftarrow  a + ( b \times c )
-\end{equation}
-The multiplier is typically implemented in combinatonial logic followed by an adder and finally the accumulator register to store the result. If the output of the register is fed back to the adder each clock cycle the output of the multiplier is added to the register. Calculating multiplications with combinatorial logic requires a large amount of logic but is much faster than the method that uses shifts and additions.
-\item \textbf{ALU:} performs standard addition, substraction and basic logical operations
-\item \textbf{Barrel shifter:} performs operations on bits and words. This digital circuitry can shift a word by a specified number of bits in one clock cycle and is implemented as a sequence of multiplexers where the output of one mux is the input of the next mux. The input depends on the shift distance. An example of an 8-bit barrel shifter is shown in Figure \ref{fig:barrelShifter}. 
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=6.5cm]{barrelShifter}
-\rule{30em}{0.5pt}
-\caption[8-bit Barrel Shifter]{8-bit barrel shifter}
-\label{fig:barrelShifter}
-\end{figure} \\
-A barrel shifter is for example used for the implementation of floating-point arithmetic. To add two floats their significands must be aligned, which requires shifting the smaller number until it matches the exponent of the larger number.
-\end{itemize}
-As mentioned also parellelism plays a role in the efficiency of DSP processors. Figure \ref{fig:dspArchitecture} shows the parellelism of the ALU, MAC and shifter.
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=6.0cm]{usefullDSPArchitecture}
-\rule{30em}{0.5pt}
-\caption[DSP architecture]{Useful DSP architecture}
-\label{fig:dspArchitecture}
-\end{figure}
-%----------------------------------------------------------------------------------------
-\subsection{Memory architecture}
-Of course the memory of a DSP processor must be able to follow the high speed of the operations. Bus architecture must be optimized, there cannot be delays or bottlenecks. 
-\begin{itemize}
-\item Most general-purpose microprocessors use the von Neumann architecture and throughput is limited because of having to choose between either fetching data or fetching an instruction in each cycle. In DSP processors program memory and data memory have there own space and busses and can both be fetched in one cycle, doubling throughput. This structure is known as the Harvard architecture. Naturally additional optimizations  present on general-purpose processors, like instruction cache for example, are also present on DSPs.
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=2cm]{harvardVonNeuman}
-\rule{30em}{0.5pt}
-\caption[Harvard vs. Von Neuman]{Memory architecture: Von Neumann (top) vs. Harvard (below)}
-\label{fig:harvardVonNeumann}
-\end{figure}
-\item A lot of DSP algorithms need to get data from memory in repeating patterns. For example the fetching and manipulation of samples stored in an array. By reducing instructions needed for memory access instruction cycles can be saved. To reduce this overhead DSPs use specialized data address-generators (DAG) to automatically manage these types of repeated memory accesses. 
-Because most DSP algorithms use two operands the DSP has two DAGs. One address generator creates the address for the data memory bus, the other one for the program memory bus. By this way the DSP is able to sustain execution of instructions in one single cycle.
-\item Often DSP algorithms require data in a range of addresses going from the end of the buffer back to the start of the buffer (wrap around). Therefore the DSP is provided with hardware circular buffers. The DAGs are specially designed for this task. General-purpose processors perform these functions in software and limit the ability to handle real-time signals.
-\end{itemize}  
-%----------------------------------------------------------------------------------------
-
-\subsection{Sequencer architecture}
-Since most algorithms runned on a DSP processor are by nature repetitive, the compute engine's program counter must be able to loop through the code without overhead while getting from the end of the loop back to the start. 
-In general-purpose CPUs the loop's end condition is fully maintained in software. This condition instruction requires the fetching of addresses from memory and evaluation and takes time (cycles). DSP processors perform these tests in hardware, storing the needed addresses. In one cycle the condition is evaluated and either the first instruction of the loop is executed or the first instruction outside the loop is executed.
-%----------------------------------------------------------------------------------------
-
-\subsection{Input/Output architecture}
-Because of the high data throuhput requirement of the DSP the whole design is focused on making data accessible for the numeric, memory and sequencer sections. To transfer data into and out of the DSP quickly serial communications and DMA is used. The use of serial communications above parallel is naturally since this way data is sended one bit at a time, following the DSPs operating frequency and distributing work load. So the DSP communicates with ADCs, DACs or other devices through synchronous serial ports (SPORT). Other functions such as timers and boot logic (in other words: hardware interrupts) also ease DSP system design. 
-%----------------------------------------------------------------------------------------
-
-\section{Fixed-point vs. floating-point DSP}
-Digital signal processing can either be done with fixed point or with floating point data storage. DSPs designed to represent and manipulate integers are fixed point realizations. Floating-point DSPs represent and manipulate rational numbers. The number is represented in a similar manner to scientific notation, with a mantissa and an exponent (e.g. A $\times$ $2^{B}$ , where 'A' is the mantissa and 'B' is the exponent). 
-\subsection{Advantages of floating-point digital signal processors}
-In a fixed point DSP numbers are represented with a fixed number of digits after the decimal point, for example: 123.45, 1234.56, 12345,67, etc. In a floating point implementation the decimal point can 'float'.In addition a floating point representation can represent 1.234567, 123456.7, 0.001234567, etc.
-Thanks to the exponential representation floating-point DSPs support a much larger dynamic range: very small numbers and very large numbers can be stored. Another advantage of this that floating-point processing yields much higher precision than fixed point processing.
-\subsection{Considerations}
-In digital signal processing rounding and/or truncating numbers yields quantization error or noise, a difference between the real-world value and the quantized digital values. This also happens each times a DSP does a mathematical calculation. As such, floating-point processors are the ideal DSP when accuracy is critical, like in audio applications. This is noticable in the program of our FM synthesizer, where constantly calculations are done with float data.
-When choosing between fixed-point or floating-point processor there are many other important factors to consider, e.g. processor cost, ease of development, performance. In summary, because of the greater number of general purpose applications that can use fixed point processors those are typically less expensive than floating-point versions due to the scale of manufacturing. Floating-point DSPs are optimized for computationally intensive applications.

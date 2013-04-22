@@ -1,15 +1,45 @@
 % Appendix C
+\newpage
 
-\chapter{Block diagram of SHARC ADSP-21369 processor} % Main appendix title
-
-\label{AppendixC} % For referencing this appendix elsewhere, use \ref{AppendixA}
-
-\lhead{Appendix C. \emph{Block diagram of SHARC ADSP-21369 processor}} % This is for the header on each page - perhaps a shortened title
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=11cm]{sharc.png}
-%\rule{30em}{0.5pt}
-\caption{Block diagram of SHARC ADSP-21369 processor.}
-%\label{fig:sharc}
-\end{figure}
+\pagebreak
+\clearpage
+\section{Waspmote Variable Sleep Algorithms}
+\label{AppendixC} % For referencing this appendix elsewhere, use 
+\begin{table}[!hb]
+\begin{center}
+\begin{tabular}[!hb]{|c|c|c|c|c|}
+\hline
+\textbf{Sensor[4]} & \textbf{Sensor[3]} & \textbf{Sensor[2]} & \textbf{Sensor[1]} &\textbf{Sensor[0]}\\
+\hline
+100  & 50 & 35 & 10 & 20\\
+\hline
+\end{tabular}
+\caption{Individual Sensor Sleep Times in seconds}
+\label{tab:sleep1}
+\end{center}
+\end{table}
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}[!ht]{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Cycle} & \textbf{Sensor[4]} & \textbf{Sensor[3]} & \textbf{Sensor[2]} & \textbf{Sensor[1]} &\textbf{Sensor[0]} & \textbf{Sleep time}\\
+\hline
+0 & 100 & 50 & 35 & \textbf{10} & 20 & 10\\
+\hline
+1 & 90 & 40 & 25 & \textbf{10} & \textbf{10} & 10\\
+\hline
+2 & 80 & 30 & 15 & \textbf{10} & 20 & 10\\
+\hline
+3 & 70 & 20 & \textbf{5} & 10 & 10 & 5\\
+\hline
+4 & 65 & 15 & 25 & \textbf{5} & \textbf{5} & 5\\
+\hline
+5 & 60 & \textbf{10} & 20 & \textbf{10} & 20 & 10\\
+\hline
+6 & 50 & 50 & \textbf{10} & \textbf{10} & \textbf{10} & 10\\
+\hline
+\end{tabular}
+\caption{Example of sleep algorithm 1}
+\label{tab:sleep2}
+\end{center}
+\end{table}
