@@ -1,6 +1,7 @@
 % Chapter 5
 %----------------------------------------------------------------------------------------
 \section{Extracting the data}
+\label{extracting}
 \subsection{Programming language choice}
 To start programming a choice had to be made. Which programming language and what operating system? Since we only knew Java, C++ and C these languages had our preference. Another requirement was that running the program on an embedded device. Linux has more options is the embedded domain then windows. For instance the raspberry pi is a cheap embedded device with an Ethernet connection and 2 usb ports and a 700mhz ARM processor that can run different linux distributions.\\
 The easiest language is definitely java. It is easy because a lot of libraries are already included in the language. For a gateway several libraries are necessary. A HTTP library to send requests to ipsum and receive requests directly from the web application. Second, an XML or JSON library to format data in these HTTP requests. Since the cloud storage system, Ipsum, uses XML the rest of the gateway also uses XML instead of JSON.\\

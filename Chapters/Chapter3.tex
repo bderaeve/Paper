@@ -55,6 +55,54 @@ Since in \textit{Hibernate} mode the Waspmote is completely disconnected from th
 \label{pow}
 \subsubsection{Waspmote power modes}
 \label{dynPow}
+
+from intro:
+
+Waspmotes have a very low power consumption in \textit{Hibernate} mode but for shorter sleep times and the conservation of program variables \textit{Deep Sleep} mode is more advisable. Unfortunately it is not easy to combine and switch between the modes depending on the next time to sleep.\\
+Although OTA programming is supported on Waspmotes, it should be limited to a minimum in order to obtain reasonable battery durations. Writing to FLASH takes about 83nAH per byte, whilst reading only takes 1.1nAH per byte \citep{KTH}. 
+
+
+\paragraph{PHY Layer Responsibilities}
+\begin{itemize}
+\item Enabling and disabling the radio transceiver ... ...
+\item Transmit and receive data ... ...
+\item Select CH ... ...
+\item Estimating signal energy ... ...
+\item Providing RSSI, LQI ... ...
+\end{itemize}
+\paragraph{MAC Layer Responsibilities}
+\begin{itemize}
+\item Generating beacons ... ...
+\item CSMA-CA, BPSK vs. O-QPSK, vs. ASK ... ...
+\item Providing a reliable link ... ...
+\item PAN association and disassociation services
+\end{itemize}
+\paragraph{Network Layer Responsibilities}
+\begin{itemize}
+\item Setting up a network ... ...
+\item Allow joining and leaving a network ... ...
+\item Configuring new devices ... ...
+\item Discover and maintain routes ... ...
+\end{itemize}
+\paragraph{Application Layer Responsibilities}
+\begin{itemize}
+\item Application support ... ...
+\item Address management and mapping ... ...
+\item Define the role of the device ... ...
+\item Security related tasks ... ...
+\end{itemize}
+%-----------------------------------------
+\subsection{Networking concepts}
+\subsubsection{Device Types}
+\subsubsection{Device Roles}
+In table \ref{fig:roles} from \defcitealias{DYNAMIC}{Dynamic C: An Introduction to ZigBee User Manual, 2008}\citepalias{DYNAMIC} an overview of the device responsibilities on network layer is given. 
+\paragraph{Coordinator Operation}
+\paragraph{Router Operation}
+\paragraph{End Device Operation}
+sleep...
+\subsection{Parent - Child relationship}
+
+
 The libelium Waspmote has 4 operational modes: ON, Sleep, Deep Sleep and Hibernate. They differ from which type of interruptions they can be woken up and duration interval. For our application we want sleep intervals of 30 seconds and more, so only Deep Sleep and Hibernate mode are of interest. Table \ref{tab:cons1} summarizes the Waspmotes operational modes.
 \begin{table*}[!ht]
 \begin{center}
@@ -141,6 +189,7 @@ Waspmote, hibernate & 0,007$\mu$A\\
 The batteries included with our Waspmotes are rechargeable Lithium-ion batteries with a capacity of 6600mAH. The Waspmote that will be deployed on the roof of Group T, campus Vesalius will also have a 12V solar panel with a charging current up to 280 mA to extend its battery life. The other batteries can by charged manually or by USB (5V, 100mA). Lithium-ion have a self-discharge rate of typcially 1 to 2 percent per month \citep{LION} and since the used batteries are new we expect a high battery efficiency.\\
 %-------------------------------------------
 \paragraph{XBee and Waspmote start-up times}
+\label{startup}
 For the XBee node to join an existing network there are two power related possibilities. Either the Waspmote has been turned on already sufficiently long and the XBee had more than enough time to join the network, or either the XBee wasn't joined yet and the program needs to wait on this. From the experiments done at our apartment we came to following conclusions:
 \begin{enumerate}
 \item It takes about 2.5 seconds to join a network after powered on.

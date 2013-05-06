@@ -1,13 +1,65 @@
 % Chapter 4
-%\chapter{A WSN with Waspmotes: Implementation aspects} % Main chapter title
-%\label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter1} 
-%\lhead{Chapter 4. \emph{A WSN with Waspmotes: Implementation aspects}}
-%\textsl{Written by Frederik De Greef}
-%\pagebreak
 %----------------------------------------------------------------------------------------
 \section{A WSN with Waspmotes: Implementation aspects}
 \subsection{Introduction}
-To start programming the Waspmotes the first step is to install the Waspmote-IDE. This IDE uses the same compiler (AVR) and core libraries as the Arduino IDE. According to Libelium their IDE has been properly tested and proven to assure optimum operation. Unfortunately we cannot agree with this. The Waspmote-IDE also includes Libelium API libraries to help you creating your Waspmote programs. Libelium also offers a lot of program examples on their website. Sadly most of them don't work like Libelium claims they do.
+In this section the program running on the WSN nodes will be discussed. To start programming, Libelium offers its customers a customized IDE and a fairly extensive API. The IDE uses the same compiler (AVR) and core libraries as the Arduino IDE. The IDE is ideal to upload small examples and test programs. However, to facilitate programming and to obtain more C/C++ support, expanding the API is a better approach. This will be discussed more in section \ref{LibAPI}.\\
+After experimenting with the ZigBee sleep modes it became clear that some unstable results caused by delayed pending messages for end devices could not be avoided. The program does support XBee sleep modes but this section will only discuss stable operation modes. From now on, we will no longer differentiate between ZigBee routers and ZigBee end devices, but the sleep options will be controlled via Waspmote sleep modes, as recommended by Libelium \defcitealias{LIB_SLEEP}{Libelium-dev, 2013}\citepalias{LIB_SLEEP}. So a ZigBee router forced to sleep as well as a ZigBee end device will be considered as an 'End Device'. 
+
+%---------------------------------------------------
+
+\subsection{Program Structure}
+When ZigBee sleep modes are ignored, basically three different programs suffice to program the entire network. There is one program to support the gateway (which is also the ZigBee coordinator) to analyse the data received from the other nodes, which will be discussed in section \ref{extracting}. All the other nodes run either a 'Router' program or an 'End Device' program and are designed to collect and send data to the gateway. The only difference between these last programs is that a 'Router' program does not implement the sleep modes. Before continuing to the next sections, please have a look at the full 'End Device' program flowchart shown in figure \ref{fig:flow}.
+
+\subsubsection{Initialization}
+Figure \ref{fig:fsm} shows the simplified underlying logic of a dynamic C implementation of ZigBee at the application level. In one cycle each node has to associate with the network, measure some sensors, send the measured samples and possibly enter a sleep mode before repeating this cycle, depending on whether it has a 'Router' program or 'End Device' program running.\\ 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.35\textwidth]{fsm}
+\caption{ZigBee Application State Machine}
+\label{fig:fsm}
+\end{figure}
+\paragraph{Device start-up: Full initialization}
+When the program is executed for the first time, a full XBee setup will be executed with the parameters entered via the Libelium IDE. To ensure stability it takes about 8 seconds to write the settings to the XBee, to reset it afterwards (turn the power off and back on) and finally to perform the joining process. From this moment on the node will send its battery level to the coordinator and wait to receive its physical sensor layout settings. Until such an 'ADD\_NODE\_REQUEST' packet is received the sleeping time will gradually be increased in order to save battery power.
+\paragraph{Next cycles: Reduced initialization}
+By not resetting the PAN ID but by fetching it from the XBee's memory, the joining process only takes about two seconds\footnote{By enabling ZigBee sleep the node does not lose the association with its parent and the re-joining process only takes about 10ms. However, the time needed to receive messages pending in router devices varies between 5 and 15 seconds and is never compensated by the faster joining process. There is also no guarantee that pending messages will be received or in which order they will be received, so network stability can no longer be guaranteed.} (Please see appendix \ref{fig:envA} for more measurement results). Unfortunately a disadvantage of this shortened setup is that the XBee is no longer able to detect if the coordinator or his parent is actually available. The result of the association check is not always correct and the program will only notice this for the first time when it is trying to send a message. If this function results in a send error the program will do a full setup routine and resend the message. If the node then fails again to send the message we can conclude that the coordinator is really off-line or that there are no joinable nodes within range. In that case the measured sensors will be saved and tried to send during the next cycles. In order not to lose results, a system administrator will be notified if a node fails to report for several consecutive cycles.
+
+\subsubsection{Measuring sensors}
+sensor float to bytes conversion... ...
+\paragraph{Sending samples}
+escaping zeros... ...
+app ID = 10: 'IO\_DATA'... ...
+see appendix ?? for all our packets... ...
+\paragraph{Wait for received messages}
+Since this mode does not use ZigBee sleep, end devices can only receive messages when the are turned on. To coordinate this, end devices will check messages for a fixed amount of time just after sensor data has been sent.\\
+This means the Waspmote will only wake up when sensors have to be measured. Whereas in the next section ZigBee sleep is enabled and the Waspmote may also wake for polling, in order to avoid that messages buffered in routers get lost (since Waspmote v1.1 cannot be interrupted by available XBee RF Data). 
+
+
+\subsubsection{Sending and Receiving}
+\label{frames1}
+In the API of Waspmote v1.1 Libelium uses an 'Application Header' which is shown in figure \ref{fig:appH} to send and receive data. This header takes care of packet fragmentation if packets exceed the maximum payload limit and can also be used by the receiver to treat the packet or fragment. The header itself is sent inside the RF Data field of the API Frame Structure (see figure \ref{fig:frames}).\\
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.48\textwidth]{appHeader}
+\caption{Application Header}
+\label{fig:appH}
+\end{figure}
+The Waspmote and gateway programs use the 'Application ID' field in this header to distinguish different data in sent packets. In a first approach this extra layer we developed also serves as acknowledgement in the communication protocol. Depending on the 'Application ID' the layer contains a sensor mask is (a 16 bit-flag) and data. Examples are 'ADD\_NODE\_REQ' and 'CH\_SENS\_FREQ\_REQ'. Appendix \ref{OwnProtocolLabel} shows a complete overview off all options.\\
+To easily switch between the different requests and select the sensors contained in the received mask the program uses static function pointers. An example is given below:
+\usestyle{vs} %other useful styles are, bw,  borland, vs
+% Include the source code 
+\includecode{fp.cpp}
+
+\subsubsection{Without ZigBee sleep mode}
+%In this mode there is no difference between routers and end devices on XBee level. The only difference in program execution is that the sleeping period is skipped for routers.
+The user can set the device role during setup or even later on by sending a command to the Waspmote, which makes it easy to change a mote's device role. The device role is stored in the xbeeZB device type identifier (see \defcitealias{ZBGUIDE}{Waspmote ZigBee Networking Guide, 2012}\citepalias{ZBGUIDE} and '\textbf{WaspXBeeZBNode.h}').
+To better understand the next sections please have a quick look at the program flow chart in figure \ref{fig:flow}.
+
+
+
+
+
+%According to Libelium their IDE has been properly tested and proven to assure optimum operation. Unfortunately we cannot agree with this. 
+%Libelium also offers a lot of program examples on their website. Sadly most of them don't work like Libelium claims they do.
 \subsection{AVR compiler}
 \subsubsection{Toolchain Overview}
 To develop software for an AVR microcontroller several tools are working together. This group of tools produces the final executable and is commonly called a toolchain and is shown in figure \ref{fig:tool}. 
@@ -134,38 +186,39 @@ Each time the Waspmote wakes up, it will compare its current RTC value with the 
 Depending on the next time to sleep the program could decide for itself to go into hibernate, deepsleep or sleep with XBee sleep mode. Also, when the program detects inefficient measuring intervals, for example, 1 minute and 2 minutes 10 seconds, this can be notified to the installer or even be refused during setup.
 %----------------------------
 \subsubsection{With ZigBee sleep}
+\paragraph{Managing End Devices}
+ZigBee end devices are intended to be battery powered and are capable of sleeping for extended periods of time. Because of this, routers and coordinators use packet buffers and transmission timeouts to ensure reliable data delivery to end devices.\\
+When an end device joins the network, a parent-child relationship is formed with a router or the coordinator. From then on, if the end device is awake, it will send poll request messages (by default every 100 ms) to its parent to determine if the parent has any data buffered for it, independent of the sleep mode. Routers buffer this data only up to 28 - 30 seconds, so if we want to ensure reliable communication, this is the maximum sleep time. The child poll timeout can however be set up to a couple of months, so an end device can sleep longer than 30 seconds and still be considered to be in the network. This includes the node is associated within a few milliseconds, compared to the 2.5 seconds mentioned in section \ref{startup}. End devices can choose between two sleep modes, discussed in the next sections. 
+\paragraph{Pin sleep}
+In this mode an external microcontroller controls when the XBee should sleep and when it should wake by controlling pin 13. The module will not respond to serial or RF data when it is sleeping.\\\\
+\textbf{+} lowest power consumption\\
+\textbf{+} external controller can take samples without powering up the radio\\
+\textbf{-} ZigBee protocol has less control\\
+\textbf{-} external controller's timer is not accurate enough to synchronize the network\\
+\textbf{-} Need fully awake parent\\
+\paragraph{Cycle sleep}
+Allows the XBee to determine when to wake up. The module can sleep for a specified time and wake for a short time to poll its parent for buffered data. If the parent has date the device will remain awake for a time, otherwise it will re-enter sleep mode immediately. 
+\begin{itemize}
+\item + suitable for DigiMesh, where the sleep clocks is accurate enough to get all nodes awake at the same time
+\item + with DigiMesh, fully awake routers are not required, so they can be battery powered
+\item - more power consumption due to accurate clock
+\item - external controller must also wake when the XBee wakes to treat potentially received messages, even if there is no need to sample data
+\end{itemize}
+
+\paragraph{XBee sleep parameters}
+\textbf{Router/Coordinator Configuration:} 
+\begin{itemize}
+\item RF Packet Buffering Timeout: 
+\begin{itemize}
+\item Sleep Period (SP) parameter. Max 30 seconds.
+\item For cyclic sleep devices: SP should be set the same on routers and coordinators as it is on cyclic sleep end devices
+\item For pin sleep devices: SP should be set equal to the time the end device can sleep, up to 30 seconds. If an end device sleeps longer than 30 seconds, parent and possibly non-parent devices must know when the device is awake. Therefore and devices that sleep longer than 30 seconds should transmit some kind of data (API frame) to alert the other devices that they can send data to the end device.
+\end{itemize}
+\item Child Poll Timeout: Sleep Number (SN) parameter: The number of Sleep Periods (SP) used to calculated end device poll timeout.
+
+SP = 30
+SN = 3E8
+\end{itemize}
 ... ...
-\subsection{Program Structure}
-\subsubsection{Sending and Receiving}
-In the API of Waspmote v1.1 Libelium uses an 'Application Header' which is shown in figure \ref{fig:appH} to send and receive data. This header takes care of packet fragmentation if packets exceed the maximum payload limit and can also be used by the receiver to treat the packet or fragment. The header itself is sent inside the RF Data field of the API Frame Structure.\\
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.48\textwidth]{appHeader}
-\caption{Application Header}
-\label{fig:appH}
-\end{figure}
-The Waspmote and gateway programs use the 'Application ID' field in this header to distinguish different data in sent packets. In a first approach this extra layer we developed also serves as acknowledgement in the communication protocol. Depending on the 'Application ID' the layer contains a sensor mask is (a 16 bit-flag) and data. Examples are 'ADD\_NODE\_REQ' and 'CH\_SENS\_FREQ\_REQ'. Appendix \ref{AppendixG} shows a complete overview off all options.\\
-To easily switch between the different requests and select the sensors contained in the received mask the program uses static function pointers. An example is given below:
-\usestyle{vs} %other useful styles are, bw,  borland, vs
-% Include the source code 
-\includecode{fp.cpp}
+%--------------------------------------------------------------------
 
-\subsubsection{Without ZigBee sleep mode}
-In this mode there is no difference between routers and end devices on XBee level. The only difference in program execution is that the sleeping period is skipped for routers. The user can set the device role during setup or even later on by sending a command to the Waspmote, which makes it easy to change a mote's device role. The device role is stored in the xbeeZB device type identifier (see \defcitealias{ZBGUIDE}{Waspmote ZigBee Networking Guide, 2012}\citepalias{ZBGUIDE} and '\textbf{WaspXBeeZBNode.h}').
-To better understand the next sections please have a quick look at the program flow chart in figure \ref{fig:flow}.
-\paragraph{Device start-up}
-Whether we come out of a hardware reset or a hibernate reset, the first thing the node will do is try to establish a connection with the network. Depending which reset we come from different routines will be executed. In normal operation mode this process only takes about 2 seconds (Please see appendix \ref{fig:envA} for more measurement results). However, when a node is not able to join a network it will go into panic mode. This means that if the operating sleeping time is small, this time will be ignored and the node will wake up less frequently until it is able to rejoin the network, that way saving battery power. Supposing the node is able to rejoin the network, it will send the number of panics it experienced to the coordinator so a network administrator can investigate of the severity of the problem.
-
-\paragraph{Full initialization}
-When the program is executed for the first time or when a hardware reset is detected the XBee will execute a full initialization process and the RTC will be set to zero. This means the default PAN ID and possibly other user settings like node ID will be written to the XBee. After this write the XBee must be re-setted (turn the power off and back on) and only than the joining attempts can start. This means full initialization takes about 9 seconds on average. 
-
-\paragraph{Reduced initialization}
-By not resetting the PAN ID but fetching it from the XBee's memory the joining process only takes about two seconds. Unfortunately a disadvantage of this shortened setup is that the XBee is no longer able to detect if the coordinator or his parent is actually available. The program will only notices this for the first time when it is trying to send a message. If this function results in a send error the program will do a full setup routine and resend the message. If the node then fails again to send the message we can conclude that the coordinator is really off-line or that there are no joinable nodes within range. 
-
-
-\paragraph{Measuring sensors}
-sensor float to bytes conversion... ...
-\paragraph{Sending samples}
-escaping zeros... ...
-app ID = 10: 'IO\_DATA'... ...
-see appendix ?? for all our packets... ...

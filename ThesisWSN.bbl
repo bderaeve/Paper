@@ -1,9 +1,13 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{24}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[BW(1999)]{BW}
+21 ideas for the 21st century.
+\newblock \emph{Business Week}, Aug. 30:\penalty0 77--167, 1999.
 
 \bibitem[AVR(2008)]{AVR}
 \emph{AVR-libc}, 1.6.4 edition, 2008.
@@ -49,6 +53,11 @@ Patrick deGategno and Banning Garret.
   development?
 \newblock \emph{Atlantic Council\/National Intelligence Council}, October 2010.
 
+\bibitem[Dig(2008)]{DYNAMIC}
+\emph{Dynamic C: An Introduction to ZigBee}.
+\newblock Digi International Inc., 2008.
+\newblock Available on \url{http://www.rabbit.com}.
+
 \bibitem[Dig(2012)]{XBEE}
 \emph{XBee XBee-PRO ZB RF Modules}.
 \newblock Digi International Inc., 90000976l edition, April 2012.
@@ -80,6 +89,12 @@ Cooking Hacks.
 \newblock February 2013.
 \newblock
   \url{http://www.cooking-hacks.com/index.php/documentation/tutorials/waspmote/}.
+
+\bibitem[Libelium(2012)]{50}
+Libelium.
+\newblock 50 sensor applications for a smarter world. get inspired!
+\newblock May 2012.
+\newblock \url{http://www.libelium.com/50_sensor_applications/}.
 
 \bibitem[Lib(2012)]{ZBGUIDE}
 \emph{Waspmote ZigBee Networking Guide}.

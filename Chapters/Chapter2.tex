@@ -1,57 +1,23 @@
 %----------------------------------------------------------------------------------------
-\section{ZigBee}
-%----------------------------------------------------------------------------------------
-\subsection{ZigBee standard}
-%----------------------------------------------------------------------------------------
-At the moment ZigBee is the leading protocol to implement low-cost low-data-rate, short-range WSNs. It is an open global standard built on IEEE 802.15.4 and provides extra functionality regarding advanced routing capabilities and network stability.
-%-----------------------------------------
-\subsection{ZigBee stack}
-A common concept used to simplify and make digital communication more flexible, is the use of networking layers. Each layer is responsible for certain specific functions and pass data and commands only to the layers directly above or below via service access points. Figure \ref{fig:stack} shows how this is organized in the ZigBee protocol stack.  The bottom two layers are defined by the IEEE 802.15.4 standard and define the specifications for PHY and MAC layers. ZigBee only defines the networking, application and security layer on top of IEEE 802.15.4.\\
+\section{Design of the WSN Test-Bed}
+
+
+%------------------------------------------------------------------
+\subsection{Presentation of the thesis goal}
+The purpose of this thesis is creating a wireless sensor network in the GroupT Vesalius building. It is not our goal to cover the entire building with sensors but rather establish a basic wireless sensor network which reaches out throughout the entire building. So that later on sensor nodes can be added and they will be easy to integrate with the existing network. The data coming from these sensors should also be stored safely and a web interface should allow easy access to all data. For data storage Ipsum is used, this is a cloud storage system developed by Ruben Taqc. Ipsum is already used to log data coming from other sensors and is still being updated and maintained. The web interface is a master thesis of Matthias Verhelst. For normal users the web interface should fetch data from Ipsum. But for admin or privileged users it should also possible to communicate directly with the wireless sensor network. So the gateway has to have a web service running that can be contacted by clients via a web browser. Since wireless sensor nodes are battery power also the power consumption of these nodes has to be examined thoroughly to try and function for as long as possible without having to recharge the batteries. For a sensor network it is crucial that data storage happens correctly at all times. No data can be lost. So if Ipsum is unreachable, the gateway has to temporally store incoming data.
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.48\textwidth]{stack}
+\includegraphics[width=0.48\textwidth]{thesis}
 %\rule{30em}{0.5pt}
-\caption{ZigBee Protocol Layers}
-\label{fig:stack}
+\caption{Presentation of the subject}
+\label{fig:thesis}
 \end{figure} 
-\paragraph{PHY Layer Responsibilities}
-\begin{itemize}
-\item Enabling and disabling the radio transceiver ... ...
-\item Transmit and receive data ... ...
-\item Select CH ... ...
-\item Estimating signal energy ... ...
-\item Providing RSSI, LQI ... ...
-\end{itemize}
-\paragraph{MAC Layer Responsibilities}
-\begin{itemize}
-\item Generating beacons ... ...
-\item CSMA-CA, BPSK vs. O-QPSK, vs. ASK ... ...
-\item Providing a reliable link ... ...
-\item PAN association and disassociation services
-\end{itemize}
-\paragraph{Network Layer Responsibilities}
-\begin{itemize}
-\item Setting up a network ... ...
-\item Allow joining and leaving a network ... ...
-\item Configuring new devices ... ...
-\item Discover and maintain routes ... ...
-\end{itemize}
-\paragraph{Application Layer Responsibilities}
-\begin{itemize}
-\item Application support ... ...
-\item Address management and mapping ... ...
-\item Define the role of the device ... ...
-\item Security related tasks ... ...
-\end{itemize}
-%-----------------------------------------
-\subsection{Networking concepts}
-\subsubsection{Device Types}
-\subsubsection{Device Roles}
-\paragraph{Coordinator Operation}
-\paragraph{Router Operation}
-\paragraph{End Device Operation}
-sleep...
-\subsection{Parent - Child relationship}
+
+
+
+
+%----------------------------------------------------------------------------------------
+
 %-------------------------------------------------------------------
 \subsection{API Frame Specifications}
 To communicate with the ZigBee radio there are 2 modes, AT (transparent mode) and API (application programming interface). AT mode means that what you send to the zigbee radio using RS232, the ZigBee radio will send to its default destination. Unless you send “+++”, wait for the ZigBee to reply with OK, and then send an AT command. AT commands are used to change the configuration of the ZigBee radio. For instance the AT command OP requests the operating PAN ID.\\
