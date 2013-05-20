@@ -29,9 +29,6 @@
 %\setsansfont{Calibri}
 %\setmonofont{Consolas}
 
-
-
-
 \usepackage{hyperref}
 \usepackage{flushend}
 \usepackage{multicol} 
@@ -51,6 +48,9 @@
 %\usepackage[nottoc,numbib]{tocbibind}
 \usepackage{natbib}
 
+\usepackage{flushend}
+\usepackage{balance}
+
 %Notice that the two logos on top of the page are .eps, so you have .eps figures anyway.
 \newif\ifpdf
 \ifx\pdfoutput\undefined
@@ -62,6 +62,7 @@
 
 \ifpdf
 \usepackage{graphicx}
+\usepackage{caption}
 \usepackage{epstopdf}
 \epstopdfsetup{suffix=}
 \usepackage{epsfig}
@@ -84,11 +85,11 @@
 \title{Design of a Wireless Sensor Networking Test-Bed}
 
 \author{Bjorn Deraeve\supit{*}, Roel Storms\supit{*} \\ \vspace*{0.25cm}
-            \small{\supit{*}Master student $<$EA-ICT focus Internet Computing,$>$, GROUP T - Leuven Engineering College, Andreas-Vesaliusstraat 13, 3000 Leuven \\ \vspace*{1.5cm}
+            \small{\supit{*}Master student EA-ICT focus Internet Computing, GROUP T - Leuven Engineering College, Andreas Vesaliusstraat 13, 3000 Leuven \\ \vspace*{1.5cm}
             Supervisor: Dr. Luc Vandeurzen \\            
-            Unit Information, GROUP T - Leuven Engineering College, Andreas-Vesaliusstraat 13, 3000 Leuven, \href{mailto:luc.vandeurzen@groept.be}{luc.vandeurzen@groept.be}} \\ \vspace*{1em}
-            Co-supervisor(s): $<$Names$>$\\
-            $<$Department,$\ldots>$, $<$Company$>$, $<$Company Address$>$\\
+            Unit Information, GROUP T - Leuven Engineering College, Andreas Vesaliusstraat 13, 3000 Leuven, \href{mailto:luc.vandeurzen@groept.be}{luc.vandeurzen@groept.be}} \\ \vspace*{1em}
+            %Co-supervisor(s): $<$Names$>$\\
+            %$<$Department,$\ldots>$, $<$Company$>$, $<$Company Address$>$\\
             }
   
 \input{TitlePageEN.tex}
@@ -110,8 +111,7 @@
 %	ABSTRACT PAGE
 %----------------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------%	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
 %----------------------------------------------------------------------------------------
@@ -150,12 +150,6 @@
 
 
 
-% To start a new column (but not a new page) and help balance the last-page
-% column length use \vfill\pagebreak.
-% -------------------------------------------------------------------------
-%\vfill
-%\pagebreak
-
 \vspace{2em}
 
 
@@ -168,6 +162,16 @@
 \bibliographystyle{plainnat}
 %\nocite{*}
 \bibliography{./Bibliography}
+
+%\balancecolumns
+
+% To start a new column (but not a new page) and help balance the last-page
+% column length use \vfill\pagebreak.
+% -------------------------------------------------------------------------
+%\vfill
+%\pagebreak
+%\clearpage
+
 
 %----------------------------------------------------------------------------------------
 %	CONTENT - APPENDICES
@@ -183,4 +187,6 @@
 \input{./Appendices/AppendixE}
 \input{./Appendices/AppendixF}
 \input{./Appendices/AppendixG}
+
+
 \end{document}

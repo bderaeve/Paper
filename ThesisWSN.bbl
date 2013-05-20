@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{33}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -53,6 +53,30 @@ Patrick deGategno and Banning Garret.
   development?
 \newblock \emph{Atlantic Council\/National Intelligence Council}, October 2010.
 
+\bibitem[Developers(2010{\natexlab{a}})]{BOOST}
+Boost Developers.
+\newblock Boost c++ libraries.
+\newblock 2010{\natexlab{a}}.
+\newblock Available at \url{http://www.boost.org}.
+
+\bibitem[developers(2013)]{RASP}
+Raspbian developers.
+\newblock Welcome to raspbian.
+\newblock 2013.
+\newblock Available at: \url{http://www.raspbian.org/}.
+
+\bibitem[Developers(2013)]{SQ}
+SQLite Developers.
+\newblock Sqlite.
+\newblock 2013.
+\newblock Available at \url{http://www.sqlite.org/}.
+
+\bibitem[Developers(2010{\natexlab{b}})]{XER}
+Xerces Developers.
+\newblock Xerces-c++ xml parser.
+\newblock 2010{\natexlab{b}}.
+\newblock Available at \url{http://xerces.apache.org/xerces-c/}.
+
 \bibitem[Dig(2008)]{DYNAMIC}
 \emph{Dynamic C: An Introduction to ZigBee}.
 \newblock Digi International Inc., 2008.
@@ -76,6 +100,12 @@ Carlo Fischione.
 Kenneth Flamm.
 \newblock \emph{Creating the Computer}.
 \newblock The Brookings Institution, 1988.
+
+\bibitem[Foundation(2011)]{RASPBERRY}
+The Raspberry~Pi Foundation.
+\newblock Raspberry pi.
+\newblock 2011.
+\newblock Available at: \url{http://www.raspberrypi.org/}.
 
 \bibitem[Group(2013)]{NEW}
 WSN~Research Group.
@@ -106,25 +136,48 @@ Libelium.
 \newblock Libelium Comunicaciones Distribuidas S.L., 4.0 edition, February
   2013.
 
+\bibitem[Libelium-dev(2013)]{LIBSLEEP}
+in~response to Bjorn~Deraeve Libelium-dev.
+\newblock Sleep options and buffers.
+\newblock 2013.
+\newblock Available at
+  \url{http://www.libelium.com/forum/viewtopic.php?f=17&t=10432}.
+
 \bibitem[S.L.()]{SQUID}
 Libelium Comuniaciones~Distribuidas S.L.
 \newblock Squidbee main page.
 \newblock \url{http://www.libelium.com/squidbee/index.php?title=Main_Page}.
+
+\bibitem[Sweet(1999)]{SWEET}
+Michael~R. Sweet.
+\newblock \emph{Serial Programming Guide for POSIX Operating Systems}, 1999.
+\newblock Available at \url{http://www.cmrr.umn.edu/~strupp/serial.html}.
 
 \bibitem[Team(2012)]{SHIELD}
 Arduino Team.
 \newblock Xbee shield, February 2012.
 \newblock \url{http://arduino.cc/en/Main/ArduinoXbeeShield/}.
 
+\bibitem[Valenok(2013)]{MONG}
+Valenok.
+\newblock Mongoose - easy to use web server.
+\newblock 2013.
+\newblock Available at \url{https://code.google.com/p/mongoose/}.
+
 \bibitem[Wikipedia(2013{\natexlab{a}})]{AUTO}
 Wikipedia.
 \newblock Auto-id labs.
 \newblock March 2013{\natexlab{a}}.
 
-\bibitem[Wikipedia(2013{\natexlab{b}})]{DARWIKI}
+\bibitem[Wikipedia(2013{\natexlab{b}})]{AVRWIKI}
 Wikipedia.
 \newblock Darpa.
-\newblock April 2013{\natexlab{b}}.
+\newblock May 2013{\natexlab{b}}.
+
+\bibitem[Wikipedia(2013{\natexlab{c}})]{DARWIKI}
+Wikipedia.
+\newblock Atmel avr.
+\newblock April 2013{\natexlab{c}}.
 
 \bibitem[Zennaro(2008)]{CHINA}
 Marco Zennaro.

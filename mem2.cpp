@@ -1,7 +1,2 @@
-  char str[5];
-  str[0] = 't';  
-  str[1] = 'e';
-  str[2] = 's';
-  str[3] = 't';
-  str[4] = '\0';
+  char str[5] = {'t','e','s','t','\0'};
   USB.println(str);

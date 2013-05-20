@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{typedef} \PY{k}{enum} \PY{p}{\PYZob{}}\PY{n}{TEMPERATURE} \PY{o}{=} \PY{l+m+mh}{0x0001}\PY{p}{,} 
+    \PY{n}{HUMIDITY} \PY{o}{=} \PY{l+m+mh}{0x0002}\PY{p}{,} \PY{n}{PRESSURE} \PY{o}{=} \PY{l+m+mh}{0x0004}\PY{p}{,} 
+    \PY{n}{BATTERY} \PY{o}{=} \PY{l+m+mh}{0x0008}\PY{p}{,} \PY{n}{CO2} \PY{o}{=} \PY{l+m+mh}{0x0010}\PY{p}{,} \PY{p}{.}\PY{p}{.}\PY{p}{.} \PY{p}{\PYZcb{}}
+    \PY{n}{SensorType}\PY{p}{;}
+\end{Verbatim}

@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{float} \PY{n}{value\PYZus{}temp} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{n}{byte} \PY{n}{temp}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{;}
+
+\PY{c+c1}{// TEMPERATURE SENSOR RANGE: \PYZhy{}40° \PYZhy{}\PYZgt{} +125° }
+\PY{n}{value\PYZus{}temp} \PY{o}{=} \PY{n}{readValue}\PY{p}{(}\PY{n}{SENS\PYZus{}TEMPERATURE}\PY{p}{)}\PY{p}{;}
+
+\PY{n}{value\PYZus{}temp} \PY{o}{+}\PY{o}{=} \PY{n}{TEMPERATURE\PYZus{}OFFSET}\PY{p}{;} \PY{c+c1}{//+= 40	}
+\PY{n}{value\PYZus{}temp} \PY{o}{*}\PY{o}{=} \PY{l+m+mi}{100}\PY{p}{;} \PY{c+c1}{// 2 DECIMALS ACCURACY	}
+			
+\PY{n}{temp}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{MSByte}\PY{p}{(}\PY{n}{value\PYZus{}temp}\PY{p}{)}\PY{p}{;}	
+\PY{n}{temp}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{LSByte}\PY{p}{(}\PY{n}{value\PYZus{}temp}\PY{p}{)}\PY{p}{;}	
+\end{Verbatim}

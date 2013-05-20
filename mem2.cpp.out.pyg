@@ -1,9 +1,4 @@
 \begin{Verbatim}[commandchars=\\\{\}]
-  \PY{k+kt}{char} \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{;}
-  \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{l+s+sc}{\PYZsq{}t\PYZsq{}}\PY{p}{;}  
-  \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{l+s+sc}{\PYZsq{}e\PYZsq{}}\PY{p}{;}
-  \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{=} \PY{l+s+sc}{\PYZsq{}s\PYZsq{}}\PY{p}{;}
-  \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]} \PY{o}{=} \PY{l+s+sc}{\PYZsq{}t\PYZsq{}}\PY{p}{;}
-  \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]} \PY{o}{=} \PY{l+s+sc}{\PYZsq{}\PYZbs{}0\PYZsq{}}\PY{p}{;}
+  \PY{k+kt}{char} \PY{n}{str}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+sc}{\PYZsq{}t\PYZsq{}}\PY{p}{,}\PY{l+s+sc}{\PYZsq{}e\PYZsq{}}\PY{p}{,}\PY{l+s+sc}{\PYZsq{}s\PYZsq{}}\PY{p}{,}\PY{l+s+sc}{\PYZsq{}t\PYZsq{}}\PY{p}{,}\PY{l+s+sc}{\PYZsq{}\PYZbs{}0\PYZsq{}}\PY{p}{\PYZcb{}}\PY{p}{;}
   \PY{n}{USB}\PY{p}{.}\PY{n}{println}\PY{p}{(}\PY{n}{str}\PY{p}{)}\PY{p}{;}
 \end{Verbatim}

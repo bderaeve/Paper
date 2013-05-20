@@ -4,10 +4,18 @@ Database file #1: ./Bibliography.bib
 Warning--to sort, need author or key in BW
 Warning--to sort, need author, organization, or key in AVR
 Warning--empty author in BW
+Warning--empty journal in BOOST
+Warning--empty journal in RASP
+Warning--empty journal in SQ
+Warning--empty journal in XER
+Warning--empty journal in RASPBERRY
 Warning--empty journal in NEW
 Warning--empty journal in CH
 Warning--empty journal in 50
+Warning--empty journal in LIBSLEEP
 Warning--empty year in SQUID
+Warning--empty journal in MONG
 Warning--empty journal in AUTO
+Warning--empty journal in AVRWIKI
 Warning--empty journal in DARWIKI
-(There were 9 warnings)
+(There were 17 warnings)

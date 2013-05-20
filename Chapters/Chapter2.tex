@@ -1,55 +1,39 @@
 %----------------------------------------------------------------------------------------
-\section{Design of the WSN Test-Bed}
-
-
+\section{Design of a Wireless Sensor Networking Test-Bed}
 %------------------------------------------------------------------
-\subsection{Presentation of the thesis goal}
-The purpose of this thesis is creating a wireless sensor network in the GroupT Vesalius building. It is not our goal to cover the entire building with sensors but rather establish a basic wireless sensor network which reaches out throughout the entire building. So that later on sensor nodes can be added and they will be easy to integrate with the existing network. The data coming from these sensors should also be stored safely and a web interface should allow easy access to all data. For data storage Ipsum is used, this is a cloud storage system developed by Ruben Taqc. Ipsum is already used to log data coming from other sensors and is still being updated and maintained. The web interface is a master thesis of Matthias Verhelst. For normal users the web interface should fetch data from Ipsum. But for admin or privileged users it should also possible to communicate directly with the wireless sensor network. So the gateway has to have a web service running that can be contacted by clients via a web browser. Since wireless sensor nodes are battery power also the power consumption of these nodes has to be examined thoroughly to try and function for as long as possible without having to recharge the batteries. For a sensor network it is crucial that data storage happens correctly at all times. No data can be lost. So if Ipsum is unreachable, the gateway has to temporally store incoming data.
+\subsection{Thesis subject context}
+This thesis is actually part of a bigger project with as goal the creation of a WSN test-bed, the storage of sensor data to a cloud database and the development of a graphical web-application to visualize, configure and control the WSN test-bed.
+
+\subsection{WSN Test-Bed and gateway to extract the data}
+\label{lab2}
+The purpose of this thesis is to create a WSN test-bed, covering part of the Group T, campus Vesalius, building. So the main focus of this thesis subject, is to sample the data via the nodes and to extract that information out of the network, indicated in green on figure \ref{fig:thesis}. This test-bed consists of at least five nodes, including one weather station. The weather station will be deployed on the roof of Group T, campus Vesalius. The other nodes will be installed amongst the classrooms of the campus\footnote{Most likely, this will be in rooms V200, V6.01, V10.01 and V11.01.} and the gateway will be installed at module 14. We will then, for example, monitor the temperature, humidity and CO$_{2}$ values at those rooms. This data acquisition can happen at intervals between one and several minutes, depending on the user requirements entered through the web interface and on the intended battery life time of the node.\\
+In the end, this test-bed can be used as a lab environment for educational-related projects or can form the base for future research projects, for example by extending the network with actuator nodes. The test-bed will thus represent as a stable network of sensing nodes and it will be very easy to integrate new nodes to the network.\\
+The gateway developed to extract the data from the WSN test-bed is a middleware communication layer supporting sensor discovery, sensor state tracking and event or query-based data acquisition. Since privileged web-interface users have the possibility to communicate directly to the WSN, the gateway also runs a web service that can be contacted by clients via a web browser.\\
+\noindent
+ZigBee defines three logical device roles, differentiated in the network layer (table \ref{fig:roles} from \defcitealias{DYNAMIC}{Dynamic C: An Introduction to ZigBee User Manual, 2008}\citepalias{DYNAMIC} in appendix \ref{AppendixA} compares the device roles in detail). Each network must have one and only one \textit{coordinator}, responsible for establishing the network. In the test-bed this is the XBee radio installed at the gateway. A \textit{router} node has the second most complex device role and can also allow other nodes to join the network by becoming its parent. The third, simplest and cheapest device role is the \textit{end device}.  End devices don't have the parenting functionalities and thus cannot allow other nodes to join the network via them. In a typical ZigBee network end devices are also the only nodes which are allowed to sleep. Coordinator and routers are expected to be net-powered and end devices can be battery powered.\\
+ZigBee extends the star and basic peer-to-peer topologies supported by IEEE 802.15.4 with the mesh and cluster tree topology. The test-bed uses a mesh topology, in which coordinator and routers are responsible for route discovery, so there are no static routes.  Figure \ref{fig:network2} displays a basic star, tree and mesh topology.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.48\textwidth]{thesis}
-%\rule{30em}{0.5pt}
-\caption{Presentation of the subject}
+\caption{The context of the WSN Test-Bed}
 \label{fig:thesis}
-\end{figure} 
-
-
-
-
-%----------------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------
-\subsection{API Frame Specifications}
-To communicate with the ZigBee radio there are 2 modes, AT (transparent mode) and API (application programming interface). AT mode means that what you send to the zigbee radio using RS232, the ZigBee radio will send to its default destination. Unless you send “+++”, wait for the ZigBee to reply with OK, and then send an AT command. AT commands are used to change the configuration of the ZigBee radio. For instance the AT command OP requests the operating PAN ID.\\
-AT mode is fairly limited and only good for point to point communication since you can’t really specify the destination unless you change the default destination all the time. So that is why the sensor network operates in API mode. This means that everything sent to the zigbee radio, using serial communication, is now packetized.\\
-API defines a number of different packets as can be found in chapter 9 of \defcitealias{XBEE}{XBee/XBee-Pro ZB RF Modules User Manual, 2012}\citepalias{XBEE}. An API packet is shown in figure \ref{fig:api}. It starts with 0x7E as start delimiter and is followed by the length of the data excluding checksum. Then a API-specific structure follow which depends on the type of packet.\\
+\end{figure}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.48\textwidth]{api}
-\caption{UART Data Frame Structure}
-\label{fig:api}
-\end{figure} 
-\begin{table}[!ht]
-\begin{center}
-\begin{tabular}[!ht]{|c|c|}
-\hline
-\textbf{API Frame Name} & \textbf{API ID}\\
-\hline
-AT Command & 0x08\\
-\hline
-ZigBee Transmit Request & 0x10\\
-\hline
-AT Command Response & 0x88\\
-\hline
-ZigBee Receive Packet & 0x90\\
-\hline
-\end{tabular}
-\caption{API Frame Names and Values}
-\label{tab:apis}
-\end{center}
-\end{table}\\
-\label{api1}\noindent
-A reduced list of possible packets can be found in table \ref{tab:apis} (for the full list please see appendix \ref{AppendixF}). As mentioned an AT command is used to alter configurations of the ZigBee radio. This can of course also be done in API mode. For details about all the packets, please consult the datasheet. The only packets types used in this project are: 'ZigBee transmit request, 0x10' and 'Zigbee receive packet, 0x90'.\\
-A ZigBee transmit request is shown in figure \ref{fig:api4}. This packet is used to send data from this ZigBee radio to a remote one. All that has to be known is the remote ZigBee address. These types of packets are constructed by the gateway to send out data to the libelium nodes but also by libelium nodes to send data to other libelium nodes or the gateway. Libelium has its own specific format for the RF Data as will be explained in section \ref{libPAQ}. To reach the gateway the address of the coordinator can be used, since the coordinator and gateway in our case are the same. This is convenient since the coordinator can always be addressed with 0x0000000000000000. The reason we chose the gateway and coordinator to be the same is that the coordinator receives a lot of traffic due to its role as coordinator and the same goes for the gateway. So these 2 devices should be in the center of the network for efficiency reasons. Assigning one device for these 2 roles and trying to position this device as central as possible will ask for the least amount of routing overhead.\\
-When data is received by a ZigBee radio, this radio will send out a Zigbee receive packet via its serial communication. An example of this packet can be found in figure \ref{fig:api5}. Again the received data has an additional format as specified by Libelium.
-\vfill 
+\includegraphics[width=0.48\textwidth]{network2}
+\caption{The basic network topologies}
+\label{fig:network2}
+\end{figure}\\
+\noindent
+%Since wireless sensor nodes are battery powered also the power consumption of these nodes has to be examined thoroughly to try and function for as long as possible without having to recharge the batteries. 
+\subsection{Data storage} 
+For reliable sensor data storage the gateway will forward the data to Ipsum. This is a cloud storage system developed at Group T as a master thesis of Ruben Taqc. Ipsum is already in use to log data coming from other sensors and has received a few updates to better support the WSN test-bed.\\
+For a WSN it is crucial that data storage happens correctly at all times. No data can be lost. So if Ipsum is unreachable, the gateway will temporally store the incoming data.
+
+\subsection{Web-Interface}
+The web interface of the WSN test-bed is the master thesis of Matthias Verhelst and provides the user with 2D/3D models indicating the location of the sensor nodes. By selecting a sensor, the user will), depending on his privileges, will have access to the current state of the node, will be able to change the node's configuration and will be able to send messages (requests) to the node. For non-privileged users the web interface will provide data via Ipsum. The web application also provides the service to add or delete sensors and to define their service capabilities, e.g. the sensor layout of a certain node.
+
+\subsection{Requirements}
+In a first stage, this work aimed to design, implement and configure the ZigBee WSN test-bed and the communication layer to extract the sensor data. The most important aspect of this part were network stability, network topologies and network coverage. The network must monitor sensors at default intervals by all means and this data is not to be lost. Nodes must be able to self-recover when they were temporarily unable to join the network.\\
+The network must also support additional services such as sensor discovery, sensor state tracking and event-based sensor acquisition. A privileged user of the web interface must for example be able to set different time settings. This can be for all sensors of a certain type or for all sensors of a certain node. This means a node may, for example, have to sample different sensors at different intervals. These settings must be handled by the gateway and stored into the nodes.  To assure overall network stability, network security aspects must be taken into account as well.
+%\vfill 

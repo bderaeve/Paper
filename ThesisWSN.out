@@ -11,80 +11,93 @@
 \BOOKMARK [2][-]{subsection.1.4}{Wireless Standards and Technology}{section.1}% 11
 \BOOKMARK [3][-]{subsubsection.1.4.1}{Standards enable growth: ZigBee}{subsection.1.4}% 12
 \BOOKMARK [3][-]{subsubsection.1.4.2}{ZigBee standard}{subsection.1.4}% 13
-\BOOKMARK [1][-]{section.2}{Design of the WSN Test-Bed}{}% 14
-\BOOKMARK [2][-]{subsection.2.1}{Presentation of the thesis goal}{section.2}% 15
-\BOOKMARK [2][-]{subsection.2.2}{API Frame Specifications}{section.2}% 16
-\BOOKMARK [1][-]{section.3}{A WSN with Waspmotes: Theoretical aspects}{}% 17
-\BOOKMARK [2][-]{subsection.3.1}{Introduction}{section.3}% 18
-\BOOKMARK [2][-]{subsection.3.2}{Hardware}{section.3}% 19
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Modular Architecture}{subsection.3.2}% 20
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Microcontroller and memory}{subsection.3.2}% 21
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Timers}{subsection.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.3}{Programming}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.4}{Power considerations}{section.3}% 24
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Waspmote power modes}{subsection.3.4}% 25
-\BOOKMARK [2][-]{subsection.3.5}{Networking concepts}{section.3}% 26
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Device Types}{subsection.3.5}% 27
-\BOOKMARK [3][-]{subsubsection.3.5.2}{Device Roles}{subsection.3.5}% 28
-\BOOKMARK [2][-]{subsection.3.6}{Parent - Child relationship}{section.3}% 29
-\BOOKMARK [3][-]{subsubsection.3.6.1}{Sampling sensors}{subsection.3.6}% 30
-\BOOKMARK [3][-]{subsubsection.3.6.2}{Battery life estimation}{subsection.3.6}% 31
-\BOOKMARK [3][-]{subsubsection.3.6.3}{Sleeping Mesh}{subsection.3.6}% 32
-\BOOKMARK [1][-]{section.4}{A WSN with Waspmotes: Implementation aspects}{}% 33
-\BOOKMARK [2][-]{subsection.4.1}{Introduction}{section.4}% 34
-\BOOKMARK [2][-]{subsection.4.2}{Program Structure}{section.4}% 35
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Initialization}{subsection.4.2}% 36
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Measuring sensors}{subsection.4.2}% 37
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Sending and Receiving}{subsection.4.2}% 38
-\BOOKMARK [3][-]{subsubsection.4.2.4}{Without ZigBee sleep mode}{subsection.4.2}% 39
-\BOOKMARK [2][-]{subsection.4.3}{AVR compiler}{section.4}% 40
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Toolchain Overview}{subsection.4.3}% 41
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Memory Sections}{subsection.4.3}% 42
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Memory problems}{subsection.4.3}% 43
-\BOOKMARK [2][-]{subsection.4.4}{Libelium IDE and API}{section.4}% 44
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Waspmote-IDE}{subsection.4.4}% 45
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Waspmote-API}{subsection.4.4}% 46
-\BOOKMARK [2][-]{subsection.4.5}{Sleep options}{section.4}% 47
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Without ZigBee sleep}{subsection.4.5}% 48
-\BOOKMARK [3][-]{subsubsection.4.5.2}{With ZigBee sleep}{subsection.4.5}% 49
+\BOOKMARK [1][-]{section.2}{Design of a Wireless Sensor Networking Test-Bed}{}% 14
+\BOOKMARK [2][-]{subsection.2.1}{Thesis subject context}{section.2}% 15
+\BOOKMARK [2][-]{subsection.2.2}{WSN Test-Bed and gateway to extract the data}{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.3}{Data storage}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.4}{Web-Interface}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.5}{Requirements}{section.2}% 19
+\BOOKMARK [1][-]{section.3}{A WSN with Waspmotes: Background information}{}% 20
+\BOOKMARK [2][-]{subsection.3.1}{Introduction}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.2}{Hardware}{section.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Modular Architecture}{subsection.3.2}% 23
+\BOOKMARK [3][-]{subsubsection.3.2.2}{XBee radio}{subsection.3.2}% 24
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Microcontroller and memory}{subsection.3.2}% 25
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Timers}{subsection.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.3}{Power considerations}{section.3}% 27
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Waspmote power modes}{subsection.3.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Sampling sensors}{subsection.3.3}% 29
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Battery life estimation}{subsection.3.3}% 30
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Battery life optimizations}{subsection.3.3}% 31
+\BOOKMARK [1][-]{section.4}{A WSN with Waspmotes: Implementation aspects}{}% 32
+\BOOKMARK [2][-]{subsection.4.1}{Introduction}{section.4}% 33
+\BOOKMARK [2][-]{subsection.4.2}{Overall Program Structure}{section.4}% 34
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Initialization}{subsection.4.2}% 35
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Measuring sensors}{subsection.4.2}% 36
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Sending samples}{subsection.4.2}% 37
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Wait for received messages}{subsection.4.2}% 38
+\BOOKMARK [3][-]{subsubsection.4.2.5}{Enter low power mode}{subsection.4.2}% 39
+\BOOKMARK [3][-]{subsubsection.4.2.6}{Router program}{subsection.4.2}% 40
+\BOOKMARK [2][-]{subsection.4.3}{Weather Station Program}{section.4}% 41
+\BOOKMARK [2][-]{subsection.4.4}{AVR compiler}{section.4}% 42
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Toolchain Overview}{subsection.4.4}% 43
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Memory Sections}{subsection.4.4}% 44
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Memory problems}{subsection.4.4}% 45
+\BOOKMARK [3][-]{subsubsection.4.4.4}{Compiler bugs}{subsection.4.4}% 46
+\BOOKMARK [2][-]{subsection.4.5}{Libelium IDE and API}{section.4}% 47
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Waspmote-IDE}{subsection.4.5}% 48
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Waspmote-API}{subsection.4.5}% 49
 \BOOKMARK [1][-]{section.5}{Extracting the data}{}% 50
-\BOOKMARK [2][-]{subsection.5.1}{Programming language choice}{section.5}% 51
-\BOOKMARK [2][-]{subsection.5.2}{Implementation aspects}{section.5}% 52
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Ipsum}{subsection.5.2}% 53
-\BOOKMARK [3][-]{subsubsection.5.2.2}{ZigBee}{subsection.5.2}% 54
-\BOOKMARK [3][-]{subsubsection.5.2.3}{Web service}{subsection.5.2}% 55
-\BOOKMARK [3][-]{subsubsection.5.2.4}{Main thread}{subsection.5.2}% 56
-\BOOKMARK [2][-]{subsection.5.3}{Hardware}{section.5}% 57
-\BOOKMARK [1][-]{section.6}{Discussion}{}% 58
-\BOOKMARK [1][-]{section.7}{Future Work}{}% 59
-\BOOKMARK [1][-]{section.8}{Conclusion}{}% 60
-\BOOKMARK [1][-]{section.9}{Acknowledgements}{}% 61
-\BOOKMARK [1][-]{appendix.A}{XBee join and send time experiments}{}% 62
-\BOOKMARK [2][-]{subsection.A.1}{Distance relation test}{appendix.A}% 63
-\BOOKMARK [2][-]{subsection.A.2}{First time reduction}{appendix.A}% 64
-\BOOKMARK [2][-]{subsection.A.3}{Second time reduction}{appendix.A}% 65
-\BOOKMARK [2][-]{subsection.A.4}{Sensor measuring experiments}{appendix.A}% 66
-\BOOKMARK [3][-]{subsubsection.A.4.1}{Temperature measurements with and without delay between the readings}{subsection.A.4}% 67
-\BOOKMARK [3][-]{subsubsection.A.4.2}{Humidity measurements with and without delay between the readings}{subsection.A.4}% 68
-\BOOKMARK [3][-]{subsubsection.A.4.3}{Pressure measurements with and without delay between the readings}{subsection.A.4}% 69
-\BOOKMARK [3][-]{subsubsection.A.4.4}{Pressure measurements with and without delay between the readings}{subsection.A.4}% 70
-\BOOKMARK [1][-]{appendix.B}{Waspmote Architectural Overview}{}% 71
-\BOOKMARK [2][-]{subsection.B.1}{Waspmote Block Diagram}{appendix.B}% 72
-\BOOKMARK [2][-]{subsection.B.2}{AVR CPU Core Block Diagram}{appendix.B}% 73
-\BOOKMARK [1][-]{appendix.C}{Waspmote Variable Sleep Algorithms}{}% 74
-\BOOKMARK [1][-]{appendix.D}{Waspmote Battery Life Analysis}{}% 75
-\BOOKMARK [2][-]{subsection.D.1}{High Performance Mode, without ZigBee sleep}{appendix.D}% 76
-\BOOKMARK [2][-]{subsection.D.2}{Power Saver Mode, without ZigBee sleep}{appendix.D}% 77
-\BOOKMARK [2][-]{subsection.D.3}{High Performance vs. Saver Mode, with ZigBee sleep}{appendix.D}% 78
-\BOOKMARK [1][-]{appendix.E}{Waspmote Flow Chart}{}% 79
-\BOOKMARK [1][-]{appendix.F}{ZigBee Packet Structure }{}% 80
-\BOOKMARK [2][-]{subsection.F.1}{API Frames}{appendix.F}% 81
-\BOOKMARK [2][-]{subsection.F.2}{ZigBee Transmit Request}{appendix.F}% 82
-\BOOKMARK [2][-]{subsection.F.3}{ZigBee Receive Packet}{appendix.F}% 83
-\BOOKMARK [2][-]{subsection.F.4}{Waspmote Application Header in ZigBee API Frame Structure}{appendix.F}% 84
-\BOOKMARK [2][-]{subsection.F.5}{IO API Data Frames for Waspmote and Gateway}{appendix.F}% 85
-\BOOKMARK [1][-]{appendix.G}{Waspmote Program Remarks}{}% 86
-\BOOKMARK [2][-]{subsection.G.1}{Application ID / Packet ID}{appendix.G}% 87
-\BOOKMARK [2][-]{subsection.G.2}{Read the Programming Style Guide available at ??. }{appendix.G}% 88
-\BOOKMARK [2][-]{subsection.G.3}{Follow the 19 instructions from the Waspmote checklist available at ??. }{appendix.G}% 89
-\BOOKMARK [2][-]{subsection.G.4}{Ready?}{appendix.G}% 90
+\BOOKMARK [2][-]{subsection.5.1}{Gateway requirements}{section.5}% 51
+\BOOKMARK [2][-]{subsection.5.2}{Programming language choice}{section.5}% 52
+\BOOKMARK [2][-]{subsection.5.3}{Gateway program}{section.5}% 53
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Overall Program Structure}{subsection.5.3}% 54
+\BOOKMARK [3][-]{subsubsection.5.3.2}{IO-threads}{subsection.5.3}% 55
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Main thread}{subsection.5.3}% 56
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 57
+\BOOKMARK [1][-]{section.7}{Future Work}{}% 58
+\BOOKMARK [1][-]{section.8}{Conclusion}{}% 59
+\BOOKMARK [1][-]{section.9}{Acknowledgements}{}% 60
+\BOOKMARK [1][-]{appendix.A}{ZigBee Additions}{}% 61
+\BOOKMARK [2][-]{subsection.A.1}{ZigBee Stack}{appendix.A}% 62
+\BOOKMARK [2][-]{subsection.A.2}{Logical Device Types}{appendix.A}% 63
+\BOOKMARK [2][-]{subsection.A.3}{ZigBee Sleep Mode}{appendix.A}% 64
+\BOOKMARK [3][-]{subsubsection.A.3.1}{Waspmote V1.1}{subsection.A.3}% 65
+\BOOKMARK [3][-]{subsubsection.A.3.2}{Waspmote PRO}{subsection.A.3}% 66
+\BOOKMARK [2][-]{subsection.A.4}{Sleeping Mesh}{appendix.A}% 67
+\BOOKMARK [2][-]{subsection.A.5}{Range Test}{appendix.A}% 68
+\BOOKMARK [2][-]{subsection.A.6}{Self-made mobile XBee ZigBee node}{appendix.A}% 69
+\BOOKMARK [1][-]{appendix.B}{Network Stability Experiments}{}% 70
+\BOOKMARK [2][-]{subsection.B.1}{Distance relation test}{appendix.B}% 71
+\BOOKMARK [2][-]{subsection.B.2}{First time reduction}{appendix.B}% 72
+\BOOKMARK [2][-]{subsection.B.3}{Second time reduction}{appendix.B}% 73
+\BOOKMARK [2][-]{subsection.B.4}{Sensor measuring experiments}{appendix.B}% 74
+\BOOKMARK [3][-]{subsubsection.B.4.1}{Temperature measurements with and without delay between the readings}{subsection.B.4}% 75
+\BOOKMARK [3][-]{subsubsection.B.4.2}{Humidity measurements with and without delay between the readings}{subsection.B.4}% 76
+\BOOKMARK [3][-]{subsubsection.B.4.3}{Pressure measurements with and without delay between the readings}{subsection.B.4}% 77
+\BOOKMARK [3][-]{subsubsection.B.4.4}{Pressure measurements with and without delay between the readings}{subsection.B.4}% 78
+\BOOKMARK [1][-]{appendix.C}{Waspmote Additions}{}% 79
+\BOOKMARK [2][-]{subsection.C.1}{Waspmote Architectural Overview}{appendix.C}% 80
+\BOOKMARK [3][-]{subsubsection.C.1.1}{Waspmote Block Diagram}{subsection.C.1}% 81
+\BOOKMARK [3][-]{subsubsection.C.1.2}{AVR CPU Core Block Diagram}{subsection.C.1}% 82
+\BOOKMARK [2][-]{subsection.C.2}{Waspmote Variable Sleep Algorithms}{appendix.C}% 83
+\BOOKMARK [2][-]{subsection.C.3}{Practical limitations of Waspmote V1.1}{appendix.C}% 84
+\BOOKMARK [3][-]{subsubsection.C.3.1}{IDE and API}{subsection.C.3}% 85
+\BOOKMARK [3][-]{subsubsection.C.3.2}{Hardware aspects}{subsection.C.3}% 86
+\BOOKMARK [1][-]{appendix.D}{Waspmote Battery Life Analysis}{}% 87
+\BOOKMARK [2][-]{subsection.D.1}{Introduction: XBee and Waspmote start-up times}{appendix.D}% 88
+\BOOKMARK [2][-]{subsection.D.2}{High Performance Mode, without ZigBee sleep}{appendix.D}% 89
+\BOOKMARK [2][-]{subsection.D.3}{Power Saver Mode, without ZigBee sleep}{appendix.D}% 90
+\BOOKMARK [1][-]{appendix.E}{Waspmote Flow Chart}{}% 91
+\BOOKMARK [1][-]{appendix.F}{ZigBee Packet Structure }{}% 92
+\BOOKMARK [2][-]{subsection.F.1}{API Frames}{appendix.F}% 93
+\BOOKMARK [2][-]{subsection.F.2}{ZigBee Transmit Request}{appendix.F}% 94
+\BOOKMARK [2][-]{subsection.F.3}{ZigBee Receive Packet}{appendix.F}% 95
+\BOOKMARK [2][-]{subsection.F.4}{Waspmote Application Header in ZigBee API Frame Structure}{appendix.F}% 96
+\BOOKMARK [2][-]{subsection.F.5}{IO API Data Frames for Waspmote and Gateway}{appendix.F}% 97
+\BOOKMARK [2][-]{subsection.F.6}{Web service packets}{appendix.F}% 98
+\BOOKMARK [1][-]{appendix.G}{Practical remarks}{}% 99
+\BOOKMARK [2][-]{subsection.G.1}{Application ID / Packet ID}{appendix.G}% 100
+\BOOKMARK [2][-]{subsection.G.2}{Read the Programming Style Guide available at:}{appendix.G}% 101
+\BOOKMARK [2][-]{subsection.G.3}{Follow the 19 instructions from the Waspmote checklist available at:}{appendix.G}% 102
+\BOOKMARK [2][-]{subsection.G.4}{Ready?}{appendix.G}% 103

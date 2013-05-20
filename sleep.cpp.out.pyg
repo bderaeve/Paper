@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{typedef} \PY{k}{enum}\PY{p}{\PYZob{}}\PY{n}{END\PYZus{}DEVICE}\PY{p}{,} \PY{n}{ROUTER}\PY{p}{,} \PY{n}{COORDINATOR}\PY{p}{\PYZcb{}}
+	\PY{n}{DeviceRole}\PY{p}{;}
+
+\PY{k}{typedef} \PY{k}{enum} \PY{p}{\PYZob{}}\PY{n}{HIGHPERFORMANCE}\PY{p}{,} \PY{n}{POWERSAVER}\PY{p}{\PYZcb{}} 
+	\PY{n}{PowerPlan}\PY{p}{;} 
+
+\PY{k}{typedef} \PY{k}{enum} \PY{p}{\PYZob{}}\PY{n}{SLEEP}\PY{p}{,} \PY{n}{DEEPSLEEP}\PY{p}{,} \PY{n}{HIBERNATE}\PY{p}{,} \PY{n}{NONE}\PY{p}{\PYZcb{}}
+	\PY{n}{SleepMode}\PY{p}{;}
+
+\PY{k}{typedef} \PY{k}{enum} \PY{p}{\PYZob{}}\PY{n}{XBEE\PYZus{}SLEEP\PYZus{}ENABLED}\PY{p}{,} \PY{n}{XBEE\PYZus{}SLEEP\PYZus{}DISABLED}\PY{p}{\PYZcb{}}
+	\PY{n}{XBeeSleepMode}\PY{p}{;}
+\end{Verbatim}
